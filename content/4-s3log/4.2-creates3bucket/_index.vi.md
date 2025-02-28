@@ -11,23 +11,23 @@ Bạn có thể kiểm tra việc triển khai bằng cách truy cập vào url 
 
 1. Tìm bộ cân bằng tải:
 
-![VPC](/static/images/5.fwd/image122.png)
+![VPC](/images/5.fwd/image122.png)
 
 2. Sao chép tên DNS của bạn cho bedrock-ingress:
 
-![VPC](/static/images/5.fwd/image123.png)
+![VPC](/images/5.fwd/image123.png)
 
 3. Dán vào tab trình duyệt mới để truy cập vào giao diện
 
 Trong giao diện người dùng, bạn có thể thấy chatbot để tương tác với nó
 
-![VPC](/static/images/5.fwd/image124.png)
+![VPC](/images/5.fwd/image124.png)
 
 4. Kiểm tra xem mô hình có thể cung cấp cho chúng ta câu trả lời về OPEA hay không:
 
-![VPC](/static/images/5.fwd/image125.png)
+![VPC](/images/5.fwd/image125.png)
 
-![VPC](/static/images/5.fwd/image126.png)
+![VPC](/images/5.fwd/image126.png)
 
 Bạn có thể nhận thấy rằng phản hồi ban đầu của chatbot đã lỗi thời hoặc thiếu thông tin chi tiết cụ thể về OPEA. Điều này là do OPEA là một dự án tương đối mới và không được đưa vào tập dữ liệu được sử dụng để đào tạo mô hình ngôn ngữ. Vì hầu hết các LLM (Mô hình ngôn ngữ lớn) đều tĩnh nên chúng chỉ dựa vào dữ liệu đào tạo có sẵn và không thể tự động kết hợp các phát triển mới hoặc công nghệ mới nổi như OPEA.
 
@@ -45,7 +45,7 @@ Bạn có thể nhận thấy rằng phản hồi ban đầu của chatbot đã 
 
 Bằng cách tải lên các tài liệu hoặc liên kết đã cập nhật, bạn mở rộng cơ sở kiến ​​thức của chatbot, đảm bảo chatbot cung cấp các phản hồi có liên quan, chính xác và cập nhật hơn.
 
-![VPC](/static/images/5.fwd/image127.png)
+![VPC](/images/5.fwd/image127.png)
 
 Việc triển khai cho phép bạn tải lên tệp hoặc trang web. Đối với trường hợp này, hãy sử dụng trang web OPEA:
 

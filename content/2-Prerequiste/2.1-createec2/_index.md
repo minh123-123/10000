@@ -33,22 +33,22 @@ Step 1: Configure Access to Your EKS Cluster
 To interact with your EKS cluster using kubectl, you need to configure your local environment to recognize the cluster. This is done by updating the kubeconfig file, which stores authentication details and access configurations for your Kubernetes cluster.
 1. Log in to the AWS Management Console:
 Start by signing into your AWS Management Console.
-![VPC](/static/images/2/image001.png)
+![VPC](/images/2/image001.png)
 
 2. Open Cloud Shell or Set Up Your Local Environment:
 In the console, click the Cloud Shell icon to launch a preconfigured terminal.
 Alternatively, if you prefer to use your own AWS CLI, ensure you have both the AWS CLI Client and kubectl installed on your local machine.
 
-![VPC](/static/images/2/image002.png)
+![VPC](/images/2/image002.png)
 
 3. Update Your kubeconfig:
-![VPC](/static/images/2/image004.png)
+![VPC](/images/2/image004.png)
 You should receive an output confirming your conf file was updated:
-![VPC](/static/images/2/image005.png)
+![VPC](/images/2/image005.png)
 You are now ready to interact with the Kubernetes cluster using kubectl
 Step 2: Verify Cluster Access
 After updating your kubeconfig, verify that you can successfully connect to the cluster by listing the nodes:
-![VPC](/static/images/2/image006.png)
+![VPC](/images/2/image006.png)
 If the command executes successfully, you should see an output displaying the nodes associated with your cluster.
-![VPC](/static/images/2/image007.png)
+![VPC](/images/2/image007.png)
 You are now ready to explore the module of your choice and begin deploying workloads on your EKS cluster!

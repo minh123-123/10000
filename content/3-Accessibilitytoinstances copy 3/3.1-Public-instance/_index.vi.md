@@ -15,7 +15,7 @@ OPEA LLM và các dịch vụ vi mô nhúng chạy trên Intel Gaudi2 AI Acceler
 
 Tham khảo kiến ​​trúc để biết thông tin triển khai:
 
-![VPC](/static/images/5.fwd/image101.png)
+![VPC](/images/5.fwd/image101.png)
 
 ### Kiến trúc OPEA phát triển như thế nào?
 
@@ -41,28 +41,28 @@ Bản kê khai cho ChatQnA-Remote Inference có thể được tìm thấy trong
 
 Xác minh các dịch vụ mới đã được tạo
 
-![VPC](/static/images/5.fwd/image102.png)
+![VPC](/images/5.fwd/image102.png)
 
-![VPC](/static/images/5.fwd/image103.png)
+![VPC](/images/5.fwd/image103.png)
 
 Kiểm tra Chat QnA trên bảng điều khiển
 
 Truy cập vào ngnix POD (sao chép tên pod NGNIX của bạn từ kubectl get pods -n remote-inference và REPLACE chatqna-nginx-xxxxxxxx trên lệnh bên dưới)
 
-![VPC](/static/images/5.fwd/image104.png)
+![VPC](/images/5.fwd/image104.png)
 
 Dấu nhắc lệnh của bạn bây giờ sẽ chỉ ra rằng bạn đang ở bên trong vùng chứa, phản ánh sự thay đổi trong môi trường:
 
-![VPC](/static/images/5.fwd/image105.png)
+![VPC](/images/5.fwd/image105.png)
 
 Nhận "Học sâu là gì? Giải thích trong 20 words"*:
 
-![VPC](/static/images/5.fwd/image106.png)
+![VPC](/images/5.fwd/image106.png)
 
-![VPC](/static/images/5.fwd/image107.png)
+![VPC](/images/5.fwd/image107.png)
 
 Xác minh việc triển khai đã hoàn tất bằng cách xác minh bộ cân bằng tải mới trên bảng điều khiển quản lý của bạn
 
-![VPC](/static/images/5.fwd/image108.png)
+![VPC](/images/5.fwd/image108.png)
 
-![VPC](/static/images/5.fwd/image109.png)
+![VPC](/images/5.fwd/image109.png)

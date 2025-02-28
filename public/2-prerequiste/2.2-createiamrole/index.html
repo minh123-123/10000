@@ -12,21 +12,21 @@
     <title>Using Your Own Account :: WORK WITH AMAZON SYSTEM MANAGER - SESSION MANAGER</title>
 
     
-    <link href="/css/nucleus.css?1740754861" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1740754861" rel="stylesheet">
-    <link href="/css/hybrid.css?1740754861" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1740754861" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1740754861" rel="stylesheet">
-    <link href="/css/auto-complete.css?1740754861" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1740754861" rel="stylesheet">
-    <link href="/css/theme.css?1740754861" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1740754861" rel="stylesheet">
+    <link href="/css/nucleus.css?1740757120" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1740757120" rel="stylesheet">
+    <link href="/css/hybrid.css?1740757120" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1740757120" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1740757120" rel="stylesheet">
+    <link href="/css/auto-complete.css?1740757120" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1740757120" rel="stylesheet">
+    <link href="/css/theme.css?1740757120" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1740757120" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1740754861" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1740757120" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1740754861"></script>
+    <script src="/js/jquery-3.3.1.min.js?1740757120"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1740754861"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1740754861"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1740757120"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1740757120"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1740754861"></script>
+<script type="text/javascript" src="/js/search.js?1740757120"></script>
 
     
   </div>
@@ -965,20 +965,20 @@ Alternatively, you can retrieve your ARN using the AWS CLI.</li>
 
 <p>Deploying the CloudFormation Stack
 Once the parameters are set, click Create Stack.</p>
-<p><img src="/static/images/2/image008.png" alt="VPC"></p>
+<p><img src="/images/2/image008.png" alt="VPC"></p>
 <p>This process will initiate an AWS CodeBuild Project, which pulls in the opea-demo-builder open-source library.</p>
 <p>The AWS Cloud Development Kit (CDK) will generate the necessary CloudFormation templates to configure your AWS environment for the workshop.</p>
 <p>Monitoring Deployment Progress
 The deployment process takes approximately 25 minutes.
 Open the AWS CloudFormation Console and monitor the progress.</p>
-<p><img src="/static/images/2/image009.png" alt="VPC"></p>
+<p><img src="/images/2/image009.png" alt="VPC"></p>
 <p>Ensure that the following stacks reach the CREATE_COMPLETE status:</p>
 <ul>
 <li>The EKS cluster</li>
 <li>The ChatQnA application (default deployment)</li>
 </ul>
 <p>Some stacks may remain in REVIEW_IN_PROGRESS, as they will be deployed onto the EKS cluster later.</p>
-<p><img src="/static/images/2/image010.png" alt="VPC"></p>
+<p><img src="/images/2/image010.png" alt="VPC"></p>
 <h4 id="step-2-configuring-access-to-your-eks-cluster">Step 2: Configuring Access to Your EKS Cluster</h4>
 <p>Once the CloudFormation stacks are successfully deployed, you need to configure your local environment to interact with the Amazon EKS cluster using kubectl.</p>
 <p>Updating Your Kubernetes Configuration (kubeconfig)</p>
@@ -995,11 +995,11 @@ Open the AWS CloudFormation Console and monitor the progress.</p>
 <ul>
 <li>
 <p>Run the following command (updating the region if necessary):
-<img src="/static/images/2/image011.png" alt="VPC"></p>
+<img src="/images/2/image011.png" alt="VPC"></p>
 </li>
 <li>
 <p>If successful, you should receive a confirmation message indicating that your configuration file has been updated.
-<img src="/static/images/2/image012.png" alt="VPC"></p>
+<img src="/images/2/image012.png" alt="VPC"></p>
 </li>
 </ul>
 <ol start="3">
@@ -1014,23 +1014,23 @@ Ensure you can interact with the cluster using kubectl.</li>
 <ul>
 <li>
 <p>Navigate to the EKS Console.
-<img src="/static/images/2/image013.png" alt="VPC"></p>
+<img src="/images/2/image013.png" alt="VPC"></p>
 </li>
 <li>
 <p>Look for your IAM principal ARN under Access Entries.
-<img src="/static/images/2/image014.png" alt="VPC"></p>
+<img src="/images/2/image014.png" alt="VPC"></p>
 </li>
 </ul>
 </li>
 </ol>
-<p><img src="/static/images/2/image015.png" alt="VPC"></p>
+<p><img src="/images/2/image015.png" alt="VPC"></p>
 <ol start="2">
 <li>
 <p>If Your ARN Is Not Listed, Add It Manually</p>
 <ul>
 <li>Click Create Access Entry.</li>
 <li>Enter your IAM User ARN or Role ARN.
-<img src="/static/images/2/image016.png" alt="VPC"></li>
+<img src="/images/2/image016.png" alt="VPC"></li>
 </ul>
 </li>
 <li>
@@ -1039,7 +1039,7 @@ Assign the following permissions to your IAM role:</p>
 <ul>
 <li>AmazonEKSAdminPolicy</li>
 <li>AmazonEKSClusterAdminPolicy
-<img src="/static/images/2/image017.png" alt="VPC"></li>
+<img src="/images/2/image017.png" alt="VPC"></li>
 </ul>
 </li>
 <li>
@@ -1047,12 +1047,12 @@ Assign the following permissions to your IAM role:</p>
 <ul>
 <li>
 <p>Run the following command to check if worker nodes are visible:
-<img src="/static/images/2/image018.png" alt="VPC"></p>
+<img src="/images/2/image018.png" alt="VPC"></p>
 </li>
 <li>
 <p>If the command returns a list of nodes, your cluster is successfully configured.
 <strong>Note</strong>: If no nodes appear, wait a few minutes and retry, as node provisioning may still be in progress.
-<img src="/static/images/2/image019.png" alt="VPC"></p>
+<img src="/images/2/image019.png" alt="VPC"></p>
 </li>
 </ul>
 </li>
@@ -1475,19 +1475,19 @@ Assign the following permissions to your IAM role:</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1740754861"></script>
-    <script src="/js/perfect-scrollbar.min.js?1740754861"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1740754861"></script>
-    <script src="/js/jquery.sticky.js?1740754861"></script>
-    <script src="/js/featherlight.min.js?1740754861"></script>
-    <script src="/js/highlight.pack.js?1740754861"></script>
+    <script src="/js/clipboard.min.js?1740757120"></script>
+    <script src="/js/perfect-scrollbar.min.js?1740757120"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1740757120"></script>
+    <script src="/js/jquery.sticky.js?1740757120"></script>
+    <script src="/js/featherlight.min.js?1740757120"></script>
+    <script src="/js/highlight.pack.js?1740757120"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1740754861"></script>
-    <script src="/js/learn.js?1740754861"></script>
-    <script src="/js/hugo-learn.js?1740754861"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1740757120"></script>
+    <script src="/js/learn.js?1740757120"></script>
+    <script src="/js/hugo-learn.js?1740757120"></script>
 
-    <link href="/mermaid/mermaid.css?1740754861" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1740754861"></script>
+    <link href="/mermaid/mermaid.css?1740757120" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1740757120"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

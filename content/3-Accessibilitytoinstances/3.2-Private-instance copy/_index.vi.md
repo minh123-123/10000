@@ -12,19 +12,19 @@ Bây giờ bạn đã xác minh tất cả các dịch vụ đang chạy, hãy c
 
 Trong UI, bạn có thể thấy chatbot tương tác với nó
 
-![VPC](/static/images/2/image052.png)
+![VPC](/images/2/image052.png)
 
 Để xác minh UI, hãy tiếp tục và hỏi
 
-![VPC](/static/images/2/image053.png)
+![VPC](/images/2/image053.png)
 
-![VPC](/static/images/2/image054.png)
+![VPC](/images/2/image054.png)
 
 Câu trả lời lại đúng vì chúng ta đã lập chỉ mục cơ sở kiến ​​thức của mình ở bước trước.
 
 Hãy thử một cái gì đó khác. Ứng dụng có thể trả lời về OPEA không:
 
-![VPC](/static/images/2/image055.png)
+![VPC](/images/2/image055.png)
 
 Bạn có thể nhận thấy rằng phản hồi ban đầu của chatbot đã lỗi thời hoặc thiếu thông tin chi tiết cụ thể về OPEA. Nguyên nhân là do OPEA là một dự án tương đối mới và không được đưa vào tập dữ liệu được sử dụng để đào tạo mô hình ngôn ngữ. Vì hầu hết các mô hình ngôn ngữ đều là tĩnh—có nghĩa là chúng dựa vào dữ liệu có sẵn tại thời điểm đào tạo—nên chúng không thể tự động kết hợp các phát triển gần đây hoặc các chủ đề mới nổi như OPEA.
 
@@ -32,7 +32,7 @@ Tuy nhiên, RAG cung cấp giải pháp bằng cách cho phép truy xuất ngữ
 
 Bằng cách tải lên tài liệu hoặc liên kết, bạn sẽ mở rộng hiệu quả cơ sở kiến ​​thức của chatbot bằng thông tin mới nhất, cải thiện tính liên quan và độ chính xác của phản hồi.
 
-![VPC](/static/images/4.s3/image057.png)
+![VPC](/images/4.s3/image057.png)
 
 Việc triển khai cho phép bạn tải lên tệp hoặc trang web. Đối với trường hợp này, hãy sử dụng trang web OPEA:
 
@@ -43,11 +43,11 @@ Việc triển khai cho phép bạn tải lên tệp hoặc trang web. Đối v�
 
 Khi quá trình lập chỉ mục hoàn tất, bạn sẽ thấy một biểu tượng được thêm vào bên dưới hộp văn bản, có nhãn là https://opea-project.github.io/latest/introduction/index.html
 
-![VPC](/static/images/4.s3/image058.png)
+![VPC](/images/4.s3/image058.png)
 
 Hỏi **"OPEA là gì?"** một lần nữa để xem câu trả lời đã cập nhật.
 
-![VPC](/static/images/4.s3/image059.png)
+![VPC](/images/4.s3/image059.png)
 
 Lần này, chatbot phản hồi chính xác dựa trên dữ liệu mà nó đã thêm vào lời nhắc từ nguồn mới, trang web OPEA.
 

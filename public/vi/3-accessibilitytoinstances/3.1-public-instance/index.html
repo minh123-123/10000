@@ -12,21 +12,21 @@
     <title>Triển khai ChatQnA :: LÀM VIỆC VỚI AMAZON SYSTEM MANAGER - SESSION MANAGER</title>
 
     
-    <link href="/css/nucleus.css?1740754693" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1740754693" rel="stylesheet">
-    <link href="/css/hybrid.css?1740754693" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1740754693" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1740754693" rel="stylesheet">
-    <link href="/css/auto-complete.css?1740754693" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1740754693" rel="stylesheet">
-    <link href="/css/theme.css?1740754693" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1740754693" rel="stylesheet">
+    <link href="/css/nucleus.css?1740757120" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1740757120" rel="stylesheet">
+    <link href="/css/hybrid.css?1740757120" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1740757120" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1740757120" rel="stylesheet">
+    <link href="/css/auto-complete.css?1740757120" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1740757120" rel="stylesheet">
+    <link href="/css/theme.css?1740757120" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1740757120" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1740754693" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1740757120" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1740754693"></script>
+    <script src="/js/jquery-3.3.1.min.js?1740757120"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1740754693"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1740754693"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1740757120"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1740757120"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1740754693"></script>
+<script type="text/javascript" src="/js/search.js?1740757120"></script>
 
     
   </div>
@@ -917,17 +917,17 @@
 <p>Vì bạn đã thiết lập quyền truy cập vào cụm Kubernetes của mình trong phần &ldquo;Thiết lập&rdquo;, giờ đây bạn sẽ tìm hiểu sâu hơn về môi trường đã triển khai để khám phá và tìm hiểu thêm về cấu trúc và chức năng của cụm.</p>
 <h4 id="bước-1-triển-khai-mẫu-chatqna-cloudformation">Bước 1: Triển khai mẫu ChatQnA CloudFormation</h4>
 <p>Mở AWS CloudShell và triển khai mẫu ChatQnA CloudFormation vào cụm Amazon EKS của bạn. Thao tác này sẽ khởi tạo quá trình triển khai ứng dụng RAG trong môi trường Kubernetes được quản lý của bạn.
-<img src="/static/images/2/image020.png" alt="VPC"></p>
+<img src="/images/2/image020.png" alt="VPC"></p>
 <h4 id="bước-2-khám-phá-tài-nguyên-cụm">Bước 2: Khám phá Tài nguyên cụm</h4>
 <p>Điều hướng đến AWS Management Console và chọn cụm EKS được chỉ định của bạn để xem lại quá trình triển khai. Mỗi cụm bao gồm các cấu hình quan trọng như phiên bản Kubernetes, thiết lập mạng và tùy chọn ghi nhật ký. Kiểm tra các thiết lập này sẽ giúp hiểu sâu hơn về cơ sở hạ tầng của ứng dụng, giúp quản lý hiệu quả và khắc phục sự cố khi cần thiết.</p>
 <p>Xem lại Tài nguyên cụm
 Nhấp vào tab Tài nguyên để xem tất cả các ứng dụng hiện đang chạy trong cụm của bạn, bao gồm ChatQnA và các dịch vụ vi mô liên quan.
-<img src="/static/images/2/image021.png" alt="VPC">
-<img src="/static/images/2/image022.png" alt="VPC">
+<img src="/images/2/image021.png" alt="VPC">
+<img src="/images/2/image022.png" alt="VPC">
 Đảm bảo rằng tất cả các dịch vụ vi mô từ bản thiết kế OPEA ChatQnA được cài đặt đúng cách bằng cách liệt kê các pod đang hoạt động:
-<img src="/static/images/2/image023.png" alt="VPC">
+<img src="/images/2/image023.png" alt="VPC">
 Đầu ra sẽ hiển thị tất cả các pod ở trạng thái Đang chạy (1/1), xác nhận rằng ứng dụng đã được triển khai thành công. Tại thời điểm này, bạn đã sẵn sàng để khám phá thêm về việc triển khai và quản lý tài nguyên của mình trong cụm.
-<img src="/static/images/2/image024.png" alt="VPC"></p>
+<img src="/images/2/image024.png" alt="VPC"></p>
 
 
 
@@ -1341,19 +1341,19 @@ Nhấp vào tab Tài nguyên để xem tất cả các ứng dụng hiện đang
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1740754693"></script>
-    <script src="/js/perfect-scrollbar.min.js?1740754693"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1740754693"></script>
-    <script src="/js/jquery.sticky.js?1740754693"></script>
-    <script src="/js/featherlight.min.js?1740754693"></script>
-    <script src="/js/highlight.pack.js?1740754693"></script>
+    <script src="/js/clipboard.min.js?1740757120"></script>
+    <script src="/js/perfect-scrollbar.min.js?1740757120"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1740757120"></script>
+    <script src="/js/jquery.sticky.js?1740757120"></script>
+    <script src="/js/featherlight.min.js?1740757120"></script>
+    <script src="/js/highlight.pack.js?1740757120"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1740754693"></script>
-    <script src="/js/learn.js?1740754693"></script>
-    <script src="/js/hugo-learn.js?1740754693"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1740757120"></script>
+    <script src="/js/learn.js?1740757120"></script>
+    <script src="/js/hugo-learn.js?1740757120"></script>
 
-    <link href="/mermaid/mermaid.css?1740754693" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1740754693"></script>
+    <link href="/mermaid/mermaid.css?1740757120" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1740757120"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

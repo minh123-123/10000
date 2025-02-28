@@ -12,21 +12,21 @@
     <title>Kiểm tra việc triển khai và xác minh quy trình làm việc RAG :: LÀM VIỆC VỚI AMAZON SYSTEM MANAGER - SESSION MANAGER</title>
 
     
-    <link href="/css/nucleus.css?1740754733" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1740754733" rel="stylesheet">
-    <link href="/css/hybrid.css?1740754733" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1740754733" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1740754733" rel="stylesheet">
-    <link href="/css/auto-complete.css?1740754733" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1740754733" rel="stylesheet">
-    <link href="/css/theme.css?1740754733" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1740754733" rel="stylesheet">
+    <link href="/css/nucleus.css?1740757120" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1740757120" rel="stylesheet">
+    <link href="/css/hybrid.css?1740757120" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1740757120" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1740757120" rel="stylesheet">
+    <link href="/css/auto-complete.css?1740757120" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1740757120" rel="stylesheet">
+    <link href="/css/theme.css?1740757120" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1740757120" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1740754733" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1740757120" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1740754733"></script>
+    <script src="/js/jquery-3.3.1.min.js?1740757120"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1740754733"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1740754733"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1740757120"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1740757120"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1740754733"></script>
+<script type="text/javascript" src="/js/search.js?1740757120"></script>
 
     
   </div>
@@ -914,17 +914,17 @@
 <p>Bây giờ bạn đã xác minh tất cả các dịch vụ đang chạy, hãy cùng xem UI do triển khai cung cấp.</p>
 <p>Để truy cập UI, hãy mở bất kỳ trình duyệt nào và truy cập DNS của ChatQnA Load Balancer: <a href="http://chatqna-ingress-xxxxxxx.us-east-2.elb.amazonaws.com">http://chatqna-ingress-xxxxxxx.us-east-2.elb.amazonaws.com</a> (Sửa đổi bằng URL chatqna-ingressDNS của bạn)</p>
 <p>Trong UI, bạn có thể thấy chatbot tương tác với nó</p>
-<p><img src="/static/images/2/image052.png" alt="VPC"></p>
+<p><img src="/images/2/image052.png" alt="VPC"></p>
 <p>Để xác minh UI, hãy tiếp tục và hỏi</p>
-<p><img src="/static/images/2/image053.png" alt="VPC"></p>
-<p><img src="/static/images/2/image054.png" alt="VPC"></p>
+<p><img src="/images/2/image053.png" alt="VPC"></p>
+<p><img src="/images/2/image054.png" alt="VPC"></p>
 <p>Câu trả lời lại đúng vì chúng ta đã lập chỉ mục cơ sở kiến ​​thức của mình ở bước trước.</p>
 <p>Hãy thử một cái gì đó khác. Ứng dụng có thể trả lời về OPEA không:</p>
-<p><img src="/static/images/2/image055.png" alt="VPC"></p>
+<p><img src="/images/2/image055.png" alt="VPC"></p>
 <p>Bạn có thể nhận thấy rằng phản hồi ban đầu của chatbot đã lỗi thời hoặc thiếu thông tin chi tiết cụ thể về OPEA. Nguyên nhân là do OPEA là một dự án tương đối mới và không được đưa vào tập dữ liệu được sử dụng để đào tạo mô hình ngôn ngữ. Vì hầu hết các mô hình ngôn ngữ đều là tĩnh—có nghĩa là chúng dựa vào dữ liệu có sẵn tại thời điểm đào tạo—nên chúng không thể tự động kết hợp các phát triển gần đây hoặc các chủ đề mới nổi như OPEA.</p>
 <p>Tuy nhiên, RAG cung cấp giải pháp bằng cách cho phép truy xuất ngữ cảnh theo thời gian thực. Trong UI, bạn sẽ tìm thấy tùy chọn tải lên thông tin ngữ cảnh có liên quan. Khi bạn thực hiện việc này, tài liệu sẽ được gửi đến dịch vụ vi mô DataPrep, tại đó tài liệu sẽ được chuyển đổi thành nhúng và lưu trữ trong Cơ sở dữ liệu Vector.</p>
 <p>Bằng cách tải lên tài liệu hoặc liên kết, bạn sẽ mở rộng hiệu quả cơ sở kiến ​​thức của chatbot bằng thông tin mới nhất, cải thiện tính liên quan và độ chính xác của phản hồi.</p>
-<p><img src="/static/images/4.s3/image057.png" alt="VPC"></p>
+<p><img src="/images/4.s3/image057.png" alt="VPC"></p>
 <p>Việc triển khai cho phép bạn tải lên tệp hoặc trang web. Đối với trường hợp này, hãy sử dụng trang web OPEA:</p>
 <ul>
 <li>Nhấp vào biểu tượng tải lên để mở bảng điều khiển bên phải</li>
@@ -933,9 +933,9 @@
 <li>Nhấp vào Xác nhận để bắt đầu quá trình lập chỉ mục</li>
 </ul>
 <p>Khi quá trình lập chỉ mục hoàn tất, bạn sẽ thấy một biểu tượng được thêm vào bên dưới hộp văn bản, có nhãn là <a href="https://opea-project.github.io/latest/introduction/index.html">https://opea-project.github.io/latest/introduction/index.html</a></p>
-<p><img src="/static/images/4.s3/image058.png" alt="VPC"></p>
+<p><img src="/images/4.s3/image058.png" alt="VPC"></p>
 <p>Hỏi <strong>&ldquo;OPEA là gì?&rdquo;</strong> một lần nữa để xem câu trả lời đã cập nhật.</p>
-<p><img src="/static/images/4.s3/image059.png" alt="VPC"></p>
+<p><img src="/images/4.s3/image059.png" alt="VPC"></p>
 <p>Lần này, chatbot phản hồi chính xác dựa trên dữ liệu mà nó đã thêm vào lời nhắc từ nguồn mới, trang web OPEA.</p>
 <p><strong>Kết luận</strong></p>
 <p>Trong nhiệm vụ này, bạn đã khám phá cấu trúc cốt lõi của ứng dụng RAG, hiểu rõ hơn về cách từng thành phần hoạt động và tương tác trong hệ thống. Từ việc truy xuất thông tin có liên quan đến việc tạo phản hồi chính xác, mọi phần đều đóng vai trò quan trọng trong quy trình làm việc RAG của OPEA—nâng cao tính liên quan của phản hồi thông qua việc truy xuất trong khi cải thiện độ chính xác với mô hình ngôn ngữ nâng cao. Buổi thực hành này cung cấp hiểu biết rõ ràng về cách OPEA tận dụng RAG để xử lý các truy vấn phức tạp một cách hiệu quả và tinh chỉnh hiệu suất mô hình thông qua tích hợp thành phần liền mạch.</p>
@@ -1356,19 +1356,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1740754733"></script>
-    <script src="/js/perfect-scrollbar.min.js?1740754733"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1740754733"></script>
-    <script src="/js/jquery.sticky.js?1740754733"></script>
-    <script src="/js/featherlight.min.js?1740754733"></script>
-    <script src="/js/highlight.pack.js?1740754733"></script>
+    <script src="/js/clipboard.min.js?1740757120"></script>
+    <script src="/js/perfect-scrollbar.min.js?1740757120"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1740757120"></script>
+    <script src="/js/jquery.sticky.js?1740757120"></script>
+    <script src="/js/featherlight.min.js?1740757120"></script>
+    <script src="/js/highlight.pack.js?1740757120"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1740754733"></script>
-    <script src="/js/learn.js?1740754733"></script>
-    <script src="/js/hugo-learn.js?1740754733"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1740757120"></script>
+    <script src="/js/learn.js?1740757120"></script>
+    <script src="/js/hugo-learn.js?1740757120"></script>
 
-    <link href="/mermaid/mermaid.css?1740754733" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1740754733"></script>
+    <link href="/mermaid/mermaid.css?1740757120" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1740757120"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

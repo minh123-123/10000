@@ -39,23 +39,23 @@ Mô-đun này hoạt động với hầu hết mọi LLM tạo văn bản đư�
 
 1. Chuyển sang vùng us-west-2, bạn có thể thử nghiệm trên các vùng khác nhưng thường thì us-west có nhiều khả năng hơn:
 
-![VPC](/static/images/5.fwd/image116.png)
+![VPC](/images/5.fwd/image116.png)
 
 2. Truy cập Amazon Bedrock:
 
-![VPC](/static/images/5.fwd/image117.png)
+![VPC](/images/5.fwd/image117.png)
 
 3. Truy cập tab truy cập mô hình:
 
-![VPC](/static/images/5.fwd/image118.png)
+![VPC](/images/5.fwd/image118.png)
 
 4. Ở đầu màn hình, nhấp vào nút có nội dung Sửa đổi quyền truy cập mô hình
 
-![VPC](/static/images/5.fwd/image119.png)
+![VPC](/images/5.fwd/image119.png)
 
 5. Chọn Claude 3 Haiku
 
-![VPC](/static/images/5.fwd/image120.png)
+![VPC](/images/5.fwd/image120.png)
 
 {{% notice info %}}
 Có thể mất một hoặc hai phút để cấp quyền truy cập, nhưng đừng lo lắng sẽ không mất nhiều thời gian hơn thế nữa.
@@ -69,7 +69,7 @@ Bây giờ hãy xác nhận rằng triển khai Bedrock của chúng ta đã ho�
 
 ...để có đầu ra như thế này:
 
-![VPC](/static/images/5.fwd/image121.png)
+![VPC](/images/5.fwd/image121.png)
 
 {{% notice info %}}
 Có thể mất vài phút để Bedrock khởi tạo hoàn toàn và khả dụng. Chỉ tiếp tục khi bạn thấy pod chatqna-bedrock-deployment ở trạng thái Đang chạy.

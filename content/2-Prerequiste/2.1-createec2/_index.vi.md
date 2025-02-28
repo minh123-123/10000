@@ -34,22 +34,22 @@ Bước 1: Cấu hình quyền truy cập vào cụm EKS
 
 1. Đăng nhập vào AWS Management Console:
 Bắt đầu bằng cách đăng nhập vào AWS Management Console.
-![VPC](/static/images/2/image001.png)
+![VPC](/images/2/image001.png)
 
 2. Mở Cloud Shell hoặc thiết lập môi trường cục bộ:
 Trong giao diện console, nhấp vào biểu tượng Cloud Shell để mở terminal được cấu hình sẵn.
 Nếu sử dụng môi trường cục bộ, hãy đảm bảo bạn đã cài đặt AWS CLI Client và kubectl trên máy cá nhân.
-![VPC](/static/images/2/image002.png)
+![VPC](/images/2/image002.png)
 
 3. Cập nhật kubeconfig:
 Chạy lệnh sau để cập nhật kubeconfig với thông tin của cụm EKS:
-![VPC](/static/images/2/image004.png)
+![VPC](/images/2/image004.png)
 Bạn sẽ nhận được một đầu ra xác nhận rằng tệp cấu hình của bạn đã được cập nhật.
-![VPC](/static/images/2/image005.png)
+![VPC](/images/2/image005.png)
 Giờ đây, bạn có thể sử dụng kubectl để quản lý cụm Kubernetes.
 Bước 2: Kiểm tra kết nối với cụm EKS
 Sau khi cập nhật kubeconfig, hãy kiểm tra xem bạn có thể kết nối với cụm hay không bằng cách liệt kê các node:
-![VPC](/static/images/2/image006.png)
+![VPC](/images/2/image006.png)
 Nếu lệnh thực thi thành công, bạn sẽ thấy đầu ra hiển thị các nút được liên kết với cụm của bạn.
-![VPC](/static/images/2/image007.png)
+![VPC](/images/2/image007.png)
 Bây giờ bạn đã sẵn sàng khám phá mô-đun bạn chọn và bắt đầu triển khai khối lượng công việc trên cụm EKS của mình!

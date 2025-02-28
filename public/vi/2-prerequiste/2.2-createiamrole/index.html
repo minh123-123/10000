@@ -12,21 +12,21 @@
     <title>Sử dụng tài khoản của riêng bạn :: LÀM VIỆC VỚI AMAZON SYSTEM MANAGER - SESSION MANAGER</title>
 
     
-    <link href="/css/nucleus.css?1740754679" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1740754679" rel="stylesheet">
-    <link href="/css/hybrid.css?1740754679" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1740754679" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1740754679" rel="stylesheet">
-    <link href="/css/auto-complete.css?1740754679" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1740754679" rel="stylesheet">
-    <link href="/css/theme.css?1740754679" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1740754679" rel="stylesheet">
+    <link href="/css/nucleus.css?1740757120" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1740757120" rel="stylesheet">
+    <link href="/css/hybrid.css?1740757120" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1740757120" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1740757120" rel="stylesheet">
+    <link href="/css/auto-complete.css?1740757120" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1740757120" rel="stylesheet">
+    <link href="/css/theme.css?1740757120" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1740757120" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1740754679" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1740757120" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1740754679"></script>
+    <script src="/js/jquery-3.3.1.min.js?1740757120"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1740754679"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1740754679"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1740757120"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1740757120"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1740754679"></script>
+<script type="text/javascript" src="/js/search.js?1740757120"></script>
 
     
   </div>
@@ -963,20 +963,20 @@ Lấy ARN bằng lệnh AWS CLI (nếu cần).</li>
 
 <p>Quá trình triển khai
 Sau khi thiết lập các tham số, nhấp vào Tạo ngăn xếp.</p>
-<p><img src="/static/images/2/image008.png" alt="VPC"></p>
+<p><img src="/images/2/image008.png" alt="VPC"></p>
 <p>Quá trình này sẽ khởi tạo Dự án AWS CodeBuild, dự án này sẽ đưa thư viện nguồn mở opea-demo-builder vào</p>
 <p>Bộ công cụ phát triển đám mây AWS (CDK) sẽ tạo các mẫu CloudFormation cần thiết để định cấu hình môi trường AWS của bạn cho hội thảo.</p>
 <p>Giám sát tiến độ triển khai
 Quá trình triển khai mất khoảng 25 phút.
 Mở Bảng điều khiển AWS CloudFormation và theo dõi tiến trình.</p>
-<p><img src="/static/images/2/image009.png" alt="VPC"></p>
+<p><img src="/images/2/image009.png" alt="VPC"></p>
 <p>Đảm bảo rằng các ngăn xếp sau đạt trạng thái CREATE_COMPLETE:</p>
 <ul>
 <li>Cụm EKS</li>
 <li>Ứng dụng ChatQnA (triển khai mặc định)</li>
 </ul>
 <p>Một số ngăn xếp có thể vẫn còn trong REVIEW_IN_PROGRESS vì chúng sẽ được triển khai trên cụm EKS sau này.</p>
-<p><img src="/static/images/2/image010.png" alt="VPC"></p>
+<p><img src="/images/2/image010.png" alt="VPC"></p>
 <h4 id="bước-2-định-cấu-hình-quyền-truy-cập-vào-cụm-eks-của-bạn">Bước 2: Định cấu hình quyền truy cập vào cụm EKS của bạn</h4>
 <p>Sau khi triển khai thành công các ngăn xếp CloudFormation, bạn cần đặt cấu hình môi trường cục bộ của mình để tương tác với cụm Amazon EKS bằng kubectl.</p>
 <p>Cập nhật cấu hình Kubernetes của bạn (kubeconfig)</p>
@@ -993,11 +993,11 @@ Mở Bảng điều khiển AWS CloudFormation và theo dõi tiến trình.</p>
 <ul>
 <li>
 <p>Chạy lệnh sau (cập nhật vùng nếu cần):
-<img src="/static/images/2/image011.png" alt="VPC"></p>
+<img src="/images/2/image011.png" alt="VPC"></p>
 </li>
 <li>
 <p>Nếu thành công, bạn sẽ nhận được thông báo xác nhận cho biết file cấu hình của bạn đã được cập nhật.
-<img src="/static/images/2/image012.png" alt="VPC"></p>
+<img src="/images/2/image012.png" alt="VPC"></p>
 </li>
 </ul>
 <ol start="3">
@@ -1012,23 +1012,23 @@ Mở Bảng điều khiển AWS CloudFormation và theo dõi tiến trình.</p>
 <ul>
 <li>
 <p>Điều hướng đến Bảng điều khiển EKS.
-<img src="/static/images/2/image013.png" alt="VPC"></p>
+<img src="/images/2/image013.png" alt="VPC"></p>
 </li>
 <li>
 <p>Tìm ARN chính IAM của bạn trong Mục truy cập.
-<img src="/static/images/2/image014.png" alt="VPC"></p>
+<img src="/images/2/image014.png" alt="VPC"></p>
 </li>
 </ul>
 </li>
 </ol>
-<p><img src="/static/images/2/image015.png" alt="VPC"></p>
+<p><img src="/images/2/image015.png" alt="VPC"></p>
 <ol start="2">
 <li>
 <p>Nếu ARN của bạn không được liệt kê, hãy thêm nó theo cách thủ công</p>
 <ul>
 <li>Bấm vào Tạo mục truy cập.</li>
 <li>Nhập ARN người dùng IAM hoặc ARN vai trò của bạn.
-<img src="/static/images/2/image016.png" alt="VPC"></li>
+<img src="/images/2/image016.png" alt="VPC"></li>
 </ul>
 </li>
 <li>
@@ -1037,7 +1037,7 @@ Gán các quyền sau cho vai trò IAM của bạn:</p>
 <ul>
 <li>Chính sách quản trị của AmazonEKS</li>
 <li>Chính sách quản trị AmazonEKSCluster
-<img src="/static/images/2/image017.png" alt="VPC"></li>
+<img src="/images/2/image017.png" alt="VPC"></li>
 </ul>
 </li>
 <li>
@@ -1045,12 +1045,12 @@ Gán các quyền sau cho vai trò IAM của bạn:</p>
 <ul>
 <li>
 <p>Chạy lệnh sau để kiểm tra xem các nút worker có hiển thị hay không:
-<img src="/static/images/2/image018.png" alt="VPC"></p>
+<img src="/images/2/image018.png" alt="VPC"></p>
 </li>
 <li>
 <p>Nếu lệnh trả về danh sách các nút thì cluster của bạn đã được cấu hình thành công.
 <strong>Lưu ý</strong>: Nếu không có nút nào xuất hiện, hãy đợi vài phút và thử lại vì quá trình cung cấp nút có thể vẫn đang được tiến hành.
-<img src="/static/images/2/image019.png" alt="VPC"></p>
+<img src="/images/2/image019.png" alt="VPC"></p>
 </li>
 </ul>
 </li>
@@ -1473,19 +1473,19 @@ Gán các quyền sau cho vai trò IAM của bạn:</p>
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1740754679"></script>
-    <script src="/js/perfect-scrollbar.min.js?1740754679"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1740754679"></script>
-    <script src="/js/jquery.sticky.js?1740754679"></script>
-    <script src="/js/featherlight.min.js?1740754679"></script>
-    <script src="/js/highlight.pack.js?1740754679"></script>
+    <script src="/js/clipboard.min.js?1740757120"></script>
+    <script src="/js/perfect-scrollbar.min.js?1740757120"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1740757120"></script>
+    <script src="/js/jquery.sticky.js?1740757120"></script>
+    <script src="/js/featherlight.min.js?1740757120"></script>
+    <script src="/js/highlight.pack.js?1740757120"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1740754679"></script>
-    <script src="/js/learn.js?1740754679"></script>
-    <script src="/js/hugo-learn.js?1740754679"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1740757120"></script>
+    <script src="/js/learn.js?1740757120"></script>
+    <script src="/js/hugo-learn.js?1740757120"></script>
 
-    <link href="/mermaid/mermaid.css?1740754679" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1740754679"></script>
+    <link href="/mermaid/mermaid.css?1740757120" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1740757120"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

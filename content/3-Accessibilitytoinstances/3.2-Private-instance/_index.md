@@ -19,7 +19,7 @@ This architecture offers several key advantages:
 #### OPEA Microservices Architecture
 OPEA deployments are built around three key components:
 
-![VPC](/static/images/2/image025.png)
+![VPC](/images/2/image025.png)
 
 + **Megaservice** – Acts as the orchestrator for all microservices, managing workflows and ensuring seamless interaction between components. This is essential for coordinating an end-to-end application with multiple moving parts. More details can be found in the OPEA documentation.
 
@@ -38,11 +38,11 @@ kubectl get svc lists all services in a Kubernetes cluster, showing their names,
 
 Run the following command on your CloudShell:
 
-![VPC](/static/images/2/image026.png)
+![VPC](/images/2/image026.png)
 
 You will see output similar to this:
 
-![VPC](/static/images/2/image027.png)
+![VPC](/images/2/image027.png)
 
 The kubectl get svc command is used to list the services running within a Kubernetes cluster. Services act as entry points that enable communication between different components of your application. Each service has a unique name (e.g., chatqna or chatqna-ui), which helps identify its role within the system.
 
@@ -69,19 +69,19 @@ This service isn't directly exposed, but you can access it directly from the Loa
 
 + Look for the load balancer
 
-![VPC](/static/images/2/image028.png)
+![VPC](/images/2/image028.png)
 
 + Click on chatqna-Ingress
 
-![VPC](/static/images/2/image029.png)
+![VPC](/images/2/image029.png)
 
 + Note the DNS Name.As mentioned, it's the public URL that can be accessed externally.
 
-![VPC](/static/images/2/image030.png)
+![VPC](/images/2/image030.png)
 
 You will use the curl command to send requests to the API endpoints, testing each microservice individually. The goal is to ask a question, such as "What was Nike's revenue in 2023?", and verify that the API responds correctly. This step ensures that all microservices in the system are functioning as expected.
 
-![VPC](/static/images/2/image031.png)
+![VPC](/images/2/image031.png)
 
 If everything is working properly, you should receive a response, confirming that the Retrieval-Augmented Generation (RAG) workflow is operational.
 
@@ -93,7 +93,7 @@ Now, let's explore each microservice in detail to understand its role and how it
 #### Step 2 : Microservices
 Each microservice follows the following logic performing a task within the RAG flow:
 
-![VPC](/static/images/2/image032.png)
+![VPC](/images/2/image032.png)
 
 In the flow, you can observe the microservices and we can divide the RAG flow into two steps:
 
@@ -105,7 +105,7 @@ In the flow, you can observe the microservices and we can divide the RAG flow in
 
 In this step, the logic is to start from a document (Nike's revenue PDF), and do the preprocessing needed to make it ready to be stored in a database. As shown, this process primarily involves 3 microservices: data preparation, embeddings and vector store. Let's explore each microservice
 
-![VPC](/static/images/2/image033.png)
+![VPC](/images/2/image033.png)
 
 #### **Embedding Microservice (POD: chatqna-tei:80)**
 An embedding is a numerical representation of an object—such as a word, phrase, or document—within a continuous vector space. In natural language processing (NLP), embeddings transform words, sentences, or text segments into vectors—sets of numbers that capture their meaning, relationships, and contextual significance. This transformation enables machine learning models to process and understand text more effectively.
@@ -114,7 +114,7 @@ For example, word embeddings represent words as points in a vector space, where 
 
 During training, if the model frequently encounters "king" in association with "man" and "queen" with "woman," it learns that "king" and "queen" share a similar relationship to "man" and "woman." This allows the model to position words in a way that reflects meaningful relationships, such as gender associations, in language.
 
-![VPC](/static/images/2/image034.png)
+![VPC](/images/2/image034.png)
 
 Embeddings: A Key Component of RAG
 Embeddings play a crucial role in Retrieval-Augmented Generation (RAG) by enhancing the model’s ability to process and retrieve relevant information. They provide several key advantages:
@@ -131,21 +131,21 @@ Since some microservices are not exposed externally, you will use the Nginx pod 
 
 1. Access to ngnix POD (copy your NGNIX entire pod name from kubectl get pods and REPLACE chatqna-nginx-xxxxxxxx on the below command)
 
-![VPC](/static/images/2/image035.png)
+![VPC](/images/2/image035.png)
 
 Your command prompt should now indicate that you are inside the container, reflecting the change in environment:
 
-![VPC](/static/images/2/image036.png)
+![VPC](/images/2/image036.png)
 
 Once inside, you will now have direct access to the internal pods.
 
 2. Get the embedding from the Embeddings Microservice for the phrase "What was Deep Learning?":
 
-![VPC](/static/images/2/image037.png)
+![VPC](/images/2/image037.png)
 
 The answer will be the vector representation of the phrase "What was Deep Learning?". This service returns the vector embedding for the inputs from the REST API.
 
-![VPC](/static/images/2/image038.png)
+![VPC](/images/2/image038.png)
 
 ### **Vector Database Microservice (POD: chatqna-redis-vector-db:80)**
 The Vector Database microservice plays a critical role in the Retrieval-Augmented Generation (RAG) application by storing and retrieving embeddings. This is essential for applications like ChatQnA, where relevant information needs to be efficiently retrieved based on a user's query.
@@ -178,25 +178,25 @@ Execute the following command to download a sample Nike revenue report  to the n
 
 1. Download the document to the microservice :
 
-![VPC](/static/images/2/image039.png)
+![VPC](/images/2/image039.png)
 
 2. Feed the knowledge base (Vectord) with the document (It will take ~30 seconds):
 
-![VPC](/static/images/2/image040.png)
+![VPC](/images/2/image040.png)
 
 After running the previous command, you should receive a confirmation message like the one below. This command updated the knowledge base by uploading a local file for processing.
 
-![VPC](/static/images/2/image041.png)
+![VPC](/images/2/image041.png)
 
 The data preparation microservice API can retrieve information about the list of files stored in the vector database.
 
 3. Verify if the document was uploaded:
 
-![VPC](/static/images/2/image042.png)
+![VPC](/images/2/image042.png)
 
 After running the previous command, you should receive the confirmation message.
 
-![VPC](/static/images/2/image043.png)
+![VPC](/images/2/image043.png)
 
 Congratulations! You've successfully prepared your knowledge base. Now you'll explore the microservices involved in prompt handling.
 
@@ -217,7 +217,7 @@ The microservices involved in this stage include:
    - Re-ranking
    - LLM
 
-![VPC](/static/images/2/image044.png)
+![VPC](/images/2/image044.png)
 
 #### **Retriever Microservice (POD: chatqna-retriever-usvc:7000)**
 The Retriever Microservice is responsible for locating the most relevant information within the knowledge base and returning documents that closely match the user’s query. It interacts with various back-end systems that store knowledge and provide APIs for retrieving the best-matching data.
@@ -238,11 +238,11 @@ To create the embedding, use the chatqna-tei microservice. (Make sure you are lo
 
 1. Create the embedding and save locally (embed_question):
 
-![VPC](/static/images/2/image045.png)
+![VPC](/images/2/image045.png)
 
 You should get the details about the writing task:
 
-![VPC](/static/images/2/image046.png)
+![VPC](/images/2/image046.png)
 
 2. Check to see if your embedding was saved:
 
@@ -274,7 +274,7 @@ Reranking is particularly valuable in text retrieval systems, where documents ar
 
 While these retrieval methods are effective, the reranking model refines the results by optimizing the order of retrieved documents. This step significantly improves accuracy, ensuring the final output is more relevant, precise, and contextually aligned with the user’s query.
 
-![VPC](/static/images/2/image047.png)
+![VPC](/images/2/image047.png)
 
 OPEA has multiple options  for re-rankers. For this lab, you'll use the Hugging Face TEI for re-ranking. It is the chatqna-teirerank microservice in your cluster.
 
@@ -302,13 +302,13 @@ Extract the 3 retrieved text snippets and save them in a new variable to be rera
 The following output has been formatted for better readability. Your results are displayed in plain text and may vary slightly due to the similarity search algorithm. The retrieved documents are ranked by similarity to your query, with the highest-ranked index representing the most relevant match. You can confirm that the top-ranked document corresponds to the one most closely aligned with your query.
 {{% /notice %}}
 
-![VPC](/static/images/2/image048.png)
+![VPC](/images/2/image048.png)
 
 The server responds with a JSON array containing objects with two fields: index and score. This indicates how the snippets are ranked based on their relevance to the query: {"index":2,"score":0.9972289} means the first text (index 0) has a high relevance score of approximately 0.7982. {"index":0,"score":0.9776342},{"index":3,"score":0.9296986},{"index":1,"score":0.84730965} indicates that the other snippets (index 3,1 and 2) have a much lower score.
 
 As you can see from similar_doc the id=2 has the below information where it EXACTLY refers to the revenue for 2023!
 
-![VPC](/static/images/2/image049.png)
+![VPC](/images/2/image049.png)
 
 Just the first will be used to prompt the LLM.
 
@@ -338,7 +338,7 @@ This test will demonstrate how well the model can retrieve and generate an infor
 
 1. Directly prompt the TGI(LLM) Microservice:
 
-![VPC](/static/images/2/image050.png)
+![VPC](/images/2/image050.png)
 
 The model will give you the answer to the prompt like the following:
 
@@ -354,6 +354,6 @@ Sử dụng URL bộ cân bằng tải mà bạn đã lưu ở trên trong lện
 
 3. Chạy lại curl đến bộ cân bằng tải:
 
-![VPC](/static/images/2/image051.png)
+![VPC](/images/2/image051.png)
 
 4. Xem lại kết quả của bạn và bạn sẽ thấy rằng phản hồi được truyền phát. Đây là hành vi mong đợi của dịch vụ vi mô, vì nó cung cấp câu trả lời theo từng phần nhỏ hơn thay vì tất cả cùng một lúc. Streaming cho phép dữ liệu được xử lý và hiển thị theo từng bước khi dữ liệu có sẵn. Trong ứng dụng, UI sẽ ghi lại phản hồi này và định dạng thành màn hình có thể đọc được, cho phép người dùng xem thông tin theo thời gian thực khi dữ liệu đến.

@@ -18,13 +18,13 @@ To open the UI, launch any web browser and navigate to the DNS URL of the ChatQn
 
 Once inside the UI, you can interact with the chatbot and test its responses in real time.
 
-![VPC](/static/images/5.fwd/image110.png)
+![VPC](/images/5.fwd/image110.png)
 
 To verify the UI, go ahead and ask
 
-![VPC](/static/images/5.fwd/image111.png)
+![VPC](/images/5.fwd/image111.png)
 
-![VPC](/static/images/5.fwd/image112.png)
+![VPC](/images/5.fwd/image112.png)
 
 **Enhancing Chatbot Responses with Updated Context**
 
@@ -38,7 +38,7 @@ To address this limitation, the UI includes an upload icon that allows you to pr
 
 By uploading new information, you effectively expand the chatbot’s knowledge base, ensuring its responses are more accurate, relevant, and up to date.
 
-![VPC](/static/images/5.fwd/image113.png)
+![VPC](/images/5.fwd/image113.png)
 
 **Uploading a File or Website for Enhanced Responses**
 
@@ -51,11 +51,11 @@ The deployment allows you to upload either a file or a website to improve the ch
 4. Click Confirm to initiate the indexing process.
 5. Once indexing is complete, you will see an icon labeled https://www.denvrdata.com/intel appear below the text box, indicating that the information has been successfully added.
 
-![VPC](/static/images/5.fwd/image114.png)
+![VPC](/images/5.fwd/image114.png)
 
 Ask "What is Denvr?" again to see the updated answer.
 
-![VPC](/static/images/5.fwd/image115.png)
+![VPC](/images/5.fwd/image115.png)
 
 This time, the chatbot responds correctly based on the data it added to the prompt from the new source, the Denvr Cloud website.
 

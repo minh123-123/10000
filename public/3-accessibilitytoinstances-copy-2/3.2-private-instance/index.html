@@ -12,21 +12,21 @@
     <title>Explore OpenSearch (Optional) :: WORK WITH AMAZON SYSTEM MANAGER - SESSION MANAGER</title>
 
     
-    <link href="/css/nucleus.css?1740754861" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1740754861" rel="stylesheet">
-    <link href="/css/hybrid.css?1740754861" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1740754861" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1740754861" rel="stylesheet">
-    <link href="/css/auto-complete.css?1740754861" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1740754861" rel="stylesheet">
-    <link href="/css/theme.css?1740754861" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1740754861" rel="stylesheet">
+    <link href="/css/nucleus.css?1740757120" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1740757120" rel="stylesheet">
+    <link href="/css/hybrid.css?1740757120" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1740757120" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1740757120" rel="stylesheet">
+    <link href="/css/auto-complete.css?1740757120" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1740757120" rel="stylesheet">
+    <link href="/css/theme.css?1740757120" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1740757120" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1740754861" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1740757120" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1740754861"></script>
+    <script src="/js/jquery-3.3.1.min.js?1740757120"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1740754861"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1740754861"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1740757120"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1740757120"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1740754861"></script>
+<script type="text/javascript" src="/js/search.js?1740757120"></script>
 
     
   </div>
@@ -906,7 +906,7 @@
 <p>In OpenSearch, a schema—referred to as mapping—defines how data is structured and indexed. The mapping determines how fields in JSON documents are analyzed and made searchable. While OpenSearch includes automatic schema detection for quick deployment, manually defining the schema during index creation is often the best approach. Although OPEA and the OpenSearch microservice have already configured the mapping, it can still be retrieved for the embeddings index using the following command.</p>
 <p>curl -XGET https://localhost:9200/rag-opensearch/_mapping &ndash;insecure -u admin:strongOpea0! | jq .</p>
 <p>You should see a response like this:</p>
-<p><img src="/static/images/5.fwd/image093.png" alt="VPC"></p>
+<p><img src="/images/5.fwd/image093.png" alt="VPC"></p>
 <p>The rag-opensearch index consists of three fields: metadata, text, and vector_field. The metadata field stores nested JSON, including a source field, which can be accessed in queries using dot notation (e.g., metadata.source). Both metadata.source and text are defined as text type fields with a keyword subfield. Text fields undergo parsing and term analysis to generate tokens for matching, while keyword fields are normalized and used for exact-match queries. The vector_field is a knn_vector type field designed to store vectors with 768 dimensions. The storage engine employed is the Non-Metric Space Library (NMSLIB), utilizing the Hidden Navigable Small Worlds (HNSW) algorithm.</p>
 <p><strong>Lexical queries</strong></p>
 <p>OpenSearch is a lexical search engine in addition to being a vector search engine. You can query the rag content using text queries. Use the below query to search the OpenSearch documents, with its default TF/IDF ranking algorithm (see also Okapi BM25, text-based ranking ).</p>
@@ -915,31 +915,31 @@
 </div>
 
 <p>Execute the following command to run the query</p>
-<p><img src="/static/images/5.fwd/image094.png" alt="VPC"></p>
+<p><img src="/images/5.fwd/image094.png" alt="VPC"></p>
 <p>The first line of the command runs the curl command, with the URL containing the endpoint (localhost:9200, forwarded to the OpenSearch microservice) and the API specification. Here, the request is directed to the rag-opensearch index and calls the _search API. The following lines define the TLS and authentication parameters, and after the -d flag, the request body specifies the query.</p>
 <p>This query uses a simple_query_string search for the text &ldquo;What is Nike&rsquo;s 2023 revenue?&rdquo;. The simple_query_string function analyzes the input text, breaking it down into individual tokens—technically referred to as terms—and matches them against the text field in all documents within the index. It then scores and ranks the results based on the TF/IDF algorithm to surface the most relevant document at the top.</p>
 <p>Additional directives in the query instruct OpenSearch to exclude all fields from the response (&quot;_source&quot;: false—removing this would return the original document values), limit the results to a single match (&ldquo;size&rdquo;: 1), and highlight matching terms in the text field (&ldquo;highlight&rdquo;: &hellip;).</p>
-<p><img src="/static/images/5.fwd/image095.png" alt="VPC"></p>
+<p><img src="/images/5.fwd/image095.png" alt="VPC"></p>
 <p>OpenSearch&rsquo;s response begins with a metadata section that includes details such as the query processing time on the server side (8 ms in this case), whether the query timed out, and information about the responding shards. This is followed by the hits section, which contains the total number of matches, the highest relevance score, and the matched documents themselves. Each document includes the index it belongs to (_index), its unique identifier (_id), its relevance score, the source fields (which were excluded in this query), and highlighted snippets indicating where the query terms matched the document. The highlights use HTML <!-- raw HTML omitted --> tags to emphasize the matching terms.</p>
 <p>However, the response isn&rsquo;t ideal. While it correctly identifies mentions of Nike, it also includes irrelevant words like what and is, reducing the precision of the results.</p>
 <p>You can experiment with different query terms by modifying the &ldquo;query&rdquo; field (e.g., replacing &ldquo;what is nike 2023 revenue?&rdquo; with other phrases) to observe how the responses change. Adjusting the &ldquo;size&rdquo; parameter to 2 or more allows you to see multiple results at once. Try queries like &ldquo;workplace policies&rdquo;, &ldquo;footwear apparel&rdquo;, &ldquo;men sales&rdquo;, or &ldquo;women sales&rdquo; to explore different outputs.</p>
 <p>To refine the search, you can run an exact k-Nearest-Neighbor (k-NN) query. First, retrieve the embedding for your query using the chatqna-tei microservice. The microservice returns an array of arrays, but only the inner array is needed for the OpenSearch query. The jq command extracts the first element and assigns it to the $embedding variable.</p>
 <p>To execute the command, you’ll need the port mapped to the tei microservice. Use the ps aux | grep kubectl command to check running processes and their assigned ports. If you&rsquo;ve followed the guide correctly, the chatqna-tei microservice should be running on port 9800.</p>
-<p><img src="/static/images/5.fwd/image096.png" alt="VPC"></p>
+<p><img src="/images/5.fwd/image096.png" alt="VPC"></p>
 <p>You can use echo $embedding to see the generated embedding. Now you&rsquo;ll create the local file query.json with the embeding merged into the query, and then run an exact k-Nearest-Neighbors (k-NN) query to compare the query embeddingg to every document (chunk) in the index and retrieve the closest matches</p>
-<p><img src="/static/images/5.fwd/image097.png" alt="VPC"></p>
+<p><img src="/images/5.fwd/image097.png" alt="VPC"></p>
 <p>This query is a script_score query, employing a saved script to do k-NN score calculation, comparing the query vector to every document in the index. The script_score query includes a sub-query, which you can use to apply filters to non-vector fields. ChatQnA just sends the file key in the metadata.source field, so this query just uses a match_all, which matches every document in the index. The script portion of the query specifies the knn_score script, with parameters that tell the script which field has the vector embedding for the doc, passes the embedding as the query_value and specifies l2 as the distance metric (space_type).</p>
 <p>This response is correct. The first result includes the text &ldquo;NIKE, Inc. Revenues were $51.2 billion in fiscal 2023.&rdquo; Unlike traditional text-based queries, highlighting is not supported for vector fields because they do not contain raw source text. As a result, the retrieved content appears as-is from the text field.</p>
 <p>Exact k-Nearest-Neighbor (k-NN) search is highly effective when dealing with a relatively small number of documents. However, as the dataset expands, query latency increases significantly. Beyond a few hundred thousand documents, exact k-NN search becomes impractically slow. To handle larger datasets efficiently, approximate nearest neighbor (ANN) search is a better alternative. The command below utilizes the Hierarchical Navigable Small World (HNSW) algorithm to find the closest matches.</p>
-<p><img src="/static/images/5.fwd/image098.png" alt="VPC"></p>
+<p><img src="/images/5.fwd/image098.png" alt="VPC"></p>
 <p>This query is a knn query, which uses the algorithm you specified in the field mapping to determine the nearest neighbors. You just pass in a vector and a value for k (the count of neighbors to retrieve), and opensearch does the rest.</p>
 <p><strong>Hybrid search with OpenSearch</strong></p>
 <p>Again, you can see the correct document is the first result retrieved. Using approximate k-NN you can scale your OpenSearch vector database to billions of vectors and 1000s of queries per second.</p>
 <p>OpenSearch supports hybrid search  &ndash; where you specify both a lexical and vector query, along with a normalization and merge strategy. OpenSearch runs both queries normalizes and merges the results. When you perform hybrid search, you set a Search Pipeline , and send queries through that pipeline. Use the below command to use OpenSearch&rsquo;s REST API to set a search pipeline.</p>
-<p><img src="/static/images/5.fwd/image099.png" alt="VPC"></p>
+<p><img src="/images/5.fwd/image099.png" alt="VPC"></p>
 <p>This pipeline uses min/max normalization  to set all of the lexical and vector scores in the range [0, 1]. It uses the arithmetic mean to combine the scores, with a weight of 0.3 for the first query clause and 0.7 for the second query clause. Note, this is not a query itself, when you send queries to this search pipeline, OpenSearch applies the weights. The phase_results_processor is a flexible, generic construct - the query clauses can be either lexical or vector.</p>
 <p>To use the pipeline, you send a query to the pipeline API. Use the below command to create the query in the file hybrid_query.json.</p>
-<p><img src="/static/images/5.fwd/image100.png" alt="VPC"></p>
+<p><img src="/images/5.fwd/image100.png" alt="VPC"></p>
 <p>This hybrid query contains two sub-queries - a lexical query for &ldquo;footwear revenue&rdquo; and a vector query with an embedding representing &ldquo;What is Nike 2023 revenue?&rdquo;. The value for k, 2, ensures that the results will contain at most two vector matches.</p>
 <p>The curl command sends this query to the nlp-search-pipeline you just defined. You should get these results (we&rsquo;ve removed the result metadata and other portions to show the relevant output)</p>
 <p>The first match in the results is identical to the one retrieved using the approximate nearest-neighbor query. The second and fourth matches originate from the lexical query &ldquo;footwear revenue,&rdquo; while the second result comes from the vector search. This approach effectively blends abstract, semantic insights about revenue with more concrete keyword-based matches for &ldquo;footwear revenue.&rdquo;</p>
@@ -1363,19 +1363,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1740754861"></script>
-    <script src="/js/perfect-scrollbar.min.js?1740754861"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1740754861"></script>
-    <script src="/js/jquery.sticky.js?1740754861"></script>
-    <script src="/js/featherlight.min.js?1740754861"></script>
-    <script src="/js/highlight.pack.js?1740754861"></script>
+    <script src="/js/clipboard.min.js?1740757120"></script>
+    <script src="/js/perfect-scrollbar.min.js?1740757120"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1740757120"></script>
+    <script src="/js/jquery.sticky.js?1740757120"></script>
+    <script src="/js/featherlight.min.js?1740757120"></script>
+    <script src="/js/highlight.pack.js?1740757120"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1740754861"></script>
-    <script src="/js/learn.js?1740754861"></script>
-    <script src="/js/hugo-learn.js?1740754861"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1740757120"></script>
+    <script src="/js/learn.js?1740757120"></script>
+    <script src="/js/hugo-learn.js?1740757120"></script>
 
-    <link href="/mermaid/mermaid.css?1740754861" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1740754861"></script>
+    <link href="/mermaid/mermaid.css?1740757120" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1740757120"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -15,6 +15,6 @@ Bây giờ tất cả các dịch vụ đã hoạt động, hãy cùng khám ph�
 
 Khi đã vào bên trong UI, bạn có thể tương tác với chatbot, kiểm tra phản hồi của chatbot và trải nghiệm cách chatbot xử lý các truy vấn bằng cách sử dụng chức năng truy xuất do RAG cung cấp.
 
-![VPC](/static/images/5.fwd/image124.png)
+![VPC](/images/5.fwd/image124.png)
 
 Bây giờ khi bạn gửi lời nhắc đến chatbot, phản hồi sẽ đến từ Claude Haiku của Anthropic thông qua Amazon Bedrock.

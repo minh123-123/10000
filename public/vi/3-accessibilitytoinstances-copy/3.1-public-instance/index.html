@@ -12,21 +12,21 @@
     <title>Triển khai Guardrails :: LÀM VIỆC VỚI AMAZON SYSTEM MANAGER - SESSION MANAGER</title>
 
     
-    <link href="/css/nucleus.css?1740754743" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1740754743" rel="stylesheet">
-    <link href="/css/hybrid.css?1740754743" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1740754743" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1740754743" rel="stylesheet">
-    <link href="/css/auto-complete.css?1740754743" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1740754743" rel="stylesheet">
-    <link href="/css/theme.css?1740754743" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1740754743" rel="stylesheet">
+    <link href="/css/nucleus.css?1740757120" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1740757120" rel="stylesheet">
+    <link href="/css/hybrid.css?1740757120" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1740757120" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1740757120" rel="stylesheet">
+    <link href="/css/auto-complete.css?1740757120" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1740757120" rel="stylesheet">
+    <link href="/css/theme.css?1740757120" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1740757120" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1740754743" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1740757120" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1740754743"></script>
+    <script src="/js/jquery-3.3.1.min.js?1740757120"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1740754743"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1740754743"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1740757120"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1740757120"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1740754743"></script>
+<script type="text/javascript" src="/js/search.js?1740757120"></script>
 
     
   </div>
@@ -943,7 +943,7 @@
 <ol>
 <li>Truy cập CloudShell của bạn và triển khai mẫu ChatQnA-Guardrails ClourFormation vào EKS Cluster của bạn</li>
 </ol>
-<p><img src="/static/images/4.s3/image060.png" alt="VPC"></p>
+<p><img src="/images/4.s3/image060.png" alt="VPC"></p>
 
 <div class="notices info" ><p>Có thể tìm thấy manifest cho ChatQnA-Guardrails trong kho lưu trữ ChatQnA GenAIExamples và hướng dẫn triển khai thủ công có thể tìm thấy tại đây. Các hướng dẫn bạn đang sử dụng trong hội thảo này sử dụng các mẫu AWS CloudFormation do gói AWS Marketplace EKS tạo ra.</p>
 </div>
@@ -951,15 +951,15 @@
 <ol start="2">
 <li>Xác minh không gian tên mới đã được tạo</li>
 </ol>
-<p><img src="/static/images/4.s3/image061.png" alt="VPC"></p>
+<p><img src="/images/4.s3/image061.png" alt="VPC"></p>
 <p>Bạn sẽ thấy không gian tên guardrails</p>
-<p><img src="/static/images/4.s3/image062.png" alt="VPC"></p>
+<p><img src="/images/4.s3/image062.png" alt="VPC"></p>
 <ol start="3">
 <li>Kiểm tra các pod trên không gian tên guardrails. Sẽ mất vài phút để tải xuống các mô hình và để tất cả các dịch vụ hoạt động.
 Chạy lệnh sau để kiểm tra xem tất cả các dịch vụ có đang chạy không:</li>
 </ol>
-<p><img src="/static/images/4.s3/image063.png" alt="VPC"></p>
-<p><img src="/static/images/4.s3/image064.png" alt="VPC"></p>
+<p><img src="/images/4.s3/image063.png" alt="VPC"></p>
+<p><img src="/images/4.s3/image064.png" alt="VPC"></p>
 <p>Chờ cho đến khi đầu ra hiển thị rằng tất cả các dịch vụ bao gồm chatqna-tgi-guardrails và chatqna-guardrails-usvc đang chạy (1/1).</p>
 <ol start="4">
 <li>Xác minh việc triển khai đã hoàn tất bằng cách xác minh bộ cân bằng tải mới trên bảng điều khiển quản lý của bạn</li>
@@ -968,8 +968,8 @@ Chạy lệnh sau để kiểm tra xem tất cả các dịch vụ có đang ch�
 <div class="notices info" ><p>Chờ 5 phút để bộ cân bằng tải được tạo.</p>
 </div>
 
-<p><img src="/static/images/4.s3/image065.png" alt="VPC"></p>
-<p><img src="/static/images/4.s3/image066.png" alt="VPC"></p>
+<p><img src="/images/4.s3/image065.png" alt="VPC"></p>
+<p><img src="/images/4.s3/image066.png" alt="VPC"></p>
 <p>Bằng cách kiểm tra xem cả bộ cân bằng tải và pod đều đang chạy hay không, chúng ta có thể xác nhận rằng việc triển khai đã sẵn sàng và bắt đầu kiểm tra hành vi.</p>
 
 
@@ -1384,19 +1384,19 @@ Chạy lệnh sau để kiểm tra xem tất cả các dịch vụ có đang ch�
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1740754743"></script>
-    <script src="/js/perfect-scrollbar.min.js?1740754743"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1740754743"></script>
-    <script src="/js/jquery.sticky.js?1740754743"></script>
-    <script src="/js/featherlight.min.js?1740754743"></script>
-    <script src="/js/highlight.pack.js?1740754743"></script>
+    <script src="/js/clipboard.min.js?1740757120"></script>
+    <script src="/js/perfect-scrollbar.min.js?1740757120"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1740757120"></script>
+    <script src="/js/jquery.sticky.js?1740757120"></script>
+    <script src="/js/featherlight.min.js?1740757120"></script>
+    <script src="/js/highlight.pack.js?1740757120"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1740754743"></script>
-    <script src="/js/learn.js?1740754743"></script>
-    <script src="/js/hugo-learn.js?1740754743"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1740757120"></script>
+    <script src="/js/learn.js?1740757120"></script>
+    <script src="/js/hugo-learn.js?1740757120"></script>
 
-    <link href="/mermaid/mermaid.css?1740754743" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1740754743"></script>
+    <link href="/mermaid/mermaid.css?1740757120" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1740757120"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -39,23 +39,23 @@ This module works with just about any text-generation LLM supported by Bedrock, 
 
 1. Switch to the us-west-2 region, you could test on other regions but usually us-west has more availabity:
 
-![VPC](/static/images/5.fwd/image116.png)
+![VPC](/images/5.fwd/image116.png)
 
 2. Go to Amazon Bedrock:
 
-![VPC](/static/images/5.fwd/image117.png)
+![VPC](/images/5.fwd/image117.png)
 
 3. Go to the model access tab:
 
-![VPC](/static/images/5.fwd/image118.png)
+![VPC](/images/5.fwd/image118.png)
 
 4. At the top of the screen, click on the button that says Modify Model Access
 
-![VPC](/static/images/5.fwd/image119.png)
+![VPC](/images/5.fwd/image119.png)
 
 5. Select Claude 3 Haiku
 
-![VPC](/static/images/5.fwd/image120.png)
+![VPC](/images/5.fwd/image120.png)
 
 {{% notice info %}}
 It may take a minute or two for the access to be granted, but don't worry it won't take much longer than that.
@@ -69,7 +69,7 @@ Now let's confirm that our Bedrock deployment is complete. You can onitor the st
 
 ...to get output like this:
 
-![VPC](/static/images/5.fwd/image121.png)
+![VPC](/images/5.fwd/image121.png)
 
 {{% notice info %}}
 It can take several minutes for Bedrock to fully initialize and be available. Only continue when you see the chatqna-bedrock-deployment pod in the Running state.
