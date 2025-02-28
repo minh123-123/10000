@@ -1,9 +1,9 @@
 ---
 title : "Mở rộng suy luận LLM vượt ra ngoài AWS thông qua suy luận từ xa"
 date :  "2025-02-21" 
-weight : 3 
+weight : 6 
 chapter : false
-pre : " <b> 3. </b> "
+pre : " <b> 6. </b> "
 ---
 
 Nhiệm vụ này thể hiện sự đóng góp đáng kể vào quá trình phát triển liên tục của OPEA, chứng minh cách tích hợp AWS có thể nâng cao hơn nữa hiệu suất Retrieval-Augmented Generation (RAG). Người tham gia sẽ tìm hiểu cách thay thế cơ sở dữ liệu vector mặc định bằng OpenSearch, tận dụng khả năng tìm kiếm và truy xuất nâng cao của nó. Thông qua các bài tập thực hành, họ sẽ đóng góp vào việc mở rộng các trường hợp sử dụng của OPEA và tối ưu hóa các đường ống RAG của nó bằng các giải pháp có thể mở rộng, gốc đám mây.
