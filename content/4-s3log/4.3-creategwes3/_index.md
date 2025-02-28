@@ -15,6 +15,6 @@ To access the ChatQnA Bedrock UI, open a web browser and navigate to the DNS of 
 
 Once inside the UI, you can interact with the chatbot, test its responses, and experience how it processes queries using RAG-powered retrieval.
 
-![VPC](/images/5.fwd/image124.png)
+![VPC](10000/images/5.fwd/image124.png)
 
 Now when you send a prompt to the chatbot, the response will be coming from Anthropic's Claude Haiku through Amazon Bedrock.

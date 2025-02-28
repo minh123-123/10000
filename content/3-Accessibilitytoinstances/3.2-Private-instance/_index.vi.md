@@ -19,7 +19,7 @@ Kiến trúc này mang lại một số lợi thế chính:
 #### Kiến trúc dịch vụ vi mô OPEA
 Các triển khai OPEA được xây dựng xung quanh ba thành phần chính:
 
-![VPC](/images/2/image025.png)
+![VPC](10000/images/2/image025.png)
 
 + **Megaservice** – Hoạt động như một đơn vị điều phối cho tất cả các dịch vụ vi mô, quản lý quy trình làm việc và đảm bảo tương tác liền mạch giữa các thành phần. Điều này rất cần thiết để phối hợp một ứng dụng đầu cuối với nhiều bộ phận chuyển động. Bạn có thể tìm thêm thông tin chi tiết trong tài liệu OPEA.
 
@@ -38,11 +38,11 @@ kubectl get svc liệt kê tất cả các dịch vụ trong cụm Kubernetes, h
 
 Chạy lệnh sau trên CloudShell của bạn:
 
-![VPC](/images/2/image026.png)
+![VPC](10000/images/2/image026.png)
 
 Bạn sẽ thấy đầu ra tương tự như sau:
 
-![VPC](/images/2/image027.png)
+![VPC](10000/images/2/image027.png)
 
 Lệnh kubectl get svc được sử dụng để liệt kê các dịch vụ đang chạy trong cụm Kubernetes. Các dịch vụ hoạt động như các điểm vào cho phép giao tiếp giữa các thành phần khác nhau của ứng dụng của bạn. Mỗi dịch vụ có một tên duy nhất (ví dụ: chatqna hoặc chatqna-ui), giúp xác định vai trò của dịch vụ đó trong hệ thống.
 
@@ -69,19 +69,19 @@ Dịch vụ này không được hiển thị trực tiếp, nhưng bạn có th
 
 + Tìm bộ cân bằng tải
 
-![VPC](/images/2/image028.png)
+![VPC](10000/images/2/image028.png)
 
 + Nhấp vào chatqna-Ingress
 
-![VPC](/images/2/image029.png)
+![VPC](10000/images/2/image029.png)
 
 + Lưu ý Tên DNS. Như đã đề cập, đây là URL công khai có thể truy cập bên ngoài.
 
-![VPC](/images/2/image030.png)
+![VPC](10000/images/2/image030.png)
 
 Bạn sẽ sử dụng lệnh curl để gửi yêu cầu đến các điểm cuối API, kiểm tra từng dịch vụ vi mô riêng lẻ. Mục tiêu là đặt một câu hỏi, chẳng hạn như "Doanh thu của Nike vào năm 2023 là bao nhiêu?" và xác minh rằng API phản hồi chính xác. Bước này đảm bảo rằng tất cả các dịch vụ vi mô trong hệ thống đang hoạt động như mong đợi.
 
-![VPC](/images/2/image031.png)
+![VPC](10000/images/2/image031.png)
 
 Nếu mọi thứ hoạt động bình thường, bạn sẽ nhận được phản hồi xác nhận rằng quy trình làm việc Retrieval-Augmented Generation (RAG) đang hoạt động.
 
@@ -93,7 +93,7 @@ Bây giờ, chúng ta hãy khám phá từng dịch vụ siêu nhỏ một cách
 #### Bước 2: Dịch vụ siêu nhỏ
 Mỗi dịch vụ siêu nhỏ tuân theo logic sau để thực hiện một tác vụ trong luồng RAG:
 
-![VPC](/images/2/image032.png)
+![VPC](10000/images/2/image032.png)
 
 Trong luồng, bạn có thể quan sát các dịch vụ siêu nhỏ và chúng ta có thể chia luồng RAG thành hai bước:
 
@@ -105,7 +105,7 @@ Trong luồng, bạn có thể quan sát các dịch vụ siêu nhỏ và chúng
 
 Trong bước này, logic là bắt đầu từ một tài liệu (Nike's revenue PDF) và thực hiện tiền xử lý cần thiết để chuẩn bị lưu trữ trong cơ sở dữ liệu. Như đã trình bày, quy trình này chủ yếu liên quan đến 3 dịch vụ siêu nhỏ: chuẩn bị dữ liệu, nhúng và lưu trữ vectơ. Hãy cùng khám phá từng dịch vụ siêu nhỏ
 
-![VPC](/images/2/image033.png)
+![VPC](10000/images/2/image033.png)
 
 #### **Nhúng dịch vụ siêu nhỏ (POD: chatqna-tei:80)**
 Nhúng là biểu diễn số của một đối tượng—chẳng hạn như từ, cụm từ hoặc tài liệu—trong không gian vectơ liên tục. Trong xử lý ngôn ngữ tự nhiên (NLP), nhúng biến đổi các từ, câu hoặc phân đoạn văn bản thành vectơ—các tập hợp số nắm bắt ý nghĩa, mối quan hệ và ý nghĩa theo ngữ cảnh của chúng. Sự chuyển đổi này cho phép các mô hình máy học xử lý và hiểu văn bản hiệu quả hơn.
@@ -114,7 +114,7 @@ Ví dụ, nhúng từ biểu diễn các từ dưới dạng các điểm trong 
 
 Trong quá trình đào tạo, nếu mô hình thường xuyên gặp "vua" khi liên kết với "đàn ông" và "nữ hoàng" khi liên kết với "phụ nữ", mô hình sẽ học được rằng "vua" và "nữ hoàng" có mối quan hệ tương tự với "đàn ông" và "phụ nữ". Điều này cho phép mô hình định vị các từ theo cách phản ánh các mối quan hệ có ý nghĩa, chẳng hạn như liên kết giới tính, trong ngôn ngữ.
 
-![VPC](/images/2/image034.png)
+![VPC](10000/images/2/image034.png)
 
 Nhúng: Một thành phần chính của RAG
 Nhúng đóng vai trò quan trọng trong Thế hệ tăng cường truy xuất (RAG) bằng cách tăng cường khả năng xử lý và truy xuất thông tin có liên quan của mô hình. Chúng cung cấp một số lợi thế chính:
@@ -131,21 +131,21 @@ Vì một số dịch vụ không được hiển thị bên ngoài, bạn sẽ 
 
 1. Truy cập vào ngnix POD (sao chép toàn bộ tên pod NGNIX của bạn từ kubectl get pods và THAY THẾ chatqna-nginx-xxxxxxxx trên lệnh bên dưới)
 
-![VPC](/images/2/image035.png)
+![VPC](10000/images/2/image035.png)
 
 Dấu nhắc lệnh của bạn bây giờ sẽ chỉ ra rằng bạn đang ở bên trong vùng chứa, phản ánh sự thay đổi trong môi trường:
 
-![VPC](/images/2/image036.png)
+![VPC](10000/images/2/image036.png)
 
 Khi đã vào bên trong, bây giờ bạn sẽ có quyền truy cập trực tiếp vào các pod bên trong.
 
 2. Nhận nhúng từ Microservice nhúng cho cụm từ "Học sâu là gì?":
 
-![VPC](/images/2/image037.png)
+![VPC](10000/images/2/image037.png)
 
 Câu trả lời sẽ là biểu diễn vectơ của cụm từ "Học sâu là gì?". Dịch vụ này trả về nhúng vectơ cho các đầu vào từ REST API.
 
-![VPC](/images/2/image038.png)
+![VPC](10000/images/2/image038.png)
 
 ### **Dịch vụ cơ sở dữ liệu vectơ (POD: chatqna-redis-vector-db:80)**
 Dịch vụ cơ sở dữ liệu vectơ đóng vai trò quan trọng trong ứng dụng Retrieval-Augmented Generation (RAG) bằng cách lưu trữ và truy xuất các nhúng. Điều này rất cần thiết cho các ứng dụng như ChatQnA, nơi thông tin có liên quan cần được truy xuất hiệu quả dựa trên truy vấn của người dùng.
@@ -179,25 +179,25 @@ Thực hiện lệnh sau để tải xuống báo cáo doanh thu Nike mẫu vào
 
 1. Tải xuống tài liệu vào microservice:
 
-![VPC](/images/2/image039.png)
+![VPC](10000/images/2/image039.png)
 
 2. Cung cấp tài liệu cho cơ sở kiến ​​thức (Vectord) (Sẽ mất khoảng 30 giây):
 
-![VPC](/images/2/image040.png)
+![VPC](10000/images/2/image040.png)
 
 Sau khi chạy lệnh trước đó, bạn sẽ nhận được thông báo xác nhận như bên dưới. Lệnh này đã cập nhật cơ sở kiến ​​thức bằng cách tải lên tệp cục bộ để xử lý.
 
-![VPC](/images/2/image041.png)
+![VPC](10000/images/2/image041.png)
 
 API microservice chuẩn bị dữ liệu có thể truy xuất thông tin về danh sách các tệp được lưu trữ trong cơ sở dữ liệu vector.
 
 3. Kiểm tra xem tài liệu đã được tải lên chưa:
 
-![VPC](/images/2/image042.png)
+![VPC](10000/images/2/image042.png)
 
 Sau khi chạy lệnh trước, bạn sẽ nhận được thông báo xác nhận.
 
-![VPC](/images/2/image043.png)
+![VPC](10000/images/2/image043.png)
 
 Xin chúc mừng! Bạn đã chuẩn bị thành công cơ sở kiến ​​thức của mình. Bây giờ bạn sẽ khám phá các dịch vụ vi mô liên quan đến xử lý nhanh chóng.
 
@@ -218,7 +218,7 @@ Các dịch vụ vi mô liên quan đến giai đoạn này bao gồm:
 - Xếp hạng lại
 - LLM
 
-![VPC](/images/2/image044.png)
+![VPC](10000/images/2/image044.png)
 
 #### **Dịch vụ vi mô thu thập (POD: chatqna-retriever-usvc:7000)**
 Dịch vụ vi mô thu thập chịu trách nhiệm định vị thông tin có liên quan nhất trong cơ sở kiến ​​thức và trả về các tài liệu khớp chặt chẽ với truy vấn của người dùng. Nó tương tác với nhiều hệ thống phụ trợ lưu trữ kiến ​​thức và cung cấp API để truy xuất dữ liệu khớp nhất.
@@ -239,11 +239,11 @@ Thao tác này sẽ cho phép trình thu thập tìm kiếm trong cơ sở kiế
 
 1. Tạo nhúng và lưu cục bộ (embed_question):
 
-![VPC](/images/2/image045.png)
+![VPC](10000/images/2/image045.png)
 
 Bạn sẽ nhận được thông tin chi tiết về tác vụ viết:
 
-![VPC](/images/2/image046.png)
+![VPC](10000/images/2/image046.png)
 
 2. Kiểm tra xem nhúng của bạn đã được lưu chưa:
 
@@ -275,7 +275,7 @@ Xếp hạng lại đặc biệt có giá trị trong các hệ thống truy xu�
 
 Mặc dù các phương pháp truy xuất này có hiệu quả, nhưng mô hình xếp hạng lại sẽ tinh chỉnh các kết quả bằng cách tối ưu hóa thứ tự của các tài liệu đã truy xuất. Bước này cải thiện đáng kể độ chính xác, đảm bảo đầu ra cuối cùng có liên quan hơn, chính xác hơn và phù hợp hơn về mặt ngữ cảnh với truy vấn của người dùng.
 
-![VPC](/images/2/image047.png)
+![VPC](10000/images/2/image047.png)
 
 OPEA có nhiều tùy chọn để xếp hạng lại. Đối với phòng thí nghiệm này, bạn sẽ sử dụng Hugging Face TEI để xếp hạng lại. Đây là dịch vụ vi mô chatqna-teirerank trong cụm của bạn.
 
@@ -303,13 +303,13 @@ Trích xuất 3 đoạn văn bản đã truy xuất và lưu chúng trong một 
 Đầu ra sau đây đã được định dạng để dễ đọc hơn. Kết quả của bạn được hiển thị ở dạng văn bản thuần túy và có thể thay đổi đôi chút do thuật toán tìm kiếm tương đồng. Các tài liệu được truy xuất được xếp hạng theo mức độ tương đồng với truy vấn của bạn, với chỉ mục được xếp hạng cao nhất thể hiện sự khớp có liên quan nhất. Bạn có thể xác nhận rằng tài liệu được xếp hạng cao nhất tương ứng với tài liệu phù hợp nhất với truy vấn của bạn.
 {{% /notice %}}
 
-![VPC](/images/2/image048.png)
+![VPC](10000/images/2/image048.png)
 
 Máy chủ phản hồi bằng một mảng JSON chứa các đối tượng có hai trường: chỉ mục và điểm. Điều này cho biết cách các đoạn trích được xếp hạng dựa trên mức độ liên quan của chúng với truy vấn: {"index":2,"score":0.9972289} có nghĩa là văn bản đầu tiên (chỉ mục 0) có điểm liên quan cao khoảng 0,7982. {"index":0,"score":0.9776342},{"index":3,"score":0.9296986},{"index":1,"score":0.84730965} cho biết các đoạn trích khác (chỉ mục 3, 1 và 2) có điểm thấp hơn nhiều.
 
 Như bạn có thể thấy từ similar_doc, id=2 có thông tin bên dưới, trong đó nó CHÍNH XÁC đề cập đến doanh thu năm 2023!
 
-![VPC](/images/2/image049.png)
+![VPC](10000/images/2/image049.png)
 
 Chỉ đoạn trích đầu tiên sẽ được sử dụng để nhắc LLM.
 
@@ -340,7 +340,7 @@ Bài kiểm tra này sẽ chứng minh mô hình có thể truy xuất và tạo
 
 4. Trực tiếp nhắc nhở TGI(LLM) Microservice:
 
-![VPC](/images/2/image050.png)
+![VPC](10000/images/2/image050.png)
 
 Mô hình sẽ cung cấp cho bạn câu trả lời cho lời nhắc như sau:
 

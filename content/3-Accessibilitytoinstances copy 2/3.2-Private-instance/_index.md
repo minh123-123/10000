@@ -13,7 +13,7 @@ curl -XGET https://localhost:9200/rag-opensearch/_mapping --insecure -u admin:st
 
 You should see a response like this:
 
-![VPC](/images/5.fwd/image093.png)
+![VPC](10000/images/5.fwd/image093.png)
 
 The rag-opensearch index consists of three fields: metadata, text, and vector_field. The metadata field stores nested JSON, including a source field, which can be accessed in queries using dot notation (e.g., metadata.source). Both metadata.source and text are defined as text type fields with a keyword subfield. Text fields undergo parsing and term analysis to generate tokens for matching, while keyword fields are normalized and used for exact-match queries. The vector_field is a knn_vector type field designed to store vectors with 768 dimensions. The storage engine employed is the Non-Metric Space Library (NMSLIB), utilizing the Hidden Navigable Small Worlds (HNSW) algorithm.
 
@@ -27,7 +27,7 @@ If your Cloud Shell has terminated, you may need to reestablish port forwarding 
 
 Execute the following command to run the query
 
-![VPC](/images/5.fwd/image094.png)
+![VPC](10000/images/5.fwd/image094.png)
 
 The first line of the command runs the curl command, with the URL containing the endpoint (localhost:9200, forwarded to the OpenSearch microservice) and the API specification. Here, the request is directed to the rag-opensearch index and calls the _search API. The following lines define the TLS and authentication parameters, and after the -d flag, the request body specifies the query.
 
@@ -35,7 +35,7 @@ This query uses a simple_query_string search for the text "What is Nike's 2023 r
 
 Additional directives in the query instruct OpenSearch to exclude all fields from the response ("_source": false—removing this would return the original document values), limit the results to a single match ("size": 1), and highlight matching terms in the text field ("highlight": ...).
 
-![VPC](/images/5.fwd/image095.png)
+![VPC](10000/images/5.fwd/image095.png)
 
 OpenSearch's response begins with a metadata section that includes details such as the query processing time on the server side (8 ms in this case), whether the query timed out, and information about the responding shards. This is followed by the hits section, which contains the total number of matches, the highest relevance score, and the matched documents themselves. Each document includes the index it belongs to (_index), its unique identifier (_id), its relevance score, the source fields (which were excluded in this query), and highlighted snippets indicating where the query terms matched the document. The highlights use HTML <em> tags to emphasize the matching terms.
 
@@ -47,11 +47,11 @@ To refine the search, you can run an exact k-Nearest-Neighbor (k-NN) query. Firs
 
 To execute the command, you’ll need the port mapped to the tei microservice. Use the ps aux | grep kubectl command to check running processes and their assigned ports. If you've followed the guide correctly, the chatqna-tei microservice should be running on port 9800.
 
-![VPC](/images/5.fwd/image096.png)
+![VPC](10000/images/5.fwd/image096.png)
 
 You can use echo $embedding to see the generated embedding. Now you'll create the local file query.json with the embeding merged into the query, and then run an exact k-Nearest-Neighbors (k-NN) query to compare the query embeddingg to every document (chunk) in the index and retrieve the closest matches
 
-![VPC](/images/5.fwd/image097.png)
+![VPC](10000/images/5.fwd/image097.png)
 
 This query is a script_score query, employing a saved script to do k-NN score calculation, comparing the query vector to every document in the index. The script_score query includes a sub-query, which you can use to apply filters to non-vector fields. ChatQnA just sends the file key in the metadata.source field, so this query just uses a match_all, which matches every document in the index. The script portion of the query specifies the knn_score script, with parameters that tell the script which field has the vector embedding for the doc, passes the embedding as the query_value and specifies l2 as the distance metric (space_type).
 
@@ -59,7 +59,7 @@ This response is correct. The first result includes the text "NIKE, Inc. Revenue
 
 Exact k-Nearest-Neighbor (k-NN) search is highly effective when dealing with a relatively small number of documents. However, as the dataset expands, query latency increases significantly. Beyond a few hundred thousand documents, exact k-NN search becomes impractically slow. To handle larger datasets efficiently, approximate nearest neighbor (ANN) search is a better alternative. The command below utilizes the Hierarchical Navigable Small World (HNSW) algorithm to find the closest matches.
 
-![VPC](/images/5.fwd/image098.png)
+![VPC](10000/images/5.fwd/image098.png)
 
 This query is a knn query, which uses the algorithm you specified in the field mapping to determine the nearest neighbors. You just pass in a vector and a value for k (the count of neighbors to retrieve), and opensearch does the rest.
 
@@ -69,13 +69,13 @@ Again, you can see the correct document is the first result retrieved. Using app
 
 OpenSearch supports hybrid search  -- where you specify both a lexical and vector query, along with a normalization and merge strategy. OpenSearch runs both queries normalizes and merges the results. When you perform hybrid search, you set a Search Pipeline , and send queries through that pipeline. Use the below command to use OpenSearch's REST API to set a search pipeline.
 
-![VPC](/images/5.fwd/image099.png)
+![VPC](10000/images/5.fwd/image099.png)
 
 This pipeline uses min/max normalization  to set all of the lexical and vector scores in the range [0, 1]. It uses the arithmetic mean to combine the scores, with a weight of 0.3 for the first query clause and 0.7 for the second query clause. Note, this is not a query itself, when you send queries to this search pipeline, OpenSearch applies the weights. The phase_results_processor is a flexible, generic construct - the query clauses can be either lexical or vector.
 
 To use the pipeline, you send a query to the pipeline API. Use the below command to create the query in the file hybrid_query.json.
 
-![VPC](/images/5.fwd/image100.png)
+![VPC](10000/images/5.fwd/image100.png)
 
 This hybrid query contains two sub-queries - a lexical query for "footwear revenue" and a vector query with an embedding representing "What is Nike 2023 revenue?". The value for k, 2, ensures that the results will contain at most two vector matches.
 

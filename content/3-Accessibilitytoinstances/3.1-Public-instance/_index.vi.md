@@ -16,16 +16,16 @@ Vì bạn đã thiết lập quyền truy cập vào cụm Kubernetes của mìn
 
 #### Bước 1: Triển khai mẫu ChatQnA CloudFormation
 Mở AWS CloudShell và triển khai mẫu ChatQnA CloudFormation vào cụm Amazon EKS của bạn. Thao tác này sẽ khởi tạo quá trình triển khai ứng dụng RAG trong môi trường Kubernetes được quản lý của bạn.
-![VPC](/images/2/image020.png)
+![VPC](10000/images/2/image020.png)
 
 #### Bước 2: Khám phá Tài nguyên cụm
 Điều hướng đến AWS Management Console và chọn cụm EKS được chỉ định của bạn để xem lại quá trình triển khai. Mỗi cụm bao gồm các cấu hình quan trọng như phiên bản Kubernetes, thiết lập mạng và tùy chọn ghi nhật ký. Kiểm tra các thiết lập này sẽ giúp hiểu sâu hơn về cơ sở hạ tầng của ứng dụng, giúp quản lý hiệu quả và khắc phục sự cố khi cần thiết.
 
 Xem lại Tài nguyên cụm
 Nhấp vào tab Tài nguyên để xem tất cả các ứng dụng hiện đang chạy trong cụm của bạn, bao gồm ChatQnA và các dịch vụ vi mô liên quan.
-![VPC](/images/2/image021.png)
-![VPC](/images/2/image022.png)
+![VPC](10000/images/2/image021.png)
+![VPC](10000/images/2/image022.png)
 Đảm bảo rằng tất cả các dịch vụ vi mô từ bản thiết kế OPEA ChatQnA được cài đặt đúng cách bằng cách liệt kê các pod đang hoạt động:
-![VPC](/images/2/image023.png)
+![VPC](10000/images/2/image023.png)
 Đầu ra sẽ hiển thị tất cả các pod ở trạng thái Đang chạy (1/1), xác nhận rằng ứng dụng đã được triển khai thành công. Tại thời điểm này, bạn đã sẵn sàng để khám phá thêm về việc triển khai và quản lý tài nguyên của mình trong cụm.
-![VPC](/images/2/image024.png)
+![VPC](10000/images/2/image024.png)

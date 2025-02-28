@@ -68,7 +68,7 @@ Mark the checkbox next to I acknowledge that AWS CloudFormation might create IAM
 Deploying the CloudFormation Stack
 Once the parameters are set, click Create Stack.
 
-![VPC](/images/2/image008.png)
+![VPC](10000/images/2/image008.png)
 
 This process will initiate an AWS CodeBuild Project, which pulls in the opea-demo-builder open-source library.
 
@@ -78,7 +78,7 @@ Monitoring Deployment Progress
 The deployment process takes approximately 25 minutes.
 Open the AWS CloudFormation Console and monitor the progress.
 
-![VPC](/images/2/image009.png)
+![VPC](10000/images/2/image009.png)
 
 Ensure that the following stacks reach the CREATE_COMPLETE status:
 
@@ -87,7 +87,7 @@ Ensure that the following stacks reach the CREATE_COMPLETE status:
 
 Some stacks may remain in REVIEW_IN_PROGRESS, as they will be deployed onto the EKS cluster later.
 
-![VPC](/images/2/image010.png)
+![VPC](10000/images/2/image010.png)
 
 #### Step 2: Configuring Access to Your EKS Cluster
 Once the CloudFormation stacks are successfully deployed, you need to configure your local environment to interact with the Amazon EKS cluster using kubectl.
@@ -101,10 +101,10 @@ Updating Your Kubernetes Configuration (kubeconfig)
 2. Update kubeconfig
 
 + Run the following command (updating the region if necessary):
-![VPC](/images/2/image011.png)
+![VPC](10000/images/2/image011.png)
 
 + If successful, you should receive a confirmation message indicating that your configuration file has been updated.
-![VPC](/images/2/image012.png)
+![VPC](10000/images/2/image012.png)
 
 3. Verify Connectivity to Your EKS Cluster
 Ensure you can interact with the cluster using kubectl.
@@ -115,31 +115,31 @@ After updating your kubeconfig, test whether you can connect to the cluster. If 
 1. Check Your IAM Access in the EKS Console
 
     + Navigate to the EKS Console.
-![VPC](/images/2/image013.png)
+![VPC](10000/images/2/image013.png)
     
     + Look for your IAM principal ARN under Access Entries.
-![VPC](/images/2/image014.png)
+![VPC](10000/images/2/image014.png)
 
-![VPC](/images/2/image015.png)
+![VPC](10000/images/2/image015.png)
 
 2. If Your ARN Is Not Listed, Add It Manually
     + Click Create Access Entry.
     + Enter your IAM User ARN or Role ARN.
-![VPC](/images/2/image016.png)
+![VPC](10000/images/2/image016.png)
 
 3. Attach Required Policies
 Assign the following permissions to your IAM role:
     + AmazonEKSAdminPolicy
     + AmazonEKSClusterAdminPolicy
-![VPC](/images/2/image017.png)
+![VPC](10000/images/2/image017.png)
 
 4. Confirm Access by Listing Nodes
     + Run the following command to check if worker nodes are visible:
-![VPC](/images/2/image018.png)
+![VPC](10000/images/2/image018.png)
 
     + If the command returns a list of nodes, your cluster is successfully configured.
 **Note**: If no nodes appear, wait a few minutes and retry, as node provisioning may still be in progress.
-![VPC](/images/2/image019.png)
+![VPC](10000/images/2/image019.png)
 
 #### Next Steps: Explore the Workshop Modules
 Once you have successfully connected to your EKS cluster, you are ready to proceed with any of the workshop modules. Choose the module that best fits your learning objectives and begin your hands-on experience with AWS, Kubernetes, and AI-powered solutions.

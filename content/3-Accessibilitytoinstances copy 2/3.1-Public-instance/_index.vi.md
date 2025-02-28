@@ -25,7 +25,7 @@ OpenSearch có thể lưu trữ và truy xuất các nhúng vectơ được tạ
 2. Tạo tăng cường truy xuất (RAG) cho AI tạo ra
 OpenSearch có thể hoạt động như một cơ sở kiến ​​thức, truy xuất thông tin có liên quan để nâng cao phản hồi do LLM tạo ra. Bằng cách tích hợp OpenSearch vào OPEA, chúng tôi cải thiện độ chính xác và độ tin cậy của các đầu ra do AI tạo ra bằng cách dựa trên phản hồi trong dữ liệu thực tế, có thật.
 
-![VPC](/images/4.s3/image080.png)
+![VPC](10000/images/4.s3/image080.png)
 
 Nhờ khả năng hoán đổi được cung cấp bởi OPEA, hầu hết các thành phần từ [ví dụ ChatQnA] mặc định (https://github.com/opea-project/GenAIExamples/tree/main/ChatQnA)(Mô-đun 1). Tất nhiên, đối với mô-đun này, bạn sẽ cần triển khai OpenSearch. Ngoài ra, bạn sẽ sử dụng một trình thu thập và một dịch vụ vi mô chuẩn bị dữ liệu được thiết kế để hoạt động với các API truy vấn và lập chỉ mục của OpenSearch. Bạn có thể tìm thấy các thành phần này trong [thư mục thành phần của dự án OPEA GitHub](https://github.com/opea-project/GenAIComps/tree/main/comps) .
 
@@ -38,15 +38,15 @@ Chúng tôi đã sử dụng không gian tên Kubernetes, opensearch, để tác
 
 Quay lại Cloud Shell của bạn. Nếu shell đã kết thúc, hãy nhấp vào cửa sổ để mở dòng lệnh mới hoặc sử dụng biểu tượng ở đầu bảng điều khiển AWS để bắt đầu Cloud Shell mới. Sử dụng lệnh sau để triển khai bộ thay đổi OpenSearch.
 
-![VPC](/images/4.s3/image081.png)
+![VPC](10000/images/4.s3/image081.png)
 
 OpenSearch sẽ mất vài phút để triển khai. Để kiểm tra trạng thái, bạn có thể sử dụng kubectl để theo dõi trạng thái của các pod OpenSearch. Bạn có thể sử dụng lệnh
 
-![VPC](/images/4.s3/image082.png)
+![VPC](10000/images/4.s3/image082.png)
 
 để có đầu ra như thế này
 
-![VPC](/images/4.s3/image083.png)
+![VPC](10000/images/4.s3/image083.png)
 
 Chỉ tiếp tục khi bạn thấy pod opensearch-cluster-master-0 ở trạng thái Đang chạy.
 
@@ -56,7 +56,7 @@ Phần lớn triển khai và thành phần cho ChatQnA giống hệt nhau khi b
 
 Về mặt sơ đồ, giờ đây bạn đang nói chuyện với OpenSearch thông qua các thành phần dành riêng cho OpenSearch:
 
-![VPC](/images/4.s3/image084.png)
+![VPC](10000/images/4.s3/image084.png)
 
 **Hiểu về Hệ thống phân tán của OpenSearch**
 OpenSearch là cơ sở dữ liệu phân tán hoạt động trên một cụm các nút, mỗi nút có thể đảm nhiệm các vai trò khác nhau để tối ưu hóa hiệu suất và khả năng mở rộng. Một nút có thể phục vụ nhiều vai trò cùng lúc, cho phép nút thực hiện nhiều chức năng khác nhau trong cụm. Một số vai trò chính của nút bao gồm:
@@ -75,7 +75,7 @@ Cốt lõi của cấu trúc dữ liệu của OpenSearch là chỉ mục, đón
 
 Mỗi phân đoạn về cơ bản là một phiên bản của Apache Lucene, một thư viện tìm kiếm mạnh mẽ dựa trên Java có chức năng đọc và ghi chỉ mục tìm kiếm. Khi tạo chỉ mục, bạn sẽ xác định số lượng phân mảnh chính, xác định cách dữ liệu sẽ được phân vùng ban đầu. Khi lập chỉ mục một tài liệu, OpenSearch sẽ gán tài liệu đó cho một phân mảnh chính bằng chiến lược phân phối ngẫu nhiên, đảm bảo hiệu suất lưu trữ và truy xuất cân bằng trên toàn cụm.
 
-![VPC](/images/4.s3/image085.png)
+![VPC](10000/images/4.s3/image085.png)
 
 OpenSearch phân phối các phân mảnh trên các nút dữ liệu khả dụng trong cụm. Bạn cũng có thể đặt một hoặc nhiều bản sao cho chỉ mục. Mỗi bản sao là một bản sao hoàn chỉnh của tập hợp các phân mảnh chính. Ví dụ: nếu bạn có 5 phân mảnh chính và một bản sao, tổng cộng bạn có 10 phân mảnh. Quyết định của bạn về số lượng phân mảnh chính, số lượng bản sao và số lượng nút dữ liệu có tầm quan trọng sống còn đối với sự thành công của cụm trong việc xử lý khối lượng công việc của bạn.
 
@@ -154,7 +154,7 @@ Cộng dung lượng lưu trữ vector và dung lượng lưu trữ siêu dữ l
 ### Xác minh triển khai OpenSearch
 Để xác minh triển khai, bạn sẽ sử dụng chuyển tiếp cổng Kubernetes để gọi các dịch vụ vi mô khác nhau. Bạn có thể xác minh triển khai OpenSearch đang hoạt động bằng cách thực hiện yêu cầu GET đối với URL cơ sở. OpenSearch lắng nghe trên cổng 9200. Sử dụng lệnh sau để ánh xạ cổng 9200 đến cổng cục bộ 9200 của bạn. (Nếu thiết bị đầu cuối Cloud Shell của bạn đã kết thúc, hãy nhấp vào cửa sổ hoặc mở thiết bị đầu cuối mới từ bảng điều khiển AWS.)
 
-![VPC](/images/5.fwd/image086.png)
+![VPC](10000/images/5.fwd/image086.png)
 
 {{% notice info %}}
 Trong phần hướng dẫn này, bạn sẽ sử dụng chuyển tiếp cổng cho một số dịch vụ. Chuyển tiếp cổng mất vài giây để bắt đầu, hãy đảm bảo đợi dòng xác nhận trông như thế này: Chuyển tiếp từ 127.0.0.1:9200 -> 9200.
@@ -164,11 +164,11 @@ Bây giờ bạn có thể truy vấn OpenSearch trực tiếp trên localhost:9
 
 Truy vấn tới / chỉ trả về tình trạng và thông tin của cụm.
 
-![VPC](/images/5.fwd/image087.png)
+![VPC](10000/images/5.fwd/image087.png)
 
 Bạn sẽ nhận được kết quả như sau:
 
-![VPC](/images/5.fwd/image088.png)
+![VPC](10000/images/5.fwd/image088.png)
 
 Xin chúc mừng! Bạn đã tạo triển khai được OpenSearch hỗ trợ cho ví dụ ChatQnA của OPEA!
 
@@ -187,7 +187,7 @@ kubectl port-forward -n opensearch svc/chatqna-data-prep 6007:6007 &
 
 Chờ cho đến khi bạn thấy thông báo Chuyển tiếp từ 127.0.0.1:6007 -> 6007, sau đó gửi tài liệu.
 
-![VPC](/images/5.fwd/image089.png)
+![VPC](10000/images/5.fwd/image089.png)
 
 Việc chuẩn bị dữ liệu sẽ mất khoảng 30 giây để xử lý tài liệu. Khi hoàn tất, bạn sẽ thấy
 
@@ -199,7 +199,7 @@ curl -XGET 'https://localhost:9200/_cat/indices?v' --insecure -u admin:strongOpe
 
 Bạn sẽ thấy đầu ra như thế này:
 
-![VPC](/images/5.fwd/image090.png)
+![VPC](10000/images/5.fwd/image090.png)
 
 Khi kiểm tra đầu ra của OpenSearch, bạn sẽ thấy nhiều chỉ mục hệ thống khác nhau, thường được thêm dấu chấm. Trong số đó, nhật ký kiểm tra cung cấp thông tin chi tiết về cách sử dụng API, trong khi các chỉ mục như rag-opensearch và file-keys chứa dữ liệu từ ChatQnA.
 
@@ -211,7 +211,7 @@ Với dữ liệu được lập chỉ mục thành công, khả năng truy xu�
 
 kubectl port-forward -n opensearch svc/chatqna-tei 9800:80 &
 
-![VPC](/images/5.fwd/image091.png)
+![VPC](10000/images/5.fwd/image091.png)
 
 Để xác minh rằng cuộc gọi này thành công, bạn có thể sử dụng echo $question_embedding để xem nhúng vector. Bây giờ hãy sử dụng lệnh sau để gọi dịch vụ vi mô của trình thu thập và tìm các tài liệu khớp từ OpenSearch và lưu trữ chúng trong biến bash similar_docs. Thiết lập chuyển tiếp cổng:
 
@@ -219,7 +219,7 @@ kubectl port-forward -n opensearch svc/chatqna-retriever-usvc 9801:7000 &
 
 Sau khi shell xác nhận rằng nó đang chuyển tiếp, hãy chạy lệnh truy xuất
 
-![VPC](/images/5.fwd/image092.png)
+![VPC](10000/images/5.fwd/image092.png)
 
 Một lần nữa, bạn có thể xác minh việc truy xuất bằng lệnh echo $similar_docs | jq .. Bây giờ bạn có thể khám phá trình xếp hạng lại, liên hệ trực tiếp với tài liệu tương tự và so sánh với câu hỏi Doanh thu của Nike năm 2023 là bao nhiêu?. Dịch vụ chatqna-teirerank mong đợi một mảng các khối văn bản. Thực hiện các lệnh sau để định dạng lại $similar_docs và lưu kết quả vào tệp cục bộ rerank.json
 

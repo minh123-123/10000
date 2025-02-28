@@ -63,7 +63,7 @@ aws sts get-caller-identity --query 'Arn' --output text | awk -F: '{print $NF}' 
 Quá trình triển khai
 Sau khi thiết lập các tham số, nhấp vào Tạo ngăn xếp.
 
-![VPC](/images/2/image008.png)
+![VPC](10000/images/2/image008.png)
 
 Quá trình này sẽ khởi tạo Dự án AWS CodeBuild, dự án này sẽ đưa thư viện nguồn mở opea-demo-builder vào
 
@@ -73,7 +73,7 @@ Giám sát tiến độ triển khai
 Quá trình triển khai mất khoảng 25 phút.
 Mở Bảng điều khiển AWS CloudFormation và theo dõi tiến trình.
 
-![VPC](/images/2/image009.png)
+![VPC](10000/images/2/image009.png)
 
 Đảm bảo rằng các ngăn xếp sau đạt trạng thái CREATE_COMPLETE:
 
@@ -82,7 +82,7 @@ Mở Bảng điều khiển AWS CloudFormation và theo dõi tiến trình.
 
 Một số ngăn xếp có thể vẫn còn trong REVIEW_IN_PROGRESS vì chúng sẽ được triển khai trên cụm EKS sau này.
 
-![VPC](/images/2/image010.png)
+![VPC](10000/images/2/image010.png)
 
 #### Bước 2: Định cấu hình quyền truy cập vào cụm EKS của bạn
 Sau khi triển khai thành công các ngăn xếp CloudFormation, bạn cần đặt cấu hình môi trường cục bộ của mình để tương tác với cụm Amazon EKS bằng kubectl.
@@ -96,10 +96,10 @@ Cập nhật cấu hình Kubernetes của bạn (kubeconfig)
 2. Cập nhật kubeconfig
 
 + Chạy lệnh sau (cập nhật vùng nếu cần):
-![VPC](/images/2/image011.png)
+![VPC](10000/images/2/image011.png)
 
 + Nếu thành công, bạn sẽ nhận được thông báo xác nhận cho biết file cấu hình của bạn đã được cập nhật.
-![VPC](/images/2/image012.png)
+![VPC](10000/images/2/image012.png)
 
 3. Xác minh kết nối với cụm EKS của bạn
 Đảm bảo bạn có thể tương tác với cụm bằng kubectl.
@@ -110,31 +110,31 @@ Sau khi cập nhật kubeconfig, hãy kiểm tra xem bạn có thể kết nối
 1. Kiểm tra quyền truy cập IAM của bạn trong Bảng điều khiển EKS
 
     + Điều hướng đến Bảng điều khiển EKS.
-![VPC](/images/2/image013.png)
+![VPC](10000/images/2/image013.png)
     
     + Tìm ARN chính IAM của bạn trong Mục truy cập.
-![VPC](/images/2/image014.png)
+![VPC](10000/images/2/image014.png)
 
-![VPC](/images/2/image015.png)
+![VPC](10000/images/2/image015.png)
 
 2. Nếu ARN của bạn không được liệt kê, hãy thêm nó theo cách thủ công
     + Bấm vào Tạo mục truy cập.
     + Nhập ARN người dùng IAM hoặc ARN vai trò của bạn.
-![VPC](/images/2/image016.png)
+![VPC](10000/images/2/image016.png)
 
 3. Đính kèm các chính sách bắt buộc
 Gán các quyền sau cho vai trò IAM của bạn:
     + Chính sách quản trị của AmazonEKS
     + Chính sách quản trị AmazonEKSCluster
-![VPC](/images/2/image017.png)
+![VPC](10000/images/2/image017.png)
 
 4. Xác nhận quyền truy cập bằng nút niêm yết
     + Chạy lệnh sau để kiểm tra xem các nút worker có hiển thị hay không:
-![VPC](/images/2/image018.png)
+![VPC](10000/images/2/image018.png)
 
     + Nếu lệnh trả về danh sách các nút thì cluster của bạn đã được cấu hình thành công.
 **Lưu ý**: Nếu không có nút nào xuất hiện, hãy đợi vài phút và thử lại vì quá trình cung cấp nút có thể vẫn đang được tiến hành.
-![VPC](/images/2/image019.png)
+![VPC](10000/images/2/image019.png)
 
 #### Các bước tiếp theo: Khám phá các mô-đun hội thảo
 Sau khi kết nối thành công với cụm EKS của mình, bạn đã sẵn sàng tiếp tục với bất kỳ mô-đun hội thảo nào. Chọn mô-đun phù hợp nhất với mục tiêu học tập của bạn và bắt đầu trải nghiệm thực tế với các giải pháp AWS, Kubernetes và hỗ trợ AI.

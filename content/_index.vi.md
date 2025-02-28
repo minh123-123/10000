@@ -12,4 +12,4 @@ Trong hội thảo thực hành này, bạn sẽ học cách triển khai một 
 
 Đối với những người hoàn thành sớm, sẽ có các bài tập tùy chọn cung cấp các phương pháp thay thế để chạy mô hình LLM theo hướng serverless trong triển khai RAG của bạn.
 
-![ConnectPrivate](/images/6.clean/image000.png) 
+![ConnectPrivate](10000/images/6.clean/image000.png) 

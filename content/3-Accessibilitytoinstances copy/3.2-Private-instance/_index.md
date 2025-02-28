@@ -8,7 +8,7 @@ pre : " <b> 4.2. </b> "
 ### Test the guardrail
 Before testing the deployment, refer to the image to understand the flow.
 
-![VPC](/images/4.s3/image067.png)
+![VPC](10000/images/4.s3/image067.png)
 
 #### Understanding Guardrails in AI Systems
 In the ChatQnA pipeline, user queries first pass through the Guardrails microservice, which evaluates whether a prompt is safe or unsafe. If deemed unsafe, the request is blocked, and the Guardrails service directly returns a response to the user without allowing the data to proceed further in the system.
@@ -27,7 +27,7 @@ By leveraging a structured taxonomy that encompasses a wide range of potential h
 
 In the ChatQnA pipeline, The Standard MLCommons taxonomy of hazard is used, which is as follows:
 
-![VPC](/images/4.s3/image068.png)
+![VPC](10000/images/4.s3/image068.png)
 
 For more details, you can explore further through the Hugging Face model page for Meta-Llama-Guard-2-8B .
     
@@ -39,17 +39,17 @@ For more details, you can explore further through the Hugging Face model page fo
 
 2. Prompt the application with an inappropriate question:
 
-![VPC](/images/4.s3/image069.png)
+![VPC](10000/images/4.s3/image069.png)
 
 We can see how the prompt is probing for information on an activity that is illegal and unethical.
 
-![VPC](/images/4.s3/image070.png)
+![VPC](10000/images/4.s3/image070.png)
 
 The Guardrails MicroService evaluates queries against ethical and legal standards to block potentially illegal or unethical requests. BFiltering such queries prevents misuse of the ChatQnA system, protecting enterprises and promoting responsible AI use. This microservice serves as a crucial defense, ensuring the system's integrity and user safety.
 
 The following response is provided by the Guardrails microservice, and by extension the ChatQnA pipeline:
 
-![VPC](/images/4.s3/image071.png)
+![VPC](10000/images/4.s3/image071.png)
 
 #### Testing the Guardrails Microservice
 To understand how the Guardrails system functions, start by running a safe query and observe the output:
@@ -72,7 +72,7 @@ A prompt strategy refers to the intentional design of input text (or "prompts") 
 
 For the meta-llama/Meta-Llama-Guard-2-8B model, prompt strategy plays a critical role in shaping AI responses. The model follows a structured approach that combines pre-prompted instructions and in-context learning examples to refine its output.
 
-![VPC](/images/4.s3/image072.png)
+![VPC](10000/images/4.s3/image072.png)
 
 In this case, the strategy involves a simulated conversation where a user inquires about the stock market, and the AI responds. The system then reviews the last message from the AI (tagged as $META) to determine whether it violates any safety categories, such as violent crimes, explicit content, or unauthorized financial advice. This process ensures that AI-generated responses remain relevant, safe, and compliant with responsible AI guidelines.
 
@@ -90,38 +90,38 @@ To check the tgi-guardrail microservice directly, we need to connect to the NGNI
 
 + Get NGNIX pod name on the guardrails namespace
 
-![VPC](/images/4.s3/image073.png)
+![VPC](10000/images/4.s3/image073.png)
 
 *Copy chatqna-nginx-deployment-XXXXXX
 
 + Access to the NGNIX microservice
 
-![VPC](/images/4.s3/image074.png)
+![VPC](10000/images/4.s3/image074.png)
 
 To illustrate how the guardrails work in a typical scenario, consider the following example where the AI discusses deep learning:
 
-![VPC](/images/4.s3/image075.png)
+![VPC](10000/images/4.s3/image075.png)
 
 The returned response is flagged as "safe" as it strictly adheres to educational and informative content.
 
-![VPC](/images/4.s3/image076.png)
+![VPC](10000/images/4.s3/image076.png)
 
 Notice how the final agent answer has been deemed ‘safe’, and rightly so, as it is talking about what deep learning is.
 
 **Simulating Unsafe Output**
 Now, let's simulate a response where the AI mistakenly attempts to provide unsafe content:
 
-![VPC](/images/4.s3/image077.png)
+![VPC](10000/images/4.s3/image077.png)
 
 As you can see it was SAFE: "content":"safe"
 
 Let's see if the question remains the same, but with the assistant being instructed to provide guidance on robbing a bank:
 
-![VPC](/images/4.s3/image078.png)
+![VPC](10000/images/4.s3/image078.png)
 
 In the returned response, we can see that the guardrails correctly identified and stopped the unsafe content, demonstrating the effectiveness of the system in real-time application:
 
-![VPC](/images/4.s3/image079.png)
+![VPC](10000/images/4.s3/image079.png)
 
 By diligently applying output guardrails, we can maintain our AI system as a reliable and trustworthy tool for users. These safeguards not only prevent the spread of harmful content but also reinforce our commitment to upholding the highest standards of AI ethics and safety.
 

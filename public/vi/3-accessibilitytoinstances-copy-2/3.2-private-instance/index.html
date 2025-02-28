@@ -12,21 +12,21 @@
     <title>Khám phá OpenSearch (Tùy chọn) :: LÀM VIỆC VỚI AMAZON SYSTEM MANAGER - SESSION MANAGER</title>
 
     
-    <link href="/css/nucleus.css?1740757120" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1740757120" rel="stylesheet">
-    <link href="/css/hybrid.css?1740757120" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1740757120" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1740757120" rel="stylesheet">
-    <link href="/css/auto-complete.css?1740757120" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1740757120" rel="stylesheet">
-    <link href="/css/theme.css?1740757120" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1740757120" rel="stylesheet">
+    <link href="/css/nucleus.css?1740757544" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1740757544" rel="stylesheet">
+    <link href="/css/hybrid.css?1740757544" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1740757544" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1740757544" rel="stylesheet">
+    <link href="/css/auto-complete.css?1740757544" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1740757544" rel="stylesheet">
+    <link href="/css/theme.css?1740757544" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1740757544" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1740757120" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1740757544" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1740757120"></script>
+    <script src="/js/jquery-3.3.1.min.js?1740757544"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1740757120"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1740757120"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1740757544"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1740757544"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1740757120"></script>
+<script type="text/javascript" src="/js/search.js?1740757544"></script>
 
     
   </div>
@@ -906,7 +906,7 @@
 <p>Trong OpenSearch, một lược đồ—được gọi là ánh xạ—xác định cách dữ liệu được cấu trúc và lập chỉ mục. Ánh xạ xác định cách các trường trong tài liệu JSON được phân tích và có thể tìm kiếm được. Trong khi OpenSearch bao gồm tính năng phát hiện lược đồ tự động để triển khai nhanh chóng, thì việc xác định thủ công lược đồ trong quá trình tạo chỉ mục thường là cách tiếp cận tốt nhất. Mặc dù OPEA và dịch vụ vi mô OpenSearch đã định cấu hình ánh xạ, nhưng vẫn có thể truy xuất ánh xạ cho chỉ mục nhúng bằng lệnh sau.</p>
 <p>curl -XGET https://localhost:9200/rag-opensearch/_mapping &ndash;insecure -u admin:strongOpea0! | jq .</p>
 <p>Bạn sẽ thấy phản hồi như thế này:</p>
-<p><img src="/images/5.fwd/image093.png" alt="VPC"></p>
+<p><img src="10000/images/5.fwd/image093.png" alt="VPC"></p>
 <p>Chỉ mục rag-opensearch bao gồm ba trường: siêu dữ liệu, văn bản và vector_field. Trường siêu dữ liệu lưu trữ JSON lồng nhau, bao gồm trường nguồn, có thể được truy cập trong các truy vấn bằng ký hiệu dấu chấm (ví dụ: metadata.source). Cả metadata.source và text đều được định nghĩa là các trường kiểu văn bản với một trường con từ khóa. Các trường văn bản trải qua quá trình phân tích cú pháp và phân tích thuật ngữ để tạo mã thông báo để khớp, trong khi các trường từ khóa được chuẩn hóa và sử dụng cho các truy vấn khớp chính xác. vector_field là trường kiểu knn_vector được thiết kế để lưu trữ các vectơ có 768 chiều. Công cụ lưu trữ được sử dụng là Thư viện không gian phi số liệu (NMSLIB), sử dụng thuật toán Hidden Navigable Small Worlds (HNSW).</p>
 <p><strong>Truy vấn từ vựng</strong></p>
 <p>OpenSearch là một công cụ tìm kiếm từ vựng ngoài việc là một công cụ tìm kiếm vectơ. Bạn có thể truy vấn nội dung rag bằng các truy vấn văn bản. Sử dụng truy vấn bên dưới để tìm kiếm các tài liệu OpenSearch, với thuật toán xếp hạng TF/IDF mặc định của nó (xem thêm Okapi BM25, xếp hạng dựa trên văn bản).</p>
@@ -915,31 +915,31 @@
 </div>
 
 <p>Thực hiện lệnh sau để chạy truy vấn</p>
-<p><img src="/images/5.fwd/image094.png" alt="VPC"></p>
+<p><img src="10000/images/5.fwd/image094.png" alt="VPC"></p>
 <p>Dòng đầu tiên của lệnh chạy lệnh curl, với URL chứa điểm cuối (localhost:9200, được chuyển tiếp đến dịch vụ vi mô OpenSearch) và thông số kỹ thuật API. Tại đây, yêu cầu được chuyển hướng đến chỉ mục rag-opensearch và gọi API _search. Các dòng sau xác định các tham số TLS và xác thực và sau cờ -d, nội dung yêu cầu chỉ định truy vấn.</p>
 <p>Truy vấn này sử dụng tìm kiếm simple_query_string cho văn bản &ldquo;Doanh thu năm 2023 của Nike là bao nhiêu?&rdquo;. Hàm simple_query_string phân tích văn bản đầu vào, chia nhỏ thành các mã thông báo riêng lẻ—về mặt kỹ thuật được gọi là các thuật ngữ—và khớp chúng với trường văn bản trong tất cả các tài liệu trong chỉ mục. Sau đó, nó sẽ chấm điểm và xếp hạng kết quả dựa trên thuật toán TF/IDF để đưa tài liệu có liên quan nhất lên đầu.</p>
 <p>Các chỉ thị bổ sung trong truy vấn hướng dẫn OpenSearch loại trừ tất cả các trường khỏi phản hồi (&quot;_source&quot;: false—xóa trường này sẽ trả về các giá trị tài liệu gốc), giới hạn kết quả thành một kết quả khớp duy nhất (&ldquo;size&rdquo;: 1) và tô sáng các thuật ngữ khớp trong trường văn bản (&ldquo;highlight&rdquo;: &hellip;).</p>
-<p><img src="/images/5.fwd/image095.png" alt="VPC"></p>
+<p><img src="10000/images/5.fwd/image095.png" alt="VPC"></p>
 <p>Phản hồi của OpenSearch bắt đầu bằng phần siêu dữ liệu bao gồm các chi tiết như thời gian xử lý truy vấn ở phía máy chủ (8 ms trong trường hợp này), liệu truy vấn có hết thời gian chờ hay không và thông tin về các phân đoạn phản hồi. Tiếp theo là phần lượt truy cập, chứa tổng số kết quả khớp, điểm liên quan cao nhất và chính các tài liệu khớp. Mỗi tài liệu bao gồm chỉ mục mà tài liệu đó thuộc về (_index), mã định danh duy nhất (_id), điểm liên quan, các trường nguồn (đã bị loại trừ trong truy vấn này) và các đoạn trích được tô sáng cho biết các thuật ngữ truy vấn khớp với tài liệu ở đâu. Các điểm nổi bật sử dụng thẻ HTML <!-- raw HTML omitted --> để nhấn mạnh các thuật ngữ khớp.</p>
 <p>Tuy nhiên, phản hồi không lý tưởng. Mặc dù xác định đúng các đề cập đến Nike, nhưng nó cũng bao gồm các từ không liên quan như what và is, làm giảm độ chính xác của kết quả.</p>
 <p>Bạn có thể thử nghiệm các thuật ngữ truy vấn khác nhau bằng cách sửa đổi trường &ldquo;truy vấn&rdquo; (ví dụ: thay thế &ldquo;doanh thu năm 2023 của nike là gì?&rdquo; bằng các cụm từ khác) để quan sát cách phản hồi thay đổi. Điều chỉnh tham số &ldquo;size&rdquo; thành 2 hoặc nhiều hơn cho phép bạn xem nhiều kết quả cùng một lúc. Hãy thử các truy vấn như &ldquo;workplace policies&rdquo;, &ldquo;footwear apparel&rdquo;, &ldquo;men sales&rdquo; hoặc &ldquo;women sales&rdquo; để khám phá các đầu ra khác nhau.</p>
 <p>Để tinh chỉnh tìm kiếm, bạn có thể chạy truy vấn k-Nearest-Neighbor (k-NN) chính xác. Trước tiên, hãy truy xuất nhúng cho truy vấn của bạn bằng dịch vụ vi mô chatqna-tei. Dịch vụ vi mô trả về một mảng các mảng, nhưng chỉ cần mảng bên trong cho truy vấn OpenSearch. Lệnh jq trích xuất phần tử đầu tiên và gán nó cho biến $embedding.</p>
 <p>Để thực thi lệnh, bạn sẽ cần cổng được ánh xạ tới dịch vụ vi mô tei. Sử dụng lệnh ps aux | grep kubectl để kiểm tra các quy trình đang chạy và các cổng được chỉ định của chúng. Nếu bạn đã làm theo hướng dẫn đúng, dịch vụ vi mô chatqna-tei sẽ chạy trên cổng 9800.</p>
-<p><img src="/images/5.fwd/image096.png" alt="VPC"></p>
+<p><img src="10000/images/5.fwd/image096.png" alt="VPC"></p>
 <p>Bạn có thể sử dụng echo $embedding để xem nhúng được tạo. Bây giờ, bạn sẽ tạo tệp cục bộ query.json với nhúng được hợp nhất vào truy vấn, sau đó chạy truy vấn k-Nearest-Neighbors (k-NN) chính xác để so sánh nhúng truy vấn với mọi tài liệu (chunk) trong chỉ mục và truy xuất các kết quả khớp gần nhất</p>
-<p><img src="/images/5.fwd/image097.png" alt="VPC"></p>
+<p><img src="10000/images/5.fwd/image097.png" alt="VPC"></p>
 <p>Truy vấn này là truy vấn script_score, sử dụng một tập lệnh đã lưu để thực hiện tính toán điểm k-NN, so sánh vectơ truy vấn với mọi tài liệu trong chỉ mục. Truy vấn script_score bao gồm một truy vấn phụ, mà bạn có thể sử dụng để áp dụng bộ lọc cho các trường không phải vectơ. ChatQnA chỉ gửi khóa tệp trong trường metadata.source, do đó truy vấn này chỉ sử dụng match_all, khớp với mọi tài liệu trong chỉ mục. Phần script của truy vấn chỉ định script knn_score, với các tham số cho script biết trường nào có nhúng vectơ cho tài liệu, truyền nhúng dưới dạng query_value và chỉ định l2 là số liệu khoảng cách (space_type).</p>
 <p>Phản hồi này là chính xác. Kết quả đầu tiên bao gồm văn bản &ldquo;NIKE, Inc. Revenues were $51.2 billion in financial 2023.&rdquo; Không giống như các truy vấn dựa trên văn bản truyền thống, việc tô sáng không được hỗ trợ cho các trường vectơ vì chúng không chứa văn bản nguồn thô. Do đó, nội dung được truy xuất sẽ xuất hiện nguyên trạng từ trường văn bản.</p>
 <p>Tìm kiếm k-Nearest-Neighbor (k-NN) chính xác có hiệu quả cao khi xử lý số lượng tài liệu tương đối nhỏ. Tuy nhiên, khi tập dữ liệu mở rộng, độ trễ truy vấn tăng lên đáng kể. Ngoài vài trăm nghìn tài liệu, tìm kiếm k-NN chính xác trở nên chậm một cách không thực tế. Để xử lý hiệu quả các tập dữ liệu lớn hơn, tìm kiếm lân cận gần nhất (ANN) là giải pháp thay thế tốt hơn. Lệnh bên dưới sử dụng thuật toán Hierarchical Navigable Small World (HNSW) để tìm các kết quả khớp gần nhất.</p>
-<p><img src="/images/5.fwd/image098.png" alt="VPC"></p>
+<p><img src="10000/images/5.fwd/image098.png" alt="VPC"></p>
 <p>Truy vấn này là truy vấn knn, sử dụng thuật toán bạn đã chỉ định trong ánh xạ trường để xác định các lân cận gần nhất. Bạn chỉ cần truyền vào một vectơ và một giá trị cho k (số lượng lân cận cần truy xuất) và opensearch sẽ thực hiện phần còn lại.</p>
 <p><strong>Tìm kiếm kết hợp với OpenSearch</strong></p>
 <p>Một lần nữa, bạn có thể thấy tài liệu chính xác là kết quả đầu tiên được truy xuất. Sử dụng k-NN gần đúng, bạn có thể mở rộng cơ sở dữ liệu vectơ OpenSearch của mình lên hàng tỷ vectơ và hàng nghìn truy vấn mỗi giây.</p>
 <p>OpenSearch hỗ trợ tìm kiếm kết hợp &ndash; trong đó bạn chỉ định cả truy vấn từ vựng và vectơ, cùng với chiến lược chuẩn hóa và hợp nhất. OpenSearch chạy cả hai truy vấn, chuẩn hóa và hợp nhất các kết quả. Khi bạn thực hiện tìm kiếm kết hợp, bạn thiết lập một Đường ống tìm kiếm và gửi các truy vấn qua đường ống đó. Sử dụng lệnh bên dưới để sử dụng API REST của OpenSearch để thiết lập đường ống tìm kiếm.</p>
-<p><img src="/images/5.fwd/image099.png" alt="VPC"></p>
+<p><img src="10000/images/5.fwd/image099.png" alt="VPC"></p>
 <p>Đường ống này sử dụng chuẩn hóa min/max để thiết lập tất cả các điểm từ vựng và vectơ trong phạm vi [0, 1]. Nó sử dụng trung bình số học để kết hợp các điểm, với trọng số là 0,3 cho mệnh đề truy vấn đầu tiên và 0,7 cho mệnh đề truy vấn thứ hai. Lưu ý, đây không phải là một truy vấn, khi bạn gửi các truy vấn đến đường ống tìm kiếm này, OpenSearch sẽ áp dụng các trọng số. phase_results_processor là một cấu trúc chung linh hoạt - các mệnh đề truy vấn có thể là từ vựng hoặc vectơ.</p>
 <p>Để sử dụng đường ống, bạn gửi một truy vấn đến API đường ống. Sử dụng lệnh bên dưới để tạo truy vấn trong tệp hybrid_query.json.</p>
-<p><img src="/images/5.fwd/image100.png" alt="VPC"></p>
+<p><img src="10000/images/5.fwd/image100.png" alt="VPC"></p>
 <p>Truy vấn kết hợp này chứa hai truy vấn phụ - truy vấn từ vựng cho &ldquo;doanh thu giày dép&rdquo; và truy vấn vectơ có nhúng biểu diễn &ldquo;Doanh thu Nike 2023 là gì?&rdquo;. Giá trị k, 2, đảm bảo rằng kết quả sẽ chứa tối đa hai kết quả khớp vectơ.</p>
 <p>Lệnh curl gửi truy vấn này đến nlp-search-pipeline mà bạn vừa xác định. Bạn sẽ nhận được những kết quả này (chúng tôi đã xóa siêu dữ liệu kết quả và các phần khác để hiển thị đầu ra có liên quan)</p>
 <p>Kết quả khớp đầu tiên trong kết quả giống hệt với kết quả được truy xuất bằng truy vấn lân cận gần nhất. Kết quả khớp thứ hai và thứ tư bắt nguồn từ truy vấn từ vựng &ldquo;doanh thu giày dép&rdquo;, trong khi kết quả thứ hai đến từ tìm kiếm vectơ. Cách tiếp cận này kết hợp hiệu quả các hiểu biết trừu tượng, ngữ nghĩa về doanh thu với các kết quả khớp dựa trên từ khóa cụ thể hơn cho &ldquo;doanh thu giày dép&rdquo;.</p>
@@ -1363,19 +1363,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1740757120"></script>
-    <script src="/js/perfect-scrollbar.min.js?1740757120"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1740757120"></script>
-    <script src="/js/jquery.sticky.js?1740757120"></script>
-    <script src="/js/featherlight.min.js?1740757120"></script>
-    <script src="/js/highlight.pack.js?1740757120"></script>
+    <script src="/js/clipboard.min.js?1740757544"></script>
+    <script src="/js/perfect-scrollbar.min.js?1740757544"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1740757544"></script>
+    <script src="/js/jquery.sticky.js?1740757544"></script>
+    <script src="/js/featherlight.min.js?1740757544"></script>
+    <script src="/js/highlight.pack.js?1740757544"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1740757120"></script>
-    <script src="/js/learn.js?1740757120"></script>
-    <script src="/js/hugo-learn.js?1740757120"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1740757544"></script>
+    <script src="/js/learn.js?1740757544"></script>
+    <script src="/js/hugo-learn.js?1740757544"></script>
 
-    <link href="/mermaid/mermaid.css?1740757120" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1740757120"></script>
+    <link href="/mermaid/mermaid.css?1740757544" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1740757544"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

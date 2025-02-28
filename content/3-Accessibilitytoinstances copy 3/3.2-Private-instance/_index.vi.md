@@ -18,13 +18,13 @@ Bây giờ tất cả các dịch vụ đã hoạt động, đã đến lúc kh�
 
 Khi đã vào Giao diện người dùng, bạn có thể tương tác với chatbot và kiểm tra phản hồi của chatbot theo thời gian thực.
 
-![VPC](/images/5.fwd/image110.png)
+![VPC](10000/images/5.fwd/image110.png)
 
 Để xác minh UI, hãy hỏi
 
-![VPC](/images/5.fwd/image111.png)
+![VPC](10000/images/5.fwd/image111.png)
 
-![VPC](/images/5.fwd/image112.png)
+![VPC](10000/images/5.fwd/image112.png)
 
 **Cải thiện Phản hồi của Chatbot bằng Bối cảnh Cập nhật**
 
@@ -38,7 +38,7 @@ Bạn có thể nhận thấy rằng phản hồi ban đầu của chatbot đã 
 
 Bằng cách tải lên thông tin mới, bạn sẽ mở rộng hiệu quả cơ sở kiến ​​thức của chatbot, đảm bảo phản hồi của chatbot chính xác hơn, có liên quan hơn và cập nhật hơn.
 
-![VPC](/images/5.fwd/image113.png)
+![VPC](10000/images/5.fwd/image113.png)
 
 **Tải lên tệp hoặc trang web để phản hồi nâng cao**
 
@@ -51,11 +51,11 @@ Việc triển khai cho phép bạn tải lên tệp hoặc trang web để cả
 4. Nhấp vào Xác nhận để bắt đầu quá trình lập chỉ mục.
 5. Sau khi lập chỉ mục hoàn tất, bạn sẽ thấy biểu tượng có nhãn https://www.denvrdata.com/intel xuất hiện bên dưới hộp văn bản, cho biết thông tin đã được thêm thành công.
 
-![VPC](/images/5.fwd/image114.png)
+![VPC](10000/images/5.fwd/image114.png)
 
 Hỏi lại "Denvr là gì?" để xem câu trả lời đã cập nhật.
 
-![VPC](/images/5.fwd/image115.png)
+![VPC](10000/images/5.fwd/image115.png)
 
 Lần này, chatbot phản hồi chính xác dựa trên dữ liệu mà nó đã thêm vào lời nhắc từ nguồn mới, trang web Denvr Cloud.
 

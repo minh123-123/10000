@@ -33,7 +33,7 @@ If you have been logged out of your CloudShell, click in the CloudShell window t
 
 1. Go to your CloudShell and deploy the ChatQnA-Guardrails ClourFormation template into your EKS Cluster
 
-![VPC](/images/4.s3/image060.png)
+![VPC](10000/images/4.s3/image060.png)
 
 {{% notice info %}}
 The manifest for ChatQnA-Guardrails can be found in the ChatQnA GenAIExamples repository , and the instructions for deploying it manually can be found here . The instructions you're using in this workshop use AWS CloudFormation templates created by the AWS Marketplace EKS package.
@@ -41,18 +41,18 @@ The manifest for ChatQnA-Guardrails can be found in the ChatQnA GenAIExamples re
 
 2. Verify the new namespace was created
 
-![VPC](/images/4.s3/image061.png)
+![VPC](10000/images/4.s3/image061.png)
 
 You will see the guardrails namespace
 
-![VPC](/images/4.s3/image062.png)
+![VPC](10000/images/4.s3/image062.png)
 
 3. Check pods on the guardrails namespace. It will take a few minutes for the models to download and for all the services to be up and running.
 Run the following command to check if all the services are running:
 
-![VPC](/images/4.s3/image063.png)
+![VPC](10000/images/4.s3/image063.png)
 
-![VPC](/images/4.s3/image064.png)
+![VPC](10000/images/4.s3/image064.png)
 
 Wait until the output shows that all the services including chatqna-tgi-guardrails and chatqna-guardrails-usvc are running (1/1).
 
@@ -62,8 +62,8 @@ Wait until the output shows that all the services including chatqna-tgi-guardrai
 Wait 5 minutes for the load balancer to be created.
 {{% /notice %}}
 
-![VPC](/images/4.s3/image065.png)
+![VPC](10000/images/4.s3/image065.png)
 
-![VPC](/images/4.s3/image066.png)
+![VPC](10000/images/4.s3/image066.png)
 
 By checking that both the load balancer and pods are running, we can confirm that the deployment is ready and start testing the behavior.

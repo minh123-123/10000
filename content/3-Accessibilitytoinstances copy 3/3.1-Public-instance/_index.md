@@ -15,7 +15,7 @@ The OPEA LLM and Embedding microservices run on Intel Gaudi2 AI Accelerators, ho
 
 Refer the architecture for deployment information:
 
-![VPC](/images/5.fwd/image101.png)
+![VPC](10000/images/5.fwd/image101.png)
 
 ### How Does the OPEA Architecture Evolve?
 
@@ -41,28 +41,28 @@ The manifest for ChatQnA-Remote Inference can be found in the ChatQnA GenAIExamp
 
 Verify the new services are created
 
-![VPC](/images/5.fwd/image102.png)
+![VPC](10000/images/5.fwd/image102.png)
 
-![VPC](/images/5.fwd/image103.png)
+![VPC](10000/images/5.fwd/image103.png)
 
 Test the Chat QnA on the console
 
 Access to ngnix POD (copy your NGNIX pod name from kubectl get pods -n remote-inference and REPLACE chatqna-nginx-xxxxxxxx on the below command)
 
-![VPC](/images/5.fwd/image104.png)
+![VPC](10000/images/5.fwd/image104.png)
 
 Your command prompt should now indicate that you are inside the container, reflecting the change in environment:
 
-![VPC](/images/5.fwd/image105.png)
+![VPC](10000/images/5.fwd/image105.png)
 
 Get the "What is Deep Learning? Explain in 20 words"*:
 
-![VPC](/images/5.fwd/image106.png)
+![VPC](10000/images/5.fwd/image106.png)
 
-![VPC](/images/5.fwd/image107.png)
+![VPC](10000/images/5.fwd/image107.png)
 
 Verify the deployment is done verifying the new load balancer on your managment console
 
-![VPC](/images/5.fwd/image108.png)
+![VPC](10000/images/5.fwd/image108.png)
 
-![VPC](/images/5.fwd/image109.png)
+![VPC](10000/images/5.fwd/image109.png)
