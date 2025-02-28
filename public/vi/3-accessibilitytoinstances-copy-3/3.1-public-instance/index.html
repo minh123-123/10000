@@ -12,21 +12,21 @@
     <title>Tích hợp API suy luận (Denvr Cloud và Intel Gaudi AI Accelerator) :: LÀM VIỆC VỚI AMAZON SYSTEM MANAGER - SESSION MANAGER</title>
 
     
-    <link href="/css/nucleus.css?1740757544" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1740757544" rel="stylesheet">
-    <link href="/css/hybrid.css?1740757544" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1740757544" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1740757544" rel="stylesheet">
-    <link href="/css/auto-complete.css?1740757544" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1740757544" rel="stylesheet">
-    <link href="/css/theme.css?1740757544" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1740757544" rel="stylesheet">
+    <link href="/css/nucleus.css?1740757943" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1740757943" rel="stylesheet">
+    <link href="/css/hybrid.css?1740757943" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1740757943" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1740757943" rel="stylesheet">
+    <link href="/css/auto-complete.css?1740757943" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1740757943" rel="stylesheet">
+    <link href="/css/theme.css?1740757943" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1740757943" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1740757544" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1740757943" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1740757544"></script>
+    <script src="/js/jquery-3.3.1.min.js?1740757943"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1740757544"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1740757544"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1740757943"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1740757943"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1740757544"></script>
+<script type="text/javascript" src="/js/search.js?1740757943"></script>
 
     
   </div>
@@ -918,7 +918,7 @@
 <h3 id="api-suy-luận-của-denvr-cloud-được-kích-hoạt-như-thế-nào">API suy luận của Denvr Cloud được kích hoạt như thế nào?</h3>
 <p>OPEA LLM và các dịch vụ vi mô nhúng chạy trên Intel Gaudi2 AI Accelerators, do Denvr Cloud lưu trữ. Các API này được bảo mật bằng các dịch vụ xác thực OPEA và được tối ưu hóa bằng cân bằng tải để có hiệu suất cao nhất. Trong khi triển khai ban đầu được OPEA xây dựng, Denvr Cloud đã tinh chỉnh và cải tiến hệ thống hơn nữa để đáp ứng các yêu cầu cụ thể về hiệu suất và khả năng mở rộng.</p>
 <p>Tham khảo kiến ​​trúc để biết thông tin triển khai:</p>
-<p><img src="10000/images/5.fwd/image101.png" alt="VPC"></p>
+<p><img src="/10000/images/5.fwd/image101.png" alt="VPC"></p>
 <h3 id="kiến-trúc-opea-phát-triển-như-thế-nào">Kiến trúc OPEA phát triển như thế nào?</h3>
 <p>Thiết kế mô-đun của OPEA cho phép hoán đổi thành phần liền mạch, cho phép hầu hết các thành phần từ ví dụ ChatQnA mặc định (Mô-đun 1) được tích hợp dễ dàng vào các triển khai mới. Kiến trúc được cập nhật vẫn tương tự như thiết lập ChatQnA ban đầu mà không có rào cản nhưng bao gồm một thành phần bổ sung:</p>
 <p><strong>chatqna-llm-uservice</strong>
@@ -940,19 +940,19 @@ Nhớ thay thế DenvrClientID và DenvrClientSecret bằng thông tin xác th�
 </div>
 
 <p>Xác minh các dịch vụ mới đã được tạo</p>
-<p><img src="10000/images/5.fwd/image102.png" alt="VPC"></p>
-<p><img src="10000/images/5.fwd/image103.png" alt="VPC"></p>
+<p><img src="/10000/images/5.fwd/image102.png" alt="VPC"></p>
+<p><img src="/10000/images/5.fwd/image103.png" alt="VPC"></p>
 <p>Kiểm tra Chat QnA trên bảng điều khiển</p>
 <p>Truy cập vào ngnix POD (sao chép tên pod NGNIX của bạn từ kubectl get pods -n remote-inference và REPLACE chatqna-nginx-xxxxxxxx trên lệnh bên dưới)</p>
-<p><img src="10000/images/5.fwd/image104.png" alt="VPC"></p>
+<p><img src="/10000/images/5.fwd/image104.png" alt="VPC"></p>
 <p>Dấu nhắc lệnh của bạn bây giờ sẽ chỉ ra rằng bạn đang ở bên trong vùng chứa, phản ánh sự thay đổi trong môi trường:</p>
-<p><img src="10000/images/5.fwd/image105.png" alt="VPC"></p>
+<p><img src="/10000/images/5.fwd/image105.png" alt="VPC"></p>
 <p>Nhận &ldquo;Học sâu là gì? Giải thích trong 20 words&rdquo;*:</p>
-<p><img src="10000/images/5.fwd/image106.png" alt="VPC"></p>
-<p><img src="10000/images/5.fwd/image107.png" alt="VPC"></p>
+<p><img src="/10000/images/5.fwd/image106.png" alt="VPC"></p>
+<p><img src="/10000/images/5.fwd/image107.png" alt="VPC"></p>
 <p>Xác minh việc triển khai đã hoàn tất bằng cách xác minh bộ cân bằng tải mới trên bảng điều khiển quản lý của bạn</p>
-<p><img src="10000/images/5.fwd/image108.png" alt="VPC"></p>
-<p><img src="10000/images/5.fwd/image109.png" alt="VPC"></p>
+<p><img src="/10000/images/5.fwd/image108.png" alt="VPC"></p>
+<p><img src="/10000/images/5.fwd/image109.png" alt="VPC"></p>
 
 
 
@@ -1366,19 +1366,19 @@ Nhớ thay thế DenvrClientID và DenvrClientSecret bằng thông tin xác th�
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1740757544"></script>
-    <script src="/js/perfect-scrollbar.min.js?1740757544"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1740757544"></script>
-    <script src="/js/jquery.sticky.js?1740757544"></script>
-    <script src="/js/featherlight.min.js?1740757544"></script>
-    <script src="/js/highlight.pack.js?1740757544"></script>
+    <script src="/js/clipboard.min.js?1740757944"></script>
+    <script src="/js/perfect-scrollbar.min.js?1740757944"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1740757944"></script>
+    <script src="/js/jquery.sticky.js?1740757944"></script>
+    <script src="/js/featherlight.min.js?1740757944"></script>
+    <script src="/js/highlight.pack.js?1740757944"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1740757544"></script>
-    <script src="/js/learn.js?1740757544"></script>
-    <script src="/js/hugo-learn.js?1740757544"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1740757944"></script>
+    <script src="/js/learn.js?1740757944"></script>
+    <script src="/js/hugo-learn.js?1740757944"></script>
 
-    <link href="/mermaid/mermaid.css?1740757544" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1740757544"></script>
+    <link href="/mermaid/mermaid.css?1740757944" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1740757944"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

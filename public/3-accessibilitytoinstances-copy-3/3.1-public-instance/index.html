@@ -12,21 +12,21 @@
     <title>Integrate Inference API (Denvr Cloud and Intel Gaudi AI Accelerator) :: WORK WITH AMAZON SYSTEM MANAGER - SESSION MANAGER</title>
 
     
-    <link href="/css/nucleus.css?1740757543" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1740757543" rel="stylesheet">
-    <link href="/css/hybrid.css?1740757543" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1740757543" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1740757543" rel="stylesheet">
-    <link href="/css/auto-complete.css?1740757543" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1740757543" rel="stylesheet">
-    <link href="/css/theme.css?1740757543" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1740757543" rel="stylesheet">
+    <link href="/css/nucleus.css?1740757943" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1740757943" rel="stylesheet">
+    <link href="/css/hybrid.css?1740757943" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1740757943" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1740757943" rel="stylesheet">
+    <link href="/css/auto-complete.css?1740757943" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1740757943" rel="stylesheet">
+    <link href="/css/theme.css?1740757943" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1740757943" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1740757543" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1740757943" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1740757543"></script>
+    <script src="/js/jquery-3.3.1.min.js?1740757943"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1740757543"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1740757543"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1740757943"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1740757943"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1740757543"></script>
+<script type="text/javascript" src="/js/search.js?1740757943"></script>
 
     
   </div>
@@ -918,7 +918,7 @@
 <h3 id="how-was-the-denvr-cloud-inference-api-enabled">How Was the Denvr Cloud Inference API Enabled?</h3>
 <p>The OPEA LLM and Embedding microservices run on Intel Gaudi2 AI Accelerators, hosted by Denvr Cloud. These APIs are secured using OPEA authentication services and optimized with load balancing for peak performance. While the initial implementation was built by OPEA, Denvr Cloud further refined and enhanced the system to meet specific performance and scalability requirements.</p>
 <p>Refer the architecture for deployment information:</p>
-<p><img src="10000/images/5.fwd/image101.png" alt="VPC"></p>
+<p><img src="/10000/images/5.fwd/image101.png" alt="VPC"></p>
 <h3 id="how-does-the-opea-architecture-evolve">How Does the OPEA Architecture Evolve?</h3>
 <p>OPEA’s modular design allows for seamless component interchangeability, enabling most elements from the default ChatQnA example (Module 1) to be integrated effortlessly into new deployments. The updated architecture remains largely similar to the original ChatQnA setup without guardrails but includes an additional component:</p>
 <p><strong>chatqna-llm-uservice</strong>
@@ -940,19 +940,19 @@ Remember to replace DenvrClientID and DenvrClientSecret with the credentials you
 </div>
 
 <p>Verify the new services are created</p>
-<p><img src="10000/images/5.fwd/image102.png" alt="VPC"></p>
-<p><img src="10000/images/5.fwd/image103.png" alt="VPC"></p>
+<p><img src="/10000/images/5.fwd/image102.png" alt="VPC"></p>
+<p><img src="/10000/images/5.fwd/image103.png" alt="VPC"></p>
 <p>Test the Chat QnA on the console</p>
 <p>Access to ngnix POD (copy your NGNIX pod name from kubectl get pods -n remote-inference and REPLACE chatqna-nginx-xxxxxxxx on the below command)</p>
-<p><img src="10000/images/5.fwd/image104.png" alt="VPC"></p>
+<p><img src="/10000/images/5.fwd/image104.png" alt="VPC"></p>
 <p>Your command prompt should now indicate that you are inside the container, reflecting the change in environment:</p>
-<p><img src="10000/images/5.fwd/image105.png" alt="VPC"></p>
+<p><img src="/10000/images/5.fwd/image105.png" alt="VPC"></p>
 <p>Get the &ldquo;What is Deep Learning? Explain in 20 words&rdquo;*:</p>
-<p><img src="10000/images/5.fwd/image106.png" alt="VPC"></p>
-<p><img src="10000/images/5.fwd/image107.png" alt="VPC"></p>
+<p><img src="/10000/images/5.fwd/image106.png" alt="VPC"></p>
+<p><img src="/10000/images/5.fwd/image107.png" alt="VPC"></p>
 <p>Verify the deployment is done verifying the new load balancer on your managment console</p>
-<p><img src="10000/images/5.fwd/image108.png" alt="VPC"></p>
-<p><img src="10000/images/5.fwd/image109.png" alt="VPC"></p>
+<p><img src="/10000/images/5.fwd/image108.png" alt="VPC"></p>
+<p><img src="/10000/images/5.fwd/image109.png" alt="VPC"></p>
 
 
 
@@ -1366,19 +1366,19 @@ Remember to replace DenvrClientID and DenvrClientSecret with the credentials you
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1740757543"></script>
-    <script src="/js/perfect-scrollbar.min.js?1740757543"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1740757543"></script>
-    <script src="/js/jquery.sticky.js?1740757543"></script>
-    <script src="/js/featherlight.min.js?1740757543"></script>
-    <script src="/js/highlight.pack.js?1740757543"></script>
+    <script src="/js/clipboard.min.js?1740757943"></script>
+    <script src="/js/perfect-scrollbar.min.js?1740757943"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1740757943"></script>
+    <script src="/js/jquery.sticky.js?1740757943"></script>
+    <script src="/js/featherlight.min.js?1740757943"></script>
+    <script src="/js/highlight.pack.js?1740757943"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1740757543"></script>
-    <script src="/js/learn.js?1740757543"></script>
-    <script src="/js/hugo-learn.js?1740757543"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1740757943"></script>
+    <script src="/js/learn.js?1740757943"></script>
+    <script src="/js/hugo-learn.js?1740757943"></script>
 
-    <link href="/mermaid/mermaid.css?1740757543" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1740757543"></script>
+    <link href="/mermaid/mermaid.css?1740757943" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1740757943"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

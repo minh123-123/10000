@@ -13,7 +13,7 @@ curl -XGET https://localhost:9200/rag-opensearch/_mapping --insecure -u admin:st
 
 Bạn sẽ thấy phản hồi như thế này:
 
-![VPC](10000/images/5.fwd/image093.png)
+![VPC](/10000/images/5.fwd/image093.png)
 
 Chỉ mục rag-opensearch bao gồm ba trường: siêu dữ liệu, văn bản và vector_field. Trường siêu dữ liệu lưu trữ JSON lồng nhau, bao gồm trường nguồn, có thể được truy cập trong các truy vấn bằng ký hiệu dấu chấm (ví dụ: metadata.source). Cả metadata.source và text đều được định nghĩa là các trường kiểu văn bản với một trường con từ khóa. Các trường văn bản trải qua quá trình phân tích cú pháp và phân tích thuật ngữ để tạo mã thông báo để khớp, trong khi các trường từ khóa được chuẩn hóa và sử dụng cho các truy vấn khớp chính xác. vector_field là trường kiểu knn_vector được thiết kế để lưu trữ các vectơ có 768 chiều. Công cụ lưu trữ được sử dụng là Thư viện không gian phi số liệu (NMSLIB), sử dụng thuật toán Hidden Navigable Small Worlds (HNSW).
 
@@ -27,7 +27,7 @@ Nếu Cloud Shell của bạn đã chấm dứt, bạn có thể cần thiết l
 
 Thực hiện lệnh sau để chạy truy vấn
 
-![VPC](10000/images/5.fwd/image094.png)
+![VPC](/10000/images/5.fwd/image094.png)
 
 Dòng đầu tiên của lệnh chạy lệnh curl, với URL chứa điểm cuối (localhost:9200, được chuyển tiếp đến dịch vụ vi mô OpenSearch) và thông số kỹ thuật API. Tại đây, yêu cầu được chuyển hướng đến chỉ mục rag-opensearch và gọi API _search. Các dòng sau xác định các tham số TLS và xác thực và sau cờ -d, nội dung yêu cầu chỉ định truy vấn.
 
@@ -35,7 +35,7 @@ Truy vấn này sử dụng tìm kiếm simple_query_string cho văn bản "Doan
 
 Các chỉ thị bổ sung trong truy vấn hướng dẫn OpenSearch loại trừ tất cả các trường khỏi phản hồi ("_source": false—xóa trường này sẽ trả về các giá trị tài liệu gốc), giới hạn kết quả thành một kết quả khớp duy nhất ("size": 1) và tô sáng các thuật ngữ khớp trong trường văn bản ("highlight": ...).
 
-![VPC](10000/images/5.fwd/image095.png)
+![VPC](/10000/images/5.fwd/image095.png)
 
 Phản hồi của OpenSearch bắt đầu bằng phần siêu dữ liệu bao gồm các chi tiết như thời gian xử lý truy vấn ở phía máy chủ (8 ms trong trường hợp này), liệu truy vấn có hết thời gian chờ hay không và thông tin về các phân đoạn phản hồi. Tiếp theo là phần lượt truy cập, chứa tổng số kết quả khớp, điểm liên quan cao nhất và chính các tài liệu khớp. Mỗi tài liệu bao gồm chỉ mục mà tài liệu đó thuộc về (_index), mã định danh duy nhất (_id), điểm liên quan, các trường nguồn (đã bị loại trừ trong truy vấn này) và các đoạn trích được tô sáng cho biết các thuật ngữ truy vấn khớp với tài liệu ở đâu. Các điểm nổi bật sử dụng thẻ HTML <em> để nhấn mạnh các thuật ngữ khớp.
 
@@ -47,11 +47,11 @@ Bạn có thể thử nghiệm các thuật ngữ truy vấn khác nhau bằng c
 
 Để thực thi lệnh, bạn sẽ cần cổng được ánh xạ tới dịch vụ vi mô tei. Sử dụng lệnh ps aux | grep kubectl để kiểm tra các quy trình đang chạy và các cổng được chỉ định của chúng. Nếu bạn đã làm theo hướng dẫn đúng, dịch vụ vi mô chatqna-tei sẽ chạy trên cổng 9800.
 
-![VPC](10000/images/5.fwd/image096.png)
+![VPC](/10000/images/5.fwd/image096.png)
 
 Bạn có thể sử dụng echo $embedding để xem nhúng được tạo. Bây giờ, bạn sẽ tạo tệp cục bộ query.json với nhúng được hợp nhất vào truy vấn, sau đó chạy truy vấn k-Nearest-Neighbors (k-NN) chính xác để so sánh nhúng truy vấn với mọi tài liệu (chunk) trong chỉ mục và truy xuất các kết quả khớp gần nhất
 
-![VPC](10000/images/5.fwd/image097.png)
+![VPC](/10000/images/5.fwd/image097.png)
 
 Truy vấn này là truy vấn script_score, sử dụng một tập lệnh đã lưu để thực hiện tính toán điểm k-NN, so sánh vectơ truy vấn với mọi tài liệu trong chỉ mục. Truy vấn script_score bao gồm một truy vấn phụ, mà bạn có thể sử dụng để áp dụng bộ lọc cho các trường không phải vectơ. ChatQnA chỉ gửi khóa tệp trong trường metadata.source, do đó truy vấn này chỉ sử dụng match_all, khớp với mọi tài liệu trong chỉ mục. Phần script của truy vấn chỉ định script knn_score, với các tham số cho script biết trường nào có nhúng vectơ cho tài liệu, truyền nhúng dưới dạng query_value và chỉ định l2 là số liệu khoảng cách (space_type).
 
@@ -59,7 +59,7 @@ Phản hồi này là chính xác. Kết quả đầu tiên bao gồm văn bản
 
 Tìm kiếm k-Nearest-Neighbor (k-NN) chính xác có hiệu quả cao khi xử lý số lượng tài liệu tương đối nhỏ. Tuy nhiên, khi tập dữ liệu mở rộng, độ trễ truy vấn tăng lên đáng kể. Ngoài vài trăm nghìn tài liệu, tìm kiếm k-NN chính xác trở nên chậm một cách không thực tế. Để xử lý hiệu quả các tập dữ liệu lớn hơn, tìm kiếm lân cận gần nhất (ANN) là giải pháp thay thế tốt hơn. Lệnh bên dưới sử dụng thuật toán Hierarchical Navigable Small World (HNSW) để tìm các kết quả khớp gần nhất.
 
-![VPC](10000/images/5.fwd/image098.png)
+![VPC](/10000/images/5.fwd/image098.png)
 
 Truy vấn này là truy vấn knn, sử dụng thuật toán bạn đã chỉ định trong ánh xạ trường để xác định các lân cận gần nhất. Bạn chỉ cần truyền vào một vectơ và một giá trị cho k (số lượng lân cận cần truy xuất) và opensearch sẽ thực hiện phần còn lại.
 
@@ -69,13 +69,13 @@ Một lần nữa, bạn có thể thấy tài liệu chính xác là kết qu�
 
 OpenSearch hỗ trợ tìm kiếm kết hợp -- trong đó bạn chỉ định cả truy vấn từ vựng và vectơ, cùng với chiến lược chuẩn hóa và hợp nhất. OpenSearch chạy cả hai truy vấn, chuẩn hóa và hợp nhất các kết quả. Khi bạn thực hiện tìm kiếm kết hợp, bạn thiết lập một Đường ống tìm kiếm và gửi các truy vấn qua đường ống đó. Sử dụng lệnh bên dưới để sử dụng API REST của OpenSearch để thiết lập đường ống tìm kiếm.
 
-![VPC](10000/images/5.fwd/image099.png)
+![VPC](/10000/images/5.fwd/image099.png)
 
 Đường ống này sử dụng chuẩn hóa min/max để thiết lập tất cả các điểm từ vựng và vectơ trong phạm vi [0, 1]. Nó sử dụng trung bình số học để kết hợp các điểm, với trọng số là 0,3 cho mệnh đề truy vấn đầu tiên và 0,7 cho mệnh đề truy vấn thứ hai. Lưu ý, đây không phải là một truy vấn, khi bạn gửi các truy vấn đến đường ống tìm kiếm này, OpenSearch sẽ áp dụng các trọng số. phase_results_processor là một cấu trúc chung linh hoạt - các mệnh đề truy vấn có thể là từ vựng hoặc vectơ.
 
 Để sử dụng đường ống, bạn gửi một truy vấn đến API đường ống. Sử dụng lệnh bên dưới để tạo truy vấn trong tệp hybrid_query.json.
 
-![VPC](10000/images/5.fwd/image100.png)
+![VPC](/10000/images/5.fwd/image100.png)
 
 Truy vấn kết hợp này chứa hai truy vấn phụ - truy vấn từ vựng cho "doanh thu giày dép" và truy vấn vectơ có nhúng biểu diễn "Doanh thu Nike 2023 là gì?". Giá trị k, 2, đảm bảo rằng kết quả sẽ chứa tối đa hai kết quả khớp vectơ.
 

@@ -33,7 +33,7 @@ Nếu bạn đã đăng xuất khỏi CloudShell, hãy nhấp vào cửa sổ Cl
 
 1. Truy cập CloudShell của bạn và triển khai mẫu ChatQnA-Guardrails ClourFormation vào EKS Cluster của bạn
 
-![VPC](10000/images/4.s3/image060.png)
+![VPC](/10000/images/4.s3/image060.png)
 
 {{% notice info %}}
 Có thể tìm thấy manifest cho ChatQnA-Guardrails trong kho lưu trữ ChatQnA GenAIExamples và hướng dẫn triển khai thủ công có thể tìm thấy tại đây. Các hướng dẫn bạn đang sử dụng trong hội thảo này sử dụng các mẫu AWS CloudFormation do gói AWS Marketplace EKS tạo ra.
@@ -41,18 +41,18 @@ Có thể tìm thấy manifest cho ChatQnA-Guardrails trong kho lưu trữ ChatQ
 
 2. Xác minh không gian tên mới đã được tạo
 
-![VPC](10000/images/4.s3/image061.png)
+![VPC](/10000/images/4.s3/image061.png)
 
 Bạn sẽ thấy không gian tên guardrails
 
-![VPC](10000/images/4.s3/image062.png)
+![VPC](/10000/images/4.s3/image062.png)
 
 3. Kiểm tra các pod trên không gian tên guardrails. Sẽ mất vài phút để tải xuống các mô hình và để tất cả các dịch vụ hoạt động.
 Chạy lệnh sau để kiểm tra xem tất cả các dịch vụ có đang chạy không:
 
-![VPC](10000/images/4.s3/image063.png)
+![VPC](/10000/images/4.s3/image063.png)
 
-![VPC](10000/images/4.s3/image064.png)
+![VPC](/10000/images/4.s3/image064.png)
 
 Chờ cho đến khi đầu ra hiển thị rằng tất cả các dịch vụ bao gồm chatqna-tgi-guardrails và chatqna-guardrails-usvc đang chạy (1/1).
 
@@ -62,8 +62,8 @@ Chờ cho đến khi đầu ra hiển thị rằng tất cả các dịch vụ b
 Chờ 5 phút để bộ cân bằng tải được tạo.
 {{% /notice %}}
 
-![VPC](10000/images/4.s3/image065.png)
+![VPC](/10000/images/4.s3/image065.png)
 
-![VPC](10000/images/4.s3/image066.png)
+![VPC](/10000/images/4.s3/image066.png)
 
 Bằng cách kiểm tra xem cả bộ cân bằng tải và pod đều đang chạy hay không, chúng ta có thể xác nhận rằng việc triển khai đã sẵn sàng và bắt đầu kiểm tra hành vi.

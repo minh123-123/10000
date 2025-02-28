@@ -11,23 +11,23 @@ You can check the deployment by accessing to the DNS url of the load balancer th
 
 1. Look for the load balancer:
 
-![VPC](10000/images/5.fwd/image122.png)
+![VPC](/10000/images/5.fwd/image122.png)
 
 2. Copy your DNS name for bedrock-ingress:
 
-![VPC](10000/images/5.fwd/image123.png)
+![VPC](/10000/images/5.fwd/image123.png)
 
 3. Paste it on a new browser tab to access to the interface
 
 In the UI you can see the chatbot to interact with it
 
-![VPC](10000/images/5.fwd/image124.png)
+![VPC](/10000/images/5.fwd/image124.png)
 
 4. Check if the model is able to give us an answer about OPEA:
 
-![VPC](10000/images/5.fwd/image125.png)
+![VPC](/10000/images/5.fwd/image125.png)
 
-![VPC](10000/images/5.fwd/image126.png)
+![VPC](/10000/images/5.fwd/image126.png)
 
 You may notice that the chatbot’s initial response is outdated or lacks specific details about OPEA. This is because OPEA is a relatively new project and was not included in the dataset used to train the language model. Since most LLMs (Large Language Models) are static, they rely solely on pre-existing training data and cannot automatically incorporate new developments or emerging technologies like OPEA.
 
@@ -45,7 +45,7 @@ To address this limitation, RAG (Retrieval-Augmented Generation) enables real-ti
 
 By uploading updated documents or links, you expand the chatbot’s knowledge base, ensuring it provides more relevant, accurate, and up-to-date responses.
 
-![VPC](10000/images/5.fwd/image127.png)
+![VPC](/10000/images/5.fwd/image127.png)
 
 The deployment allows you to upload either a file or a site. For this case, use the OPEA site:
 
@@ -63,7 +63,7 @@ When the indexing completes, you'll see an icon added below the text box, labele
 
 Ask "What is OPEA?" again to see the updated answer.
 
-![VPC](10000/images/2.prerequisite/image129.png)
+![VPC](/10000/images/2.prerequisite/image129.png)
 
 This time, the chat bot responds correctly based on the data it added to the prompt from the new source, the OPEA web site.
 

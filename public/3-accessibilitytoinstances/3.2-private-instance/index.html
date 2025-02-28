@@ -12,21 +12,21 @@
     <title>Explore the OPEA ChatQnA deployment :: WORK WITH AMAZON SYSTEM MANAGER - SESSION MANAGER</title>
 
     
-    <link href="/css/nucleus.css?1740757543" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1740757543" rel="stylesheet">
-    <link href="/css/hybrid.css?1740757543" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1740757543" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1740757543" rel="stylesheet">
-    <link href="/css/auto-complete.css?1740757543" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1740757543" rel="stylesheet">
-    <link href="/css/theme.css?1740757543" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1740757543" rel="stylesheet">
+    <link href="/css/nucleus.css?1740757943" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1740757943" rel="stylesheet">
+    <link href="/css/hybrid.css?1740757943" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1740757943" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1740757943" rel="stylesheet">
+    <link href="/css/auto-complete.css?1740757943" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1740757943" rel="stylesheet">
+    <link href="/css/theme.css?1740757943" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1740757943" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1740757543" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1740757943" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1740757543"></script>
+    <script src="/js/jquery-3.3.1.min.js?1740757943"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1740757543"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1740757543"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1740757943"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1740757943"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1740757543"></script>
+<script type="text/javascript" src="/js/search.js?1740757943"></script>
 
     
   </div>
@@ -927,7 +927,7 @@
 </ul>
 <h4 id="opea-microservices-architecture">OPEA Microservices Architecture</h4>
 <p>OPEA deployments are built around three key components:</p>
-<p><img src="10000/images/2/image025.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image025.png" alt="VPC"></p>
 <ul>
 <li>
 <p><strong>Megaservice</strong> – Acts as the orchestrator for all microservices, managing workflows and ensuring seamless interaction between components. This is essential for coordinating an end-to-end application with multiple moving parts. More details can be found in the OPEA documentation.</p>
@@ -947,9 +947,9 @@ Accessing the Microservices</p>
 
 <p>kubectl get svc lists all services in a Kubernetes cluster, showing their names, types, cluster IPs, and exposed ports. It provides an overview of how applications are exposed for internal or external access.</p>
 <p>Run the following command on your CloudShell:</p>
-<p><img src="10000/images/2/image026.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image026.png" alt="VPC"></p>
 <p>You will see output similar to this:</p>
-<p><img src="10000/images/2/image027.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image027.png" alt="VPC"></p>
 <p>The kubectl get svc command is used to list the services running within a Kubernetes cluster. Services act as entry points that enable communication between different components of your application. Each service has a unique name (e.g., chatqna or chatqna-ui), which helps identify its role within the system.</p>
 <p>Kubernetes services can be exposed in different ways:</p>
 <ul>
@@ -978,24 +978,24 @@ Lastly, the Age column displays how long the service has been running—for inst
 <ul>
 <li>Look for the load balancer</li>
 </ul>
-<p><img src="10000/images/2/image028.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image028.png" alt="VPC"></p>
 <ul>
 <li>Click on chatqna-Ingress</li>
 </ul>
-<p><img src="10000/images/2/image029.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image029.png" alt="VPC"></p>
 <ul>
 <li>Note the DNS Name.As mentioned, it&rsquo;s the public URL that can be accessed externally.</li>
 </ul>
-<p><img src="10000/images/2/image030.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image030.png" alt="VPC"></p>
 <p>You will use the curl command to send requests to the API endpoints, testing each microservice individually. The goal is to ask a question, such as &ldquo;What was Nike&rsquo;s revenue in 2023?&rdquo;, and verify that the API responds correctly. This step ensures that all microservices in the system are functioning as expected.</p>
-<p><img src="10000/images/2/image031.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image031.png" alt="VPC"></p>
 <p>If everything is working properly, you should receive a response, confirming that the Retrieval-Augmented Generation (RAG) workflow is operational.</p>
 <p>However, you may notice that the model is unable to provide an accurate answer. This happens because it lacks the necessary context and relies on outdated information. Without access to current and relevant data, the model cannot generate precise responses.
 In the next steps, you will enhance the system using RAG, allowing the model to retrieve up-to-date, contextually relevant information. This will ensure that it delivers more accurate and meaningful answers.</p>
 <p>Now, let&rsquo;s explore each microservice in detail to understand its role and how it contributes to improving the model&rsquo;s ability to answer questions correctly.</p>
 <h4 id="step-2--microservices">Step 2 : Microservices</h4>
 <p>Each microservice follows the following logic performing a task within the RAG flow:</p>
-<p><img src="10000/images/2/image032.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image032.png" alt="VPC"></p>
 <p>In the flow, you can observe the microservices and we can divide the RAG flow into two steps:</p>
 <ul>
 <li>
@@ -1007,12 +1007,12 @@ In the next steps, you will enhance the system using RAG, allowing the model to 
 </ul>
 <h4 id="preprompting"><strong>Preprompting</strong></h4>
 <p>In this step, the logic is to start from a document (Nike&rsquo;s revenue PDF), and do the preprocessing needed to make it ready to be stored in a database. As shown, this process primarily involves 3 microservices: data preparation, embeddings and vector store. Let&rsquo;s explore each microservice</p>
-<p><img src="10000/images/2/image033.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image033.png" alt="VPC"></p>
 <h4 id="embedding-microservice-pod-chatqna-tei80"><strong>Embedding Microservice (POD: chatqna-tei:80)</strong></h4>
 <p>An embedding is a numerical representation of an object—such as a word, phrase, or document—within a continuous vector space. In natural language processing (NLP), embeddings transform words, sentences, or text segments into vectors—sets of numbers that capture their meaning, relationships, and contextual significance. This transformation enables machine learning models to process and understand text more effectively.</p>
 <p>For example, word embeddings represent words as points in a vector space, where words with similar meanings—like &ldquo;king&rdquo; and &ldquo;queen&rdquo;—are positioned closer together. The embedding model captures these relationships through vector arithmetic.</p>
 <p>During training, if the model frequently encounters &ldquo;king&rdquo; in association with &ldquo;man&rdquo; and &ldquo;queen&rdquo; with &ldquo;woman,&rdquo; it learns that &ldquo;king&rdquo; and &ldquo;queen&rdquo; share a similar relationship to &ldquo;man&rdquo; and &ldquo;woman.&rdquo; This allows the model to position words in a way that reflects meaningful relationships, such as gender associations, in language.</p>
-<p><img src="10000/images/2/image034.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image034.png" alt="VPC"></p>
 <p>Embeddings: A Key Component of RAG
 Embeddings play a crucial role in Retrieval-Augmented Generation (RAG) by enhancing the model’s ability to process and retrieve relevant information. They provide several key advantages:</p>
 <ul>
@@ -1031,16 +1031,16 @@ Embeddings play a crucial role in Retrieval-Augmented Generation (RAG) by enhanc
 <ol>
 <li>Access to ngnix POD (copy your NGNIX entire pod name from kubectl get pods and REPLACE chatqna-nginx-xxxxxxxx on the below command)</li>
 </ol>
-<p><img src="10000/images/2/image035.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image035.png" alt="VPC"></p>
 <p>Your command prompt should now indicate that you are inside the container, reflecting the change in environment:</p>
-<p><img src="10000/images/2/image036.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image036.png" alt="VPC"></p>
 <p>Once inside, you will now have direct access to the internal pods.</p>
 <ol start="2">
 <li>Get the embedding from the Embeddings Microservice for the phrase &ldquo;What was Deep Learning?&rdquo;:</li>
 </ol>
-<p><img src="10000/images/2/image037.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image037.png" alt="VPC"></p>
 <p>The answer will be the vector representation of the phrase &ldquo;What was Deep Learning?&rdquo;. This service returns the vector embedding for the inputs from the REST API.</p>
-<p><img src="10000/images/2/image038.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image038.png" alt="VPC"></p>
 <h3 id="vector-database-microservice-pod-chatqna-redis-vector-db80"><strong>Vector Database Microservice (POD: chatqna-redis-vector-db:80)</strong></h3>
 <p>The Vector Database microservice plays a critical role in the Retrieval-Augmented Generation (RAG) application by storing and retrieving embeddings. This is essential for applications like ChatQnA, where relevant information needs to be efficiently retrieved based on a user&rsquo;s query.</p>
 <h4 id="using-redis-as-a-vector-database"><strong>Using Redis as a Vector Database</strong></h4>
@@ -1072,20 +1072,20 @@ Since different vector databases have unique data formatting requirements, the D
 <ol>
 <li>Download the document to the microservice :</li>
 </ol>
-<p><img src="10000/images/2/image039.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image039.png" alt="VPC"></p>
 <ol start="2">
 <li>Feed the knowledge base (Vectord) with the document (It will take ~30 seconds):</li>
 </ol>
-<p><img src="10000/images/2/image040.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image040.png" alt="VPC"></p>
 <p>After running the previous command, you should receive a confirmation message like the one below. This command updated the knowledge base by uploading a local file for processing.</p>
-<p><img src="10000/images/2/image041.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image041.png" alt="VPC"></p>
 <p>The data preparation microservice API can retrieve information about the list of files stored in the vector database.</p>
 <ol start="3">
 <li>Verify if the document was uploaded:</li>
 </ol>
-<p><img src="10000/images/2/image042.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image042.png" alt="VPC"></p>
 <p>After running the previous command, you should receive the confirmation message.</p>
-<p><img src="10000/images/2/image043.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image043.png" alt="VPC"></p>
 <p>Congratulations! You&rsquo;ve successfully prepared your knowledge base. Now you&rsquo;ll explore the microservices involved in prompt handling.</p>
 <h4 id="step-3-prompting">Step 3: Prompting</h4>
 <p>Once the knowledge base is set up, you can begin interacting with the application by asking context-specific questions. Retrieval-Augmented Generation (RAG) ensures that responses are both accurate and grounded in relevant data.</p>
@@ -1100,7 +1100,7 @@ Since different vector databases have unique data formatting requirements, the D
 <li>Re-ranking</li>
 <li>LLM</li>
 </ul>
-<p><img src="10000/images/2/image044.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image044.png" alt="VPC"></p>
 <h4 id="retriever-microservice-pod-chatqna-retriever-usvc7000"><strong>Retriever Microservice (POD: chatqna-retriever-usvc:7000)</strong></h4>
 <p>The Retriever Microservice is responsible for locating the most relevant information within the knowledge base and returning documents that closely match the user’s query. It interacts with various back-end systems that store knowledge and provide APIs for retrieving the best-matching data.</p>
 <p>Different knowledge bases utilize different retrieval methods:</p>
@@ -1115,9 +1115,9 @@ In this task, you will use Redis as the vector database and retrieve information
 <ol>
 <li>Create the embedding and save locally (embed_question):</li>
 </ol>
-<p><img src="10000/images/2/image045.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image045.png" alt="VPC"></p>
 <p>You should get the details about the writing task:</p>
-<p><img src="10000/images/2/image046.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image046.png" alt="VPC"></p>
 <ol start="2">
 <li>Check to see if your embedding was saved:</li>
 </ol>
@@ -1142,7 +1142,7 @@ In this task, you will use Redis as the vector database and retrieve information
 <li>Sparse lexical search, which relies on keyword-based matching.</li>
 </ul>
 <p>While these retrieval methods are effective, the reranking model refines the results by optimizing the order of retrieved documents. This step significantly improves accuracy, ensuring the final output is more relevant, precise, and contextually aligned with the user’s query.</p>
-<p><img src="10000/images/2/image047.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image047.png" alt="VPC"></p>
 <p>OPEA has multiple options  for re-rankers. For this lab, you&rsquo;ll use the Hugging Face TEI for re-ranking. It is the chatqna-teirerank microservice in your cluster.</p>
 <p>The reranker will use similar_docs from the previous stage and compare it with the question What was Nike Revenue in 2023? to check the quality of the retrieved documents.</p>
 <p>Extract the 3 retrieved text snippets and save them in a new variable to be reranked:</p>
@@ -1165,10 +1165,10 @@ In this task, you will use Redis as the vector database and retrieve information
 <div class="notices info" ><p>The following output has been formatted for better readability. Your results are displayed in plain text and may vary slightly due to the similarity search algorithm. The retrieved documents are ranked by similarity to your query, with the highest-ranked index representing the most relevant match. You can confirm that the top-ranked document corresponds to the one most closely aligned with your query.</p>
 </div>
 
-<p><img src="10000/images/2/image048.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image048.png" alt="VPC"></p>
 <p>The server responds with a JSON array containing objects with two fields: index and score. This indicates how the snippets are ranked based on their relevance to the query: {&ldquo;index&rdquo;:2,&ldquo;score&rdquo;:0.9972289} means the first text (index 0) has a high relevance score of approximately 0.7982. {&ldquo;index&rdquo;:0,&ldquo;score&rdquo;:0.9776342},{&ldquo;index&rdquo;:3,&ldquo;score&rdquo;:0.9296986},{&ldquo;index&rdquo;:1,&ldquo;score&rdquo;:0.84730965} indicates that the other snippets (index 3,1 and 2) have a much lower score.</p>
 <p>As you can see from similar_doc the id=2 has the below information where it EXACTLY refers to the revenue for 2023!</p>
-<p><img src="10000/images/2/image049.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image049.png" alt="VPC"></p>
 <p>Just the first will be used to prompt the LLM.</p>
 <h4 id="llm-microservice-pod-chatqna-tgi80"><strong>LLM Microservice (POD: chatqna-tgi:80)</strong></h4>
 <p>At the core of the RAG (Retrieval-Augmented Generation) application lies the Large Language Model (LLM), which plays a pivotal role in generating responses. By leveraging RAG, the system enhances the LLM’s performance, ensuring responses are accurate, relevant, and context-aware.</p>
@@ -1200,7 +1200,7 @@ This test will demonstrate how well the model can retrieve and generate an infor
 <ol>
 <li>Directly prompt the TGI(LLM) Microservice:</li>
 </ol>
-<p><img src="10000/images/2/image050.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image050.png" alt="VPC"></p>
 <p>The model will give you the answer to the prompt like the following:</p>
 <p><strong>&ldquo;generated_text&rdquo;:&rdquo; Nike revenue in 2023 has not been reported as it is still in the fourth quarter. The previous full financial year—which is 2022—brought in $48.9 billion in revenue for the American multinational sportswear company. They deal with the design, development, manufacturing, and worldwide marketing/sales of a diverse portfolio of products. From coming into being in 1964 as Blue Ribbon Sports, the firm was renamed Nike, Inc., in 1978. Jumpman logos (for example), include Michael Jordan, who is a former professional basketball player—are among the brands&rsquo; numerous trademarked symbols, tied to the &lsquo;Swoosh&rsquo; logo.\n\nNike revenues are clearly affected by the football World Cup. Consequently, for the 13 weeks ending January 29 in 2022, which were characterized by the football world cup</strong></p>
 <p>Điều này trực tiếp nhắc LLM mà không cung cấp ngữ cảnh. Chúng ta có thể thấy rằng mô hình thực sự đưa ra câu trả lời sai. Để kiểm tra hiệu suất RAG tổng thể, chúng ta nên thử nghiệm với megaservice như chúng ta đã làm khi bắt đầu nhiệm vụ này, điều này sẽ liên quan đến toàn bộ luồng.</p>
@@ -1212,7 +1212,7 @@ This test will demonstrate how well the model can retrieve and generate an infor
 <ol start="3">
 <li>Chạy lại curl đến bộ cân bằng tải:</li>
 </ol>
-<p><img src="10000/images/2/image051.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image051.png" alt="VPC"></p>
 <ol start="4">
 <li>Xem lại kết quả của bạn và bạn sẽ thấy rằng phản hồi được truyền phát. Đây là hành vi mong đợi của dịch vụ vi mô, vì nó cung cấp câu trả lời theo từng phần nhỏ hơn thay vì tất cả cùng một lúc. Streaming cho phép dữ liệu được xử lý và hiển thị theo từng bước khi dữ liệu có sẵn. Trong ứng dụng, UI sẽ ghi lại phản hồi này và định dạng thành màn hình có thể đọc được, cho phép người dùng xem thông tin theo thời gian thực khi dữ liệu đến.</li>
 </ol>
@@ -1632,19 +1632,19 @@ This test will demonstrate how well the model can retrieve and generate an infor
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1740757543"></script>
-    <script src="/js/perfect-scrollbar.min.js?1740757543"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1740757543"></script>
-    <script src="/js/jquery.sticky.js?1740757543"></script>
-    <script src="/js/featherlight.min.js?1740757543"></script>
-    <script src="/js/highlight.pack.js?1740757543"></script>
+    <script src="/js/clipboard.min.js?1740757943"></script>
+    <script src="/js/perfect-scrollbar.min.js?1740757943"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1740757943"></script>
+    <script src="/js/jquery.sticky.js?1740757943"></script>
+    <script src="/js/featherlight.min.js?1740757943"></script>
+    <script src="/js/highlight.pack.js?1740757943"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1740757543"></script>
-    <script src="/js/learn.js?1740757543"></script>
-    <script src="/js/hugo-learn.js?1740757543"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1740757943"></script>
+    <script src="/js/learn.js?1740757943"></script>
+    <script src="/js/hugo-learn.js?1740757943"></script>
 
-    <link href="/mermaid/mermaid.css?1740757543" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1740757543"></script>
+    <link href="/mermaid/mermaid.css?1740757943" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1740757943"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

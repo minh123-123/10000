@@ -12,21 +12,21 @@
     <title>Khám phá triển khai OPEA ChatQnA :: LÀM VIỆC VỚI AMAZON SYSTEM MANAGER - SESSION MANAGER</title>
 
     
-    <link href="/css/nucleus.css?1740757544" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1740757544" rel="stylesheet">
-    <link href="/css/hybrid.css?1740757544" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1740757544" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1740757544" rel="stylesheet">
-    <link href="/css/auto-complete.css?1740757544" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1740757544" rel="stylesheet">
-    <link href="/css/theme.css?1740757544" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1740757544" rel="stylesheet">
+    <link href="/css/nucleus.css?1740757943" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1740757943" rel="stylesheet">
+    <link href="/css/hybrid.css?1740757943" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1740757943" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1740757943" rel="stylesheet">
+    <link href="/css/auto-complete.css?1740757943" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1740757943" rel="stylesheet">
+    <link href="/css/theme.css?1740757943" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1740757943" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1740757544" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1740757943" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1740757544"></script>
+    <script src="/js/jquery-3.3.1.min.js?1740757943"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1740757544"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1740757544"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1740757943"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1740757943"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1740757544"></script>
+<script type="text/javascript" src="/js/search.js?1740757943"></script>
 
     
   </div>
@@ -927,7 +927,7 @@
 </ul>
 <h4 id="kiến-trúc-dịch-vụ-vi-mô-opea">Kiến trúc dịch vụ vi mô OPEA</h4>
 <p>Các triển khai OPEA được xây dựng xung quanh ba thành phần chính:</p>
-<p><img src="10000/images/2/image025.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image025.png" alt="VPC"></p>
 <ul>
 <li>
 <p><strong>Megaservice</strong> – Hoạt động như một đơn vị điều phối cho tất cả các dịch vụ vi mô, quản lý quy trình làm việc và đảm bảo tương tác liền mạch giữa các thành phần. Điều này rất cần thiết để phối hợp một ứng dụng đầu cuối với nhiều bộ phận chuyển động. Bạn có thể tìm thêm thông tin chi tiết trong tài liệu OPEA.</p>
@@ -947,9 +947,9 @@ Truy cập các dịch vụ vi mô</p>
 
 <p>kubectl get svc liệt kê tất cả các dịch vụ trong cụm Kubernetes, hiển thị tên, loại, IP cụm và cổng được hiển thị của chúng. Lệnh này cung cấp tổng quan về cách các ứng dụng được hiển thị để truy cập nội bộ hoặc bên ngoài.</p>
 <p>Chạy lệnh sau trên CloudShell của bạn:</p>
-<p><img src="10000/images/2/image026.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image026.png" alt="VPC"></p>
 <p>Bạn sẽ thấy đầu ra tương tự như sau:</p>
-<p><img src="10000/images/2/image027.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image027.png" alt="VPC"></p>
 <p>Lệnh kubectl get svc được sử dụng để liệt kê các dịch vụ đang chạy trong cụm Kubernetes. Các dịch vụ hoạt động như các điểm vào cho phép giao tiếp giữa các thành phần khác nhau của ứng dụng của bạn. Mỗi dịch vụ có một tên duy nhất (ví dụ: chatqna hoặc chatqna-ui), giúp xác định vai trò của dịch vụ đó trong hệ thống.</p>
 <p>Các dịch vụ Kubernetes có thể được hiển thị theo nhiều cách khác nhau:</p>
 <ul>
@@ -978,24 +978,24 @@ Cuối cùng, cột Tuổi hiển thị thời gian dịch vụ đã chạy—v�
 <ul>
 <li>Tìm bộ cân bằng tải</li>
 </ul>
-<p><img src="10000/images/2/image028.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image028.png" alt="VPC"></p>
 <ul>
 <li>Nhấp vào chatqna-Ingress</li>
 </ul>
-<p><img src="10000/images/2/image029.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image029.png" alt="VPC"></p>
 <ul>
 <li>Lưu ý Tên DNS. Như đã đề cập, đây là URL công khai có thể truy cập bên ngoài.</li>
 </ul>
-<p><img src="10000/images/2/image030.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image030.png" alt="VPC"></p>
 <p>Bạn sẽ sử dụng lệnh curl để gửi yêu cầu đến các điểm cuối API, kiểm tra từng dịch vụ vi mô riêng lẻ. Mục tiêu là đặt một câu hỏi, chẳng hạn như &ldquo;Doanh thu của Nike vào năm 2023 là bao nhiêu?&rdquo; và xác minh rằng API phản hồi chính xác. Bước này đảm bảo rằng tất cả các dịch vụ vi mô trong hệ thống đang hoạt động như mong đợi.</p>
-<p><img src="10000/images/2/image031.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image031.png" alt="VPC"></p>
 <p>Nếu mọi thứ hoạt động bình thường, bạn sẽ nhận được phản hồi xác nhận rằng quy trình làm việc Retrieval-Augmented Generation (RAG) đang hoạt động.</p>
 <p>Tuy nhiên, bạn có thể nhận thấy rằng mô hình không thể cung cấp câu trả lời chính xác. Điều này xảy ra vì nó thiếu ngữ cảnh cần thiết và dựa vào thông tin lỗi thời. Nếu không có quyền truy cập vào dữ liệu hiện tại và có liên quan, mô hình không thể tạo ra phản hồi chính xác.
 Trong các bước tiếp theo, bạn sẽ cải thiện hệ thống bằng RAG, cho phép mô hình truy xuất thông tin mới nhất, có liên quan theo ngữ cảnh. Điều này sẽ đảm bảo rằng mô hình cung cấp câu trả lời chính xác và có ý nghĩa hơn.</p>
 <p>Bây giờ, chúng ta hãy khám phá từng dịch vụ siêu nhỏ một cách chi tiết để hiểu vai trò của nó và cách nó góp phần cải thiện khả năng trả lời câu hỏi chính xác của mô hình.</p>
 <h4 id="bước-2-dịch-vụ-siêu-nhỏ">Bước 2: Dịch vụ siêu nhỏ</h4>
 <p>Mỗi dịch vụ siêu nhỏ tuân theo logic sau để thực hiện một tác vụ trong luồng RAG:</p>
-<p><img src="10000/images/2/image032.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image032.png" alt="VPC"></p>
 <p>Trong luồng, bạn có thể quan sát các dịch vụ siêu nhỏ và chúng ta có thể chia luồng RAG thành hai bước:</p>
 <ul>
 <li>
@@ -1007,12 +1007,12 @@ Trong các bước tiếp theo, bạn sẽ cải thiện hệ thống bằng RAG
 </ul>
 <h4 id="nhắc-nhở-trước"><strong>Nhắc nhở trước</strong></h4>
 <p>Trong bước này, logic là bắt đầu từ một tài liệu (Nike&rsquo;s revenue PDF) và thực hiện tiền xử lý cần thiết để chuẩn bị lưu trữ trong cơ sở dữ liệu. Như đã trình bày, quy trình này chủ yếu liên quan đến 3 dịch vụ siêu nhỏ: chuẩn bị dữ liệu, nhúng và lưu trữ vectơ. Hãy cùng khám phá từng dịch vụ siêu nhỏ</p>
-<p><img src="10000/images/2/image033.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image033.png" alt="VPC"></p>
 <h4 id="nhúng-dịch-vụ-siêu-nhỏ-pod-chatqna-tei80"><strong>Nhúng dịch vụ siêu nhỏ (POD: chatqna-tei:80)</strong></h4>
 <p>Nhúng là biểu diễn số của một đối tượng—chẳng hạn như từ, cụm từ hoặc tài liệu—trong không gian vectơ liên tục. Trong xử lý ngôn ngữ tự nhiên (NLP), nhúng biến đổi các từ, câu hoặc phân đoạn văn bản thành vectơ—các tập hợp số nắm bắt ý nghĩa, mối quan hệ và ý nghĩa theo ngữ cảnh của chúng. Sự chuyển đổi này cho phép các mô hình máy học xử lý và hiểu văn bản hiệu quả hơn.</p>
 <p>Ví dụ, nhúng từ biểu diễn các từ dưới dạng các điểm trong không gian vectơ, trong đó các từ có nghĩa tương tự như &ldquo;vua&rdquo; và &ldquo;nữ hoàng&rdquo; được đặt gần nhau hơn. Mô hình nhúng nắm bắt các mối quan hệ này thông qua phép tính vectơ.</p>
 <p>Trong quá trình đào tạo, nếu mô hình thường xuyên gặp &ldquo;vua&rdquo; khi liên kết với &ldquo;đàn ông&rdquo; và &ldquo;nữ hoàng&rdquo; khi liên kết với &ldquo;phụ nữ&rdquo;, mô hình sẽ học được rằng &ldquo;vua&rdquo; và &ldquo;nữ hoàng&rdquo; có mối quan hệ tương tự với &ldquo;đàn ông&rdquo; và &ldquo;phụ nữ&rdquo;. Điều này cho phép mô hình định vị các từ theo cách phản ánh các mối quan hệ có ý nghĩa, chẳng hạn như liên kết giới tính, trong ngôn ngữ.</p>
-<p><img src="10000/images/2/image034.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image034.png" alt="VPC"></p>
 <p>Nhúng: Một thành phần chính của RAG
 Nhúng đóng vai trò quan trọng trong Thế hệ tăng cường truy xuất (RAG) bằng cách tăng cường khả năng xử lý và truy xuất thông tin có liên quan của mô hình. Chúng cung cấp một số lợi thế chính:</p>
 <ul>
@@ -1031,16 +1031,16 @@ Nhúng đóng vai trò quan trọng trong Thế hệ tăng cường truy xuất 
 <ol>
 <li>Truy cập vào ngnix POD (sao chép toàn bộ tên pod NGNIX của bạn từ kubectl get pods và THAY THẾ chatqna-nginx-xxxxxxxx trên lệnh bên dưới)</li>
 </ol>
-<p><img src="10000/images/2/image035.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image035.png" alt="VPC"></p>
 <p>Dấu nhắc lệnh của bạn bây giờ sẽ chỉ ra rằng bạn đang ở bên trong vùng chứa, phản ánh sự thay đổi trong môi trường:</p>
-<p><img src="10000/images/2/image036.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image036.png" alt="VPC"></p>
 <p>Khi đã vào bên trong, bây giờ bạn sẽ có quyền truy cập trực tiếp vào các pod bên trong.</p>
 <ol start="2">
 <li>Nhận nhúng từ Microservice nhúng cho cụm từ &ldquo;Học sâu là gì?&rdquo;:</li>
 </ol>
-<p><img src="10000/images/2/image037.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image037.png" alt="VPC"></p>
 <p>Câu trả lời sẽ là biểu diễn vectơ của cụm từ &ldquo;Học sâu là gì?&rdquo;. Dịch vụ này trả về nhúng vectơ cho các đầu vào từ REST API.</p>
-<p><img src="10000/images/2/image038.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image038.png" alt="VPC"></p>
 <h3 id="dịch-vụ-cơ-sở-dữ-liệu-vectơ-pod-chatqna-redis-vector-db80"><strong>Dịch vụ cơ sở dữ liệu vectơ (POD: chatqna-redis-vector-db:80)</strong></h3>
 <p>Dịch vụ cơ sở dữ liệu vectơ đóng vai trò quan trọng trong ứng dụng Retrieval-Augmented Generation (RAG) bằng cách lưu trữ và truy xuất các nhúng. Điều này rất cần thiết cho các ứng dụng như ChatQnA, nơi thông tin có liên quan cần được truy xuất hiệu quả dựa trên truy vấn của người dùng.</p>
 <h4 id="sử-dụng-redis-làm-cơ-sở-dữ-liệu-vectơ"><strong>Sử dụng Redis làm Cơ sở dữ liệu vectơ</strong></h4>
@@ -1072,20 +1072,20 @@ Nhúng đóng vai trò quan trọng trong Thế hệ tăng cường truy xuất 
 <ol>
 <li>Tải xuống tài liệu vào microservice:</li>
 </ol>
-<p><img src="10000/images/2/image039.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image039.png" alt="VPC"></p>
 <ol start="2">
 <li>Cung cấp tài liệu cho cơ sở kiến ​​thức (Vectord) (Sẽ mất khoảng 30 giây):</li>
 </ol>
-<p><img src="10000/images/2/image040.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image040.png" alt="VPC"></p>
 <p>Sau khi chạy lệnh trước đó, bạn sẽ nhận được thông báo xác nhận như bên dưới. Lệnh này đã cập nhật cơ sở kiến ​​thức bằng cách tải lên tệp cục bộ để xử lý.</p>
-<p><img src="10000/images/2/image041.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image041.png" alt="VPC"></p>
 <p>API microservice chuẩn bị dữ liệu có thể truy xuất thông tin về danh sách các tệp được lưu trữ trong cơ sở dữ liệu vector.</p>
 <ol start="3">
 <li>Kiểm tra xem tài liệu đã được tải lên chưa:</li>
 </ol>
-<p><img src="10000/images/2/image042.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image042.png" alt="VPC"></p>
 <p>Sau khi chạy lệnh trước, bạn sẽ nhận được thông báo xác nhận.</p>
-<p><img src="10000/images/2/image043.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image043.png" alt="VPC"></p>
 <p>Xin chúc mừng! Bạn đã chuẩn bị thành công cơ sở kiến ​​thức của mình. Bây giờ bạn sẽ khám phá các dịch vụ vi mô liên quan đến xử lý nhanh chóng.</p>
 <h4 id="bước-3-nhắc-nhở">Bước 3: Nhắc nhở</h4>
 <p>Sau khi cơ sở kiến ​​thức được thiết lập, bạn có thể bắt đầu tương tác với ứng dụng bằng cách đặt các câu hỏi theo ngữ cảnh cụ thể. Retrieval-Augmented Generation (RAG) đảm bảo rằng các phản hồi vừa chính xác vừa dựa trên dữ liệu có liên quan.</p>
@@ -1100,7 +1100,7 @@ Nhúng đóng vai trò quan trọng trong Thế hệ tăng cường truy xuất 
 <li>Xếp hạng lại</li>
 <li>LLM</li>
 </ul>
-<p><img src="10000/images/2/image044.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image044.png" alt="VPC"></p>
 <h4 id="dịch-vụ-vi-mô-thu-thập-pod-chatqna-retriever-usvc7000"><strong>Dịch vụ vi mô thu thập (POD: chatqna-retriever-usvc:7000)</strong></h4>
 <p>Dịch vụ vi mô thu thập chịu trách nhiệm định vị thông tin có liên quan nhất trong cơ sở kiến ​​thức và trả về các tài liệu khớp chặt chẽ với truy vấn của người dùng. Nó tương tác với nhiều hệ thống phụ trợ lưu trữ kiến ​​thức và cung cấp API để truy xuất dữ liệu khớp nhất.</p>
 <p>Các cơ sở kiến ​​thức khác nhau sử dụng các phương pháp truy xuất khác nhau:</p>
@@ -1115,9 +1115,9 @@ Trong nhiệm vụ này, bạn sẽ sử dụng Redis làm cơ sở dữ liệu 
 <ol>
 <li>Tạo nhúng và lưu cục bộ (embed_question):</li>
 </ol>
-<p><img src="10000/images/2/image045.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image045.png" alt="VPC"></p>
 <p>Bạn sẽ nhận được thông tin chi tiết về tác vụ viết:</p>
-<p><img src="10000/images/2/image046.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image046.png" alt="VPC"></p>
 <ol start="2">
 <li>Kiểm tra xem nhúng của bạn đã được lưu chưa:</li>
 </ol>
@@ -1142,7 +1142,7 @@ Trong nhiệm vụ này, bạn sẽ sử dụng Redis làm cơ sở dữ liệu 
 <li>Tìm kiếm từ vựng thưa thớt, dựa trên việc khớp dựa trên từ khóa.</li>
 </ul>
 <p>Mặc dù các phương pháp truy xuất này có hiệu quả, nhưng mô hình xếp hạng lại sẽ tinh chỉnh các kết quả bằng cách tối ưu hóa thứ tự của các tài liệu đã truy xuất. Bước này cải thiện đáng kể độ chính xác, đảm bảo đầu ra cuối cùng có liên quan hơn, chính xác hơn và phù hợp hơn về mặt ngữ cảnh với truy vấn của người dùng.</p>
-<p><img src="10000/images/2/image047.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image047.png" alt="VPC"></p>
 <p>OPEA có nhiều tùy chọn để xếp hạng lại. Đối với phòng thí nghiệm này, bạn sẽ sử dụng Hugging Face TEI để xếp hạng lại. Đây là dịch vụ vi mô chatqna-teirerank trong cụm của bạn.</p>
 <p>Trình xếp hạng lại sẽ sử dụng similar_docs từ giai đoạn trước và so sánh với câu hỏi Doanh thu Nike năm 2023 là bao nhiêu? để kiểm tra chất lượng của các tài liệu đã truy xuất.</p>
 <p>Trích xuất 3 đoạn văn bản đã truy xuất và lưu chúng trong một biến mới để xếp hạng lại:</p>
@@ -1165,10 +1165,10 @@ Trong nhiệm vụ này, bạn sẽ sử dụng Redis làm cơ sở dữ liệu 
 <div class="notices info" ><p>Đầu ra sau đây đã được định dạng để dễ đọc hơn. Kết quả của bạn được hiển thị ở dạng văn bản thuần túy và có thể thay đổi đôi chút do thuật toán tìm kiếm tương đồng. Các tài liệu được truy xuất được xếp hạng theo mức độ tương đồng với truy vấn của bạn, với chỉ mục được xếp hạng cao nhất thể hiện sự khớp có liên quan nhất. Bạn có thể xác nhận rằng tài liệu được xếp hạng cao nhất tương ứng với tài liệu phù hợp nhất với truy vấn của bạn.</p>
 </div>
 
-<p><img src="10000/images/2/image048.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image048.png" alt="VPC"></p>
 <p>Máy chủ phản hồi bằng một mảng JSON chứa các đối tượng có hai trường: chỉ mục và điểm. Điều này cho biết cách các đoạn trích được xếp hạng dựa trên mức độ liên quan của chúng với truy vấn: {&ldquo;index&rdquo;:2,&ldquo;score&rdquo;:0.9972289} có nghĩa là văn bản đầu tiên (chỉ mục 0) có điểm liên quan cao khoảng 0,7982. {&ldquo;index&rdquo;:0,&ldquo;score&rdquo;:0.9776342},{&ldquo;index&rdquo;:3,&ldquo;score&rdquo;:0.9296986},{&ldquo;index&rdquo;:1,&ldquo;score&rdquo;:0.84730965} cho biết các đoạn trích khác (chỉ mục 3, 1 và 2) có điểm thấp hơn nhiều.</p>
 <p>Như bạn có thể thấy từ similar_doc, id=2 có thông tin bên dưới, trong đó nó CHÍNH XÁC đề cập đến doanh thu năm 2023!</p>
-<p><img src="10000/images/2/image049.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image049.png" alt="VPC"></p>
 <p>Chỉ đoạn trích đầu tiên sẽ được sử dụng để nhắc LLM.</p>
 <h4 id="llm-microservice-pod-chatqna-tgi80"><strong>LLM Microservice (POD: chatqna-tgi:80)</strong></h4>
 <p>Cốt lõi của ứng dụng RAG (Retrieval-Augmented Generation) là Mô hình ngôn ngữ lớn (LLM), đóng vai trò quan trọng trong việc tạo ra phản hồi. Bằng cách tận dụng RAG, hệ thống nâng cao hiệu suất của LLM, đảm bảo phản hồi chính xác, có liên quan và nhận thức được ngữ cảnh.</p>
@@ -1198,7 +1198,7 @@ Tích hợp linh hoạt với OPEA: Kiến trúc dịch vụ vi mô này hỗ tr
 <ol start="4">
 <li>Trực tiếp nhắc nhở TGI(LLM) Microservice:</li>
 </ol>
-<p><img src="10000/images/2/image050.png" alt="VPC"></p>
+<p><img src="/10000/images/2/image050.png" alt="VPC"></p>
 <p>Mô hình sẽ cung cấp cho bạn câu trả lời cho lời nhắc như sau:</p>
 <p>**&ldquo;generated_text&rdquo;:&rdquo; Doanh thu của Nike năm 2023 chưa được báo cáo vì vẫn đang trong quý 4. Năm tài chính đầy đủ trước đó—tức là năm 2022—đã mang lại 48,9 tỷ đô la doanh thu cho công ty đồ thể thao đa quốc gia của Mỹ. Họ xử lý việc thiết kế, phát triển, sản xuất và tiếp thị/bán hàng trên toàn thế giới của một danh mục sản phẩm đa dạng. Từ khi thành lập vào năm 1964 với tên gọi Blue Ribbon Sports, công ty đã được đổi tên thành Nike, Inc., vào năm 1978. Logo Jumpman (ví dụ), bao gồm Michael</p>
 
@@ -1617,19 +1617,19 @@ Tích hợp linh hoạt với OPEA: Kiến trúc dịch vụ vi mô này hỗ tr
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1740757544"></script>
-    <script src="/js/perfect-scrollbar.min.js?1740757544"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1740757544"></script>
-    <script src="/js/jquery.sticky.js?1740757544"></script>
-    <script src="/js/featherlight.min.js?1740757544"></script>
-    <script src="/js/highlight.pack.js?1740757544"></script>
+    <script src="/js/clipboard.min.js?1740757943"></script>
+    <script src="/js/perfect-scrollbar.min.js?1740757943"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1740757943"></script>
+    <script src="/js/jquery.sticky.js?1740757943"></script>
+    <script src="/js/featherlight.min.js?1740757943"></script>
+    <script src="/js/highlight.pack.js?1740757943"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1740757544"></script>
-    <script src="/js/learn.js?1740757544"></script>
-    <script src="/js/hugo-learn.js?1740757544"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1740757943"></script>
+    <script src="/js/learn.js?1740757943"></script>
+    <script src="/js/hugo-learn.js?1740757943"></script>
 
-    <link href="/mermaid/mermaid.css?1740757544" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1740757544"></script>
+    <link href="/mermaid/mermaid.css?1740757943" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1740757943"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
